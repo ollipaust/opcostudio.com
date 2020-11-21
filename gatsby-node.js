@@ -1,7 +1,6 @@
 const path = require('path');
 const DirectoryNamedWebpackPlugin = require('directory-named-webpack-plugin');
 const languages = require('./src/components/i18n/languages');
-require('default-passive-events');
 
 exports.onCreateWebpackConfig = ({
   stage,

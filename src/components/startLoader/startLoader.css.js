@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { accent, light } from 'constants/colors'
+import { accentGradient150, light } from 'constants/colors'
 
 export const LoaderContainer = styled.div.withConfig({
   displayName: 'LoaderContainer',
@@ -12,7 +12,7 @@ export const LoaderContainer = styled.div.withConfig({
   place-items: center;
   width: 100%;
   height: 100%;
-  background: ${accent};
+  background: ${accentGradient150};
   color: ${light};
   text-align: center;
 

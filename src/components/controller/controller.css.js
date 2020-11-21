@@ -5,7 +5,7 @@ export const Container = styled.header.withConfig({
   displayName: 'AppController',
 })`
   width: 100%;
-  height: 150px;
+  height: calc(100px + 2.5em);
   position: fixed;
   top: 0;
   left: 0;
@@ -100,10 +100,10 @@ export const Container = styled.header.withConfig({
 export const Content = styled.header.withConfig({
   displayName: 'AppControllerContent',
 })`
-display: flex;
-align-items: center;
-justify-content: space-between;
-position: relative;
-width: 100%;
-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  width: 100%;
+  height: 100%;
 `

@@ -13,7 +13,7 @@ const LangButton = ({ label, locale, chosen, onClick }) => (
     className={locale}
     title={label}
     style={{
-      opacity: chosen ? '1' : '0.33',
+      opacity: chosen ? '1' : '0.177',
     }}
   />
 )

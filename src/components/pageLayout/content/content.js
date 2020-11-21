@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import { light, darker60 } from 'constants/colors'
 
 import { ContainerWrapper, ContentContainer } from './content.css'
 

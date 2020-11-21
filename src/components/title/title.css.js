@@ -19,7 +19,7 @@ export const Text = styled.span.withConfig({
     font-weight: ${({ size }) => () => {
       switch (size) {
         case 'super':
-          return '700'
+          return '800'
         case 'large':
           return '700'
         case 'medium':

@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import MEDIA from 'helpers/mediaTemplates'
-import { light, lighter } from 'constants/colors'
+import { light, lighter, alter66 } from 'constants/colors'
 
 export const Container = styled.ul.withConfig({
   displayName: 'NavLinks',
@@ -105,7 +105,7 @@ export const Container = styled.ul.withConfig({
     }
 
     :hover {
-      color: ${lighter};
+      color: ${alter66};
       transform: scale(1, 0.9);
       transition: color 500ms cubic-bezier(0.165, 0.8, 0.45, 1) 150ms;
     }

@@ -15,25 +15,17 @@ import Hero from 'components/pageLayout/hero'
 import Link from 'components/link'
 import Title from 'components/title'
 import BrowserNotice from 'components/browserNotice'
-import { ButtonStyled, Divider, Indicator } from 'components/elements'
-import { neutral } from 'constants/colors'
-import PageContent from 'components/pageLayout/content'
+import {
+  ButtonStyled,
+  HeroButtonsContainer,
+  Divider,
+  Indicator,
+} from 'components/elements'
+import { slideFade2s, slideFade3s } from 'constants/animations'
 
 const HeroButton = styled(Link).withConfig({ displayName: 'HeroButton' })`
   ${ButtonStyled}
 `
-
-const MotionButton = {
-  hidden: { opacity: 0, y: '75%' },
-  show: {
-    opacity: 1,
-    y: '0%',
-    transition: {
-      opacity: { delay: 1.5, duration: 0.5 },
-      y: { delay: 1.6, type: 'spring', damping: 100, stiffness: 100 },
-    },
-  },
-}
 
 const Index = () => (
   <React.Fragment>
@@ -46,10 +38,9 @@ const Index = () => (
       </BrowserNotice>
     ) : null}
 
-    <Hero accentColor={neutral} vantaShine={250}>
-      <Title as="h1" size="large">
+    <Hero>
+      <Title as="h1" size="super" className="HomeHeading">
         <FormattedMessage id="home.intro1" />
-        <FormattedMessage id="home.intro2" />
       </Title>
 
       <Divider />
@@ -57,17 +48,34 @@ const Index = () => (
       <Title as="h2" size="medium">
         <FormattedMessage id="home.name" />
       </Title>
-
       <p>
         <FormattedMessage id="home.job" />
       </p>
 
-      <motion.div variants={MotionButton} initial="hidden" animate="show">
-        <HeroButton to="/about">
-          <Indicator />
-          <FormattedMessage id="home.button" />
-        </HeroButton>
-      </motion.div>
+      <HeroButtonsContainer>
+        <motion.div
+          variants={slideFade2s}
+          initial="hidden"
+          animate="show"
+          className="heroBtn1"
+        >
+          <HeroButton to="/about">
+            <Indicator />
+            <FormattedMessage id="home.buttonStart" />
+          </HeroButton>
+        </motion.div>
+
+        <motion.div
+          variants={slideFade3s}
+          initial="hidden"
+          animate="show"
+          className="heroBtn2"
+        >
+          <HeroButton to="/about" className="dark">
+            <FormattedMessage id="home.buttonDownload" />
+          </HeroButton>
+        </motion.div>
+      </HeroButtonsContainer>
     </Hero>
   </React.Fragment>
 )

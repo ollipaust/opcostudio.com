@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components'
 import { normalize } from 'styled-normalize'
-import { accent, light, darker2 } from 'constants/colors'
+import { accent, light, dark } from 'constants/colors'
 import '../static/fonts/fontPrimary.css'
 
 export const GlobalStyles = createGlobalStyle`
@@ -33,7 +33,7 @@ export const GlobalStyles = createGlobalStyle`
     font-size: 16px;
     font-weight: 400;
     font-feature-settings: "liga", "kern";
-    color: ${darker2};
+    color: ${dark};
     background-color: ${light};
     -webkit-font-smoothing: subpixel-antialiased;
     -moz-osx-font-smoothing: grayscale;

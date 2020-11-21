@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import MEDIA from 'helpers/mediaTemplates'
-import { accent, light, dark, darkest, darker2, black } from 'constants/colors'
+import { accent, light, dark, accent66, darker2, black } from 'constants/colors'
 
 export const HeroContainer = styled.section.withConfig({
   displayName: 'HeroContainer',
@@ -19,7 +19,6 @@ export const HeroTextContainer = styled.div.withConfig({
   justify-content: center;
   width: 100%;
   height: 100%;
-  z-index: 100;
   text-align: center;
 
   h1 {
@@ -33,5 +32,11 @@ export const HeroTextContainer = styled.div.withConfig({
   h2 {
     color: ${dark};
     display: block;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    margin-bottom: 1.5rem;
   }
 `

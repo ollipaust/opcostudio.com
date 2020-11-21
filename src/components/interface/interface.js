@@ -1,9 +1,8 @@
-import React, { useState, useLayoutEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 
 import BodyClassName from 'react-body-classname'
 import hasTouch from 'has-touch'
-import { isIE, isEdge } from 'react-device-detect'
 
 import BrowserNotice from 'components/browserNotice'
 import { FormattedMessage } from 'react-intl'
@@ -11,7 +10,7 @@ import { FormattedMessage } from 'react-intl'
 import AppView from './appViewWithScrollbars'
 import Controller from 'components/controller'
 import translatorWrapper from 'components/translator/translatorWrapper'
-import useScreenOrientation from './screenOrientation'
+import useScreenOrientation from 'helpers/screenOrientation'
 
 import { GlobalStyles } from 'global.css'
 import { ScrollbarStyles, UnsortedStyles } from './interface.css'
@@ -21,32 +20,17 @@ import { TransitionsController, TransitionsView } from './transitions'
 import Div100vh from 'react-div-100vh'
 import VantaWaves from 'components/animatedBackground/vantaWaves'
 import StartLoader from 'components/startLoader'
-import { motion } from 'framer-motion'
+
+import { neutral } from 'constants/colors'
 
 const Interface = ({ children, location }) => {
   const [startLoading, setStartLoading] = useState(true)
 
-  useLayoutEffect(() => {
-    setTimeout(() => setStartLoading(false), 500)
+  useEffect(() => {
+    setTimeout(() => setStartLoading(false), 1000)
   }, [])
 
   const screenOrientation = useScreenOrientation()
-
-  const slide = {
-    show: { y: 0 },
-    hide: {
-      y: '-100%',
-      transition: {
-        y: {
-          delay: 1.9,
-          duration: 0.4,
-          type: 'spring',
-          damping: 100,
-          stiffness: 100,
-        },
-      },
-    },
-  }
 
   return (
     <Div100vh>
@@ -55,12 +39,13 @@ const Interface = ({ children, location }) => {
       <UnsortedStyles />
       <TransitionStyles />
 
-      {(process.env.NODE_ENV === 'development') ? null : <StartLoader
-      className={startLoading === true ? 'loading' : 'loading-done'}
-    />
-    }
+      {process.env.NODE_ENV === 'development' ? null : (
+        <StartLoader
+          className={startLoading === true ? 'loading' : 'loading-done'}
+        />
+      )}
 
-      <VantaWaves accentColor="#99959C" vantaShine="250" />
+      <VantaWaves accentColor={neutral} vantaShine={250} />
 
       {hasTouch ? (
         <BodyClassName className="has-touch page" />

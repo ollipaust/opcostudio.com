@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import MEDIA from 'helpers/mediaTemplates'
-import { lighter, light, accent, darker, darkest } from 'constants/colors'
+import { lighter, light, accent, darkest } from 'constants/colors'
 
 export const Container = styled.ul.withConfig({
   displayName: 'Socials',

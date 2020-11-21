@@ -33,10 +33,10 @@ export const ContentHeading = styled.article.withConfig({
     flex-direction: column;
     [class*='Title-'] {
       &:nth-of-type(1) {
-        padding-right: 0!important;
+        padding-right: 0 !important;
       }
       &:nth-of-type(2) {
-        padding-left: 0!important;
+        padding-left: 0 !important;
       }
       > span {
         text-align: center;

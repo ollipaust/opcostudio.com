@@ -1,10 +1,10 @@
 export default {
   title: 'Home',
   intro1: 'OPCO STUDIO',
-  intro2: '-- DEV MODE --',
-  name: 'by Olli Paust',
-  job: 'Coder & Designer from Berlin',
-  button: 'Intro',
+  name: 'Olliver Paust',
+  job: 'Frontend Coder & Designer from  Berlin',
+  buttonStart: 'Learn more about me',
+  buttonDownload: 'Resumé ↓',
   inDevNotice: 'This Project is currently in Development.',
-  lastUpdate: 'Last Update: 11.11.2020',
+  lastUpdate: 'Letzte Aktualisierung: 21.11.20',
 }

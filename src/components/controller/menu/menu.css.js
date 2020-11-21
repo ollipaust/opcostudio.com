@@ -5,9 +5,10 @@ import Div100vh from 'react-div-100vh'
 import {
   accent,
   light,
+  accentGradient150,
   lighter,
   lighter2,
-  dark,
+  alter50,
   darker3,
 } from 'constants/colors'
 import MEDIA from 'helpers/mediaTemplates'
@@ -171,7 +172,7 @@ export const OverlayBg = styled.div.withConfig({
   height: 100vh;
   overflow: hidden;
   outline: 0;
-  background-color: ${accent};
+  background: ${accentGradient150};
   background-size: cover;
   background-position: center;
   transform: translate3d(0px, -100%, 0px);
@@ -221,7 +222,7 @@ export const MenuButton = styled.button.withConfig({
     position: absolute;
     transform: rotate(0);
     transition: top 500ms ease 0ms, left 500ms ease 0ms,
-      transform 500ms ease 0ms, background-color 375ms ease 1075ms;
+      transform 500ms ease 0ms, background-color 500ms ease 1075ms;
   }
   span:after,
   span:before {
@@ -233,7 +234,7 @@ export const MenuButton = styled.button.withConfig({
     span:after,
     span:before {
       background-color: ${light};
-      transition: 500ms background-color 150ms, 200ms top, 200ms left,
+      transition: 500ms background-color 100ms, 200ms top, 200ms left,
         200ms transform;
       transition-delay: 0;
     }
@@ -369,13 +370,13 @@ export const ControlsContainer = styled.div.withConfig({
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 150px;
+  height: calc(100px + 2.5em);
   width: auto;
   padding-right: calc(2.5rem + 16px);
   pointer-events: none;
 
-    > div:first-of-type {
-      margin-right: 2.5rem;
+  > div:first-of-type {
+    margin-right: 2.5rem;
 
     @media (max-height: 823px) and (max-width: 450px) and (orientation: portrait) {
       margin-right: 2rem;
@@ -391,7 +392,7 @@ export const LogoContainer = styled.div.withConfig({
   position: absolute;
   top: 0;
   left: 0;
-  height: 150px;
+  height: calc(100px + 2.5em);
   z-index: 10000;
   width: 100%;
   pointer-events: none;
@@ -515,10 +516,10 @@ export const OverlayBoxRight = styled.div.withConfig({
       transition: all 500ms ease-out 100ms;
 
       ::after {
-        background: ${lighter};
+        background: ${alter50};
       }
       &:hover::after {
-        background: ${lighter};
+        background: ${alter50};
       }
       svg {
         fill: ${lighter2};

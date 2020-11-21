@@ -1,24 +1,66 @@
 import React from 'react'
 import styled from 'styled-components'
 import MEDIA from 'helpers/mediaTemplates'
-import { accent, dark, darker, light } from 'constants/colors'
+import {
+  accent,
+  accentGradient,
+  accentGradient150,
+  dark,
+  light,
+} from 'constants/colors'
+import { pulse } from 'constants/animations'
 
 export const ButtonStyled = `
   display: inline-flex;
   align-items: center;
   justify-content: center;
   position: relative;
+  display: inline-block;
   text-align: center;
   background: transparent;
   border-radius: 0.25em;
   border-width: 2px;
   border-style: solid;
   border-color: ${accent};
-  margin-top: 2vmax;
+  margin: 2vmax 0.5rem 0;
   padding: 15px 20px;
   overflow: hidden;
   text-decoration: none;
   pointer-events: all;
+
+    &.dark {
+      border-color: ${dark};
+
+        > span {
+          color: ${accent};
+        }
+
+        ::after {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 200px;
+          background: ${dark};
+          z-index: -1;
+          transform: translateY(-100%) translateZ(0);
+          transition: transform 500ms ease-in-out 50ms;
+        }
+        :hover::after, :active::after {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 200px;
+          background: ${dark};
+          z-index: -1;
+          transform: translateY(-50%) translateZ(0);
+          transition: transform 500ms ease-in-out 0ms;
+        }
+
+    }
 
     @media (max-width: 450px) and (max-height: 823px) and (orientation: portrait) {
       padding: 7.5px 12.5px!important;
@@ -58,7 +100,7 @@ export const ButtonStyled = `
       left: 0;
       width: 100%;
       height: 200px;
-      background: ${accent};
+      background: ${accentGradient150};
       z-index: -1;
       transform: translateY(-100%) translateZ(0);
       transition: transform 500ms ease-in-out 50ms;
@@ -70,7 +112,7 @@ export const ButtonStyled = `
       left: 0;
       width: 100%;
       height: 200px;
-      background: ${accent};
+      background: ${accentGradient150};
       z-index: -1;
       transform: translateY(-50%) translateZ(0);
       transition: transform 500ms ease-in-out 0ms;
@@ -108,22 +150,15 @@ export const ButtonStyled = `
     .pulsing-rings .pulsing-ringlet:nth-of-type(3) {
       animation-delay: 3.6s;
     }
-    @keyframes pulse {
-      0% {
-        transform: scale(0.1, 0.1);
-        opacity: 0;
-      }
-      10% {
-        opacity: 1;
-      }
-      20%,
-      100% {
-        transform: scale(1.2, 1.2);
-        opacity: 0;
-      }
-    }
-`
 
+
+    ${pulse}
+`
+export const HeroButtonsContainer = styled.span.withConfig({
+  displayName: 'HeroButtonsContainer',
+})`
+  display: block;
+`
 export const Divider = styled.span.withConfig({
   displayName: 'Divider',
 })`
@@ -132,7 +167,7 @@ export const Divider = styled.span.withConfig({
   width: 10%;
   margin-top: 1.5rem;
   margin-bottom: 1rem;
-  background: ${accent};
+  background: ${accentGradient150};
   border-radius: 0.25em;
 
   @media (max-height: 823px) and (max-width: 450px) and (orientation: portrait) {

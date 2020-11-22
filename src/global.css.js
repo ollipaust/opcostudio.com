@@ -49,6 +49,9 @@ export const GlobalStyles = createGlobalStyle`
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
   }
+  .flexbox {
+    display: flex;
+  }
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Campton';
   }
@@ -78,6 +81,18 @@ export const GlobalStyles = createGlobalStyle`
   table {
     border-collapse: collapse;
     border-spacing: 0;
+  }
+  .textLeft > span {
+    text-align: left;
+  }
+  .textRight > span {
+    text-align: right;
+  }
+  .textCenter > span {
+    text-align: center;
+  }
+  .textJustify > span {
+    text-align: justify;
   }
   video {
     max-width: 100%;

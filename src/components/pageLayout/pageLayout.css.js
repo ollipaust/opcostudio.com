@@ -1,32 +1,25 @@
 import styled, { createGlobalStyle } from 'styled-components'
-import { accent, light, darker2, lighter, darker } from 'constants/colors'
+import { accent, light, darker2, glass, darker } from 'constants/colors'
 
 export const PageLayoutStyles = createGlobalStyle`
 body.about {
-    .whoList {
-        max-width: 90%;
-        font-size: 3rem;
-        font-weight: 700;
-        
-            li {
-                line-height: 2.5;
-                color: ${darker};
-                position: relative;
-                span {
-                    position: absolute;
-                    top: 50%;
-                    right: 0;
-                    width: 50%;
-                    transform: translateY(-50%);
-                    font-size: 1.5rem;
-                    font-weight: 500;
-                    color: ${darker2};
-                    text-align: right;
-                    line-height: 1.25;
-                }
-            }
+
+    .flexbox {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        align-items: center;
+
+        > .intro {
+            width: 60%;
+            margin-left: 7.5vw;
+        }
     }
+
     [class*='ContentContainer'] {
+        
         .caption {
             text-align: center;
             color: ${darker};

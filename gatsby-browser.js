@@ -1,7 +1,12 @@
 import React from 'react';
 import AppProvider from 'store/provider';
 import wrapPageElementWithTransition from 'helpers/wrapPageElement';
-require('default-passive-events');
+
+if (process.env.NODE_ENV !== 'development') {
+  require('default-passive-events');
+} {
+  null
+}
 
 // React Context in Browser
 // eslint-disable-next-line react/prop-types

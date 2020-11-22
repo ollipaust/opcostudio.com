@@ -171,6 +171,7 @@ export const OverlayBg = styled.div.withConfig({
   width: 100%;
   height: 100vh;
   overflow: hidden;
+  opacity: 0.96;
   outline: 0;
   background: ${accentGradient150};
   background-size: cover;

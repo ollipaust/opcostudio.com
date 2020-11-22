@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 let io
 const listeners = []
 
-function getIO(rootMargin = '-50px') {
+function getIO(rootMargin = '50px') {
   if (
     typeof io === 'undefined' &&
     typeof window !== 'undefined' &&

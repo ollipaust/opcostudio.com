@@ -8,13 +8,14 @@ import Es6Logo from 'images/es6.png'
 import ReactLogo from 'images/react.png'
 import GatsbyLogo from 'images/gatsby.png'
 import { FormattedMessage } from 'react-intl'
+import { motionStagger, slideUp2s, ySpring } from 'constants/animations'
 
 const HeroOverlay = () => {
   const MotionHeroLogosContainer = ({ className, children }) => (
     <LogosContainer>
       <motion.div
         className={className}
-        variants={MotionLogos}
+        variants={motionStagger}
         initial="hidden"
         animate="show"
       >
@@ -26,7 +27,7 @@ const HeroOverlay = () => {
     <NoticeBox>
       <motion.div
         className={className}
-        variants={MotionNotice}
+        variants={slideUp2s}
         initial="hidden"
         animate="show"
       >
@@ -45,66 +46,32 @@ const HeroOverlay = () => {
     displayName: 'HeroOverlayTextMotion',
   })``
 
-  const MotionLogos = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: {
-        delay: 2.5,
-        opacity: { ease: 'easeIn' },
-        staggerChildren: 0.25,
-        delayChildren: 0.25,
-      },
-    },
-  }
-
-  const MotionNotice = {
-    hidden: { opacity: 0, y: '50%' },
-    show: {
-      opacity: 1,
-      y: '0%',
-      transition: {
-        delay: 3,
-        opacity: { duration: 0.5 },
-        y: { type: 'spring', damping: 300, stiffness: 50 },
-      },
-    },
-  }
-  const items = {
-    hidden: { y: '200%' },
-    show: {
-      y: '0%',
-      transition: {
-        y: { type: 'spring', damping: 300, stiffness: 10 },
-      },
-    },
-  }
   return (
     <Container>
       <StyledMotionHeroLogosContainer>
         <a href="https://www.w3.org/TR/html53/" title="W3C HTML5 Standards">
-          <motion.img variants={items} src={Html5Logo} alt="Html5" />
+          <motion.img variants={ySpring} src={Html5Logo} alt="Html5" />
         </a>
         <a href="https://www.w3.org/TR/css-2018/" title="W3C CSS3 Standards">
-          <motion.img variants={items} src={Css3Logo} alt="Css3" />
+          <motion.img variants={ySpring} src={Css3Logo} alt="Css3" />
         </a>
         <a
           href="https://www.ecma-international.org/ecma-262/7.0/"
           title="ECMAScript® 2016 Language Specification"
         >
-          <motion.img variants={items} src={Es6Logo} alt="Es6Logo" />
+          <motion.img variants={ySpring} src={Es6Logo} alt="Es6Logo" />
         </a>
         <a
           href="https://reactjs.org/"
           title="A JavaScript library for building user interfaces "
         >
-          <motion.img variants={items} src={ReactLogo} alt="ReactJS" />
+          <motion.img variants={ySpring} src={ReactLogo} alt="ReactJS" />
         </a>
         <a
           href="https://www.gatsbyjs.org/"
           title="Gatsby is a free and open source frameportfolio based on React that helps developers build blazing fast websites and apps"
         >
-          <motion.img variants={items} src={GatsbyLogo} alt="GatsbyJS" />
+          <motion.img variants={ySpring} src={GatsbyLogo} alt="GatsbyJS" />
         </a>
       </StyledMotionHeroLogosContainer>
       <StyledMotionHeroNoticeContainer>

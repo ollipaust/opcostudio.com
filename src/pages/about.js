@@ -8,12 +8,13 @@ import Title from 'components/title'
 import BodyClassName from 'react-body-classname'
 import PageLayout from 'components/pageLayout'
 import PageContent from 'components/pageLayout/content'
-import PageContentHeading from 'components/pageLayout/content/contentHeading'
 import Pagination from 'components/pageLayout/pagination'
-
 import Portrait from 'components/portrait'
 
+import IOContainer from 'components/ioContainer'
 import translatorWrapper from 'components/translator/translatorWrapper'
+import Div100vh from 'react-div-100vh'
+
 import { FormattedMessage } from 'react-intl'
 
 const portraitStyles = {
@@ -26,21 +27,13 @@ const About = () => (
     <BodyClassName className="about" />
 
     <PageContent>
-      <PageContentHeading>
-        <Title as="h1" size="medium" className="ContentTitleRight">
+      <div className="flexbox">
+        <Title as="h1" size="large" className="textLeft  intro">
           <FormattedMessage id="about.intro1" />
-          <sub>
-            <FormattedMessage id="about.intro1Sub" />
-          </sub>
         </Title>
+      </div>
 
-        <Title as="h1" size="medium" className="ContentTitleRight">
-          <FormattedMessage id="about.intro2" />
-          <sub>
-            <FormattedMessage id="about.intro2Sub" />
-          </sub>
-        </Title>
-      </PageContentHeading>
+      <Div100vh />
 
       <div style={portraitStyles}>
         <Portrait caption={<FormattedMessage id="about.thatsMe" />} />

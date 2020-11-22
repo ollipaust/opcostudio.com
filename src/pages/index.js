@@ -17,7 +17,7 @@ import {
   Indicator,
 } from 'components/elements'
 
-import { slideFade2s, slideFade3s } from 'constants/animations'
+import { motionStagger, slideUp3s, ySpring } from 'constants/animations'
 
 const HeroButton = styled(Link).withConfig({ displayName: 'HeroButton' })`
   ${ButtonStyled}
@@ -43,27 +43,19 @@ const Index = () => (
       </p>
 
       <HeroButtonsContainer>
-        <motion.div
-          variants={slideFade2s}
-          initial="hidden"
-          animate="show"
-          className="heroBtn1"
-        >
-          <HeroButton to="/about">
-            <Indicator />
-            <FormattedMessage id="home.buttonStart" />
-          </HeroButton>
-        </motion.div>
+        <motion.div variants={motionStagger} initial="hidden" animate="show">
+          <motion.div variants={ySpring} className="heroBtn1">
+            <HeroButton to="/about">
+              <Indicator />
+              <FormattedMessage id="home.buttonStart" />
+            </HeroButton>
+          </motion.div>
 
-        <motion.div
-          variants={slideFade3s}
-          initial="hidden"
-          animate="show"
-          className="heroBtn2"
-        >
-          <HeroButton to="/about" className="dark">
-            <FormattedMessage id="home.buttonDownload" />
-          </HeroButton>
+          <motion.div variants={ySpring} className="heroBtn2">
+            <HeroButton to="/about" className="dark">
+              <FormattedMessage id="home.buttonDownload" />
+            </HeroButton>
+          </motion.div>
         </motion.div>
       </HeroButtonsContainer>
     </Hero>

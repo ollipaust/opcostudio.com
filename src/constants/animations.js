@@ -73,3 +73,48 @@ export const slideFade3s = {
     },
   },
 }
+export const motionStagger = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      opacity: { delay: 1.5, ease: 'easeIn' },
+      staggerChildren: 0.25,
+      delayChildren: 1,
+    },
+  },
+}
+
+export const slideUp3s = {
+  hidden: { opacity: 0, y: '50%' },
+  show: {
+    opacity: 1,
+    y: '0%',
+    transition: {
+      delay: 3,
+      opacity: { duration: 0.5 },
+      y: { type: 'spring', damping: 300, stiffness: 50 },
+    },
+  },
+}
+export const slideUp2s = {
+  hidden: { opacity: 0, y: '50%' },
+  show: {
+    opacity: 1,
+    y: '0%',
+    transition: {
+      delay: 2,
+      opacity: { duration: 0.5 },
+      y: { type: 'spring', damping: 300, stiffness: 50 },
+    },
+  },
+}
+export const ySpring = {
+  hidden: { y: '100%' },
+  show: {
+    y: '0%',
+    transition: {
+      y: { type: 'spring', damping: 300, stiffness: 10 },
+    },
+  },
+}

@@ -20,6 +20,8 @@ export const Text = styled.span.withConfig({
       switch (size) {
         case 'super':
           return '800'
+        case 'larger':
+          return '700'
         case 'large':
           return '700'
         case 'medium':
@@ -32,6 +34,8 @@ export const Text = styled.span.withConfig({
       switch (size) {
         case 'super':
           return '8rem'
+        case 'larger':
+          return '6rem'
         case 'large':
           return '4rem'
         case 'medium':

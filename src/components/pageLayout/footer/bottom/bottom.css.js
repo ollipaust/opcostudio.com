@@ -1,10 +1,10 @@
 import styled from 'styled-components'
 import MEDIA from 'helpers/mediaTemplates'
 import {
-  lighter,
+  light33,
   light,
   accent,
-  darker,
+  dark33,
   darkest,
   black,
 } from 'constants/colors'
@@ -19,9 +19,9 @@ export const ContainerBottom = styled.div.withConfig({
   justify-content: center;
   width: 100%;
   height: 50px;
-  background: ${darker};
+  background: ${dark33};
   .copyright {
-    color: ${lighter};
+    color: ${light33};
     font-size: 1em;
     ${MEDIA.PHONE`
           font-size: 0.75em;

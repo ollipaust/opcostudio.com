@@ -6,10 +6,10 @@ import {
   accent,
   light,
   accentGradient150,
-  lighter,
-  lighter2,
+  light33,
+  light90,
   alter50,
-  darker3,
+  dark90,
 } from 'constants/colors'
 import MEDIA from 'helpers/mediaTemplates'
 
@@ -53,7 +53,7 @@ export const OverlayContent = styled(OverlayContainer).withConfig({
       opacity: 0 !important;
       transition: opacity 500ms ease 1000ms;
       svg {
-        stroke: ${lighter};
+        stroke: ${light33};
         stroke-width: 2px;
         fill: none;
         transition: stroke 500ms ease-out 500ms;
@@ -218,7 +218,7 @@ export const MenuButton = styled.button.withConfig({
     content: '';
     width: 4em;
     border-radius: 0.25em;
-    background-color: ${darker3};
+    background-color: ${dark90};
     height: 0.495em;
     position: absolute;
     transform: rotate(0);
@@ -347,7 +347,7 @@ pointer-events: none;
     opacity: 0!important;
     transition: opacity 500ms ease 100ms;
       svg {
-        stroke: ${lighter};
+        stroke: ${light33};
         stroke-width: 2px
         fill: none;
         transition: stroke 500ms ease-out 500ms;
@@ -511,7 +511,7 @@ export const OverlayBoxRight = styled.div.withConfig({
       width: 30px;
       height: 30px;
       margin-right: 1em;
-      border-color: ${lighter2};
+      border-color: ${light90};
       opacity: 0;
       transform: translateY(-50%);
       transition: all 500ms ease-out 100ms;
@@ -523,7 +523,7 @@ export const OverlayBoxRight = styled.div.withConfig({
         background: ${alter50};
       }
       svg {
-        fill: ${lighter2};
+        fill: ${light90};
       }
     }
   }
@@ -537,7 +537,7 @@ export const OverlayBoxRight = styled.div.withConfig({
         width: 25px;
         height: 25px;
         margin-right: 1.5em;
-        border-color: ${lighter2};
+        border-color: ${light90};
       }
     }
   }
@@ -556,7 +556,7 @@ export const OverlayBoxRight = styled.div.withConfig({
         width: 20px;
         height: 20px;
         margin-right: 1em;
-        border-color: ${lighter2};
+        border-color: ${light90};
       }
     }
   }

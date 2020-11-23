@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import MEDIA from 'helpers/mediaTemplates'
-import { accent, dark, darker, light } from 'constants/colors'
+import { accent, dark, dark33, light } from 'constants/colors'
 
 export const Container = styled.section.withConfig({
   displayName: 'PaginationContainer',
@@ -49,7 +49,7 @@ export const Content = styled.div.withConfig({
     }
 
     :hover {
-      color: ${darker};
+      color: ${dark33};
       transition: color 1s cubic-bezier(0.165, 0.8, 0.45, 1) 150ms;
 
       h3.left {

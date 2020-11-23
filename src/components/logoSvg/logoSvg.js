@@ -13,7 +13,7 @@ const LogoSvg = ({
 }) => {
   console.log(speed)
   return (
-    <Container>
+    <Container className={className}>
       <SvgLines
         className={className}
         animate={delay}

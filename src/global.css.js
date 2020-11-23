@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components'
 import { normalize } from 'styled-normalize'
-import { accent, light, dark } from 'constants/colors'
+import { accent, light, dark50 } from 'constants/colors'
 import '../static/fonts/fontPrimary.css'
 
 export const GlobalStyles = createGlobalStyle`
@@ -33,7 +33,6 @@ export const GlobalStyles = createGlobalStyle`
     font-size: 16px;
     font-weight: 400;
     font-feature-settings: "liga", "kern";
-    color: ${dark};
     background-color: ${light};
     -webkit-font-smoothing: subpixel-antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -42,6 +41,7 @@ export const GlobalStyles = createGlobalStyle`
     overflow-x: hidden!important;
   }
   body {
+    color: ${dark50};
     margin: 0;
     overflow-x: hidden!important;
     -webkit-text-size-adjust: 100%;

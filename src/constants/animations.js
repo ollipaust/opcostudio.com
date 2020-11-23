@@ -5,6 +5,18 @@ export const fadeIn = {
   show: { opacity: 1, transition: { duration: 0.3 } },
 }
 
+export const triangle1 = {
+  hidden: { opacity: 0, transform: 'scale(2)' },
+  show: {
+    opacity: 1,
+    transform: 'scale(1)',
+    transition: {
+      opacity: { delay: 3, duration: 0.3 },
+      transform: { delay: 4, duration: 0.3 },
+    },
+  },
+}
+
 export const shine = `
 
 animation: shine 1s cubic-bezier(0, 1, 1, 0.01) 3.5s;

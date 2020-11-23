@@ -181,8 +181,6 @@ const Head = ({
           })
         )}
       </script>
-
-      <script src="https://unpkg.com/blotterjs-fork@0.1.0/build/blotter.min.js"></script>
     </Helmet>
   )
 }

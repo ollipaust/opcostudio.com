@@ -1,6 +1,6 @@
 export default {
   title: 'Startseite',
-  intro1: 'OPCO STUDIO',
+  intro1: 'Willkommen',
   name: 'Olliver Paust',
   job: 'Web Coder & Designer aus Berlin',
   buttonStart: 'Mehr über mich erfahren',

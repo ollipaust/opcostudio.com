@@ -1,26 +1,26 @@
 import styled from 'styled-components'
 import MEDIA from 'helpers/mediaTemplates'
-import { lighter, light, accent, darkest } from 'constants/colors'
+import { light33, light, accent, darkest } from 'constants/colors'
 
 export const Container = styled.ul.withConfig({
   displayName: 'Socials',
 })`
-display: inline-flex;
-align-items: center;
-justify-content: center;
-margin-bottom: 0.75em;
-li {
-  position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid ${accent};  
-  border-radius: 2px;
-  width: 40px;
-  height: 40px;
-  margin-top: 0.5em;
-  margin-right: 0.5em;
-  overflow: hidden;
+  margin-bottom: 0.75em;
+  li {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid ${accent};
+    border-radius: 2px;
+    width: 40px;
+    height: 40px;
+    margin-top: 0.5em;
+    margin-right: 0.5em;
+    overflow: hidden;
     &:last-child {
       margin-right: 0;
     }
@@ -33,14 +33,14 @@ li {
     height: 35px;
     `}
     :hover {
-      color: ${light}
-      cursor: pointer;
+      color: ${light};
+      cursor: pointer !important;
       transition: all 300ms ease 100ms;
-        svg {
-          width: 32px;
-          fill: ${light};
-          transition: fill 200ms ease 0s;
-        }
+      svg {
+        width: 32px;
+        fill: ${light};
+        transition: fill 200ms ease 0s;
+      }
     }
     ::after {
       content: '';
@@ -66,10 +66,10 @@ li {
       transform: translateY(-50%) translateZ(0);
       transition: transform 500ms ease-in-out 0ms;
     }
-      svg {
-        width: 32px;
-        fill: ${lighter};
-        transition: fill 200ms ease 200ms;
-      }
-}
+    svg {
+      width: 32px;
+      fill: ${light33};
+      transition: fill 200ms ease 200ms;
+    }
+  }
 `

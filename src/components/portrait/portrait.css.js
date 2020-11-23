@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import MEDIA from 'helpers/mediaTemplates'
-import { accent, light, dark, darker2 } from 'constants/colors'
+import { accent, light, dark, dark75 } from 'constants/colors'
 
 export const PortraitWrapper = styled.section.withConfig({
   displayName: 'PortraitWrapper',

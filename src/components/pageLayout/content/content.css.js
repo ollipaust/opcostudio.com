@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import MEDIA from 'helpers/mediaTemplates'
-import { light, accent, darker60 } from 'constants/colors'
+import { light, accent, dark66 } from 'constants/colors'
 
 export const ContainerWrapper = styled.section.withConfig({
   displayName: 'ContentWrapper',
@@ -87,25 +87,20 @@ place-content: flex-start;
 position: relative;
 height: 100%;
 margin: 0;
-padding: 5rem 7.5rem;
+padding: 0;
 z-index: 10000;
 pointer-events: all;
 will-change: transform, opacity;
 
 @media (max-height: 1366px) and (max-width: 1024px) and (orientation: portrait) {
-  margin: 100px 7.5vw 0;
+
 }
 
 [class*='Title-'] {
   > span {
-    color: ${darker60};
+    color: ${dark66};
   }
 }
-
-@media (max-height: 1366px) and (max-width: 1024px) and (orientation: portrait) {
-  padding: 1.5rem;
-}
-
 
 p,
 p > span {

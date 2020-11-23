@@ -1,5 +1,5 @@
 import styled, { createGlobalStyle } from 'styled-components'
-import { light, darker, darker2, accent } from 'constants/colors'
+import { light, dark33, dark75, accent } from 'constants/colors'
 import MEDIA from 'helpers/mediaTemplates'
 
 export const TransitionStyles = createGlobalStyle`
@@ -69,7 +69,7 @@ export const TransitionStyles = createGlobalStyle`
         span,
         span:after,
         span:before {
-            background-color: ${darker2};
+            background-color: ${dark75};
             transform: rotate(0) translateZ(0) scale(1)!important;
             transition: 
             top 500ms ease 0ms, 

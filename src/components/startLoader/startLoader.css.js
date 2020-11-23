@@ -5,8 +5,6 @@ export const LoaderContainer = styled.div.withConfig({
   displayName: 'LoaderContainer',
 })`
   position: absolute;
-  top: 0;
-  left: 0;
   z-index: 100000;
   display: flex;
   place-items: center;
@@ -15,31 +13,22 @@ export const LoaderContainer = styled.div.withConfig({
   background: ${accentGradient150};
   color: ${light};
   text-align: center;
+  overflow: hidden;
 
-  &.loading {
-    transform: translateY(0%);
-    transition: transform 600ms ease 0ms;
-  }
   &.loading-done {
     transform: translateY(-100%);
     transition: transform 600ms ease-out 1000ms;
   }
-`
-
-export const Cell = styled.div.withConfig({ displayName: 'LoaderCell' })`
-  position: relative;
-  flex-basis: 100%;
-  padding: 1.5em;
-  place-items: center;
 
   [class*='LogoSvg'] {
-    margin: 0 auto;
-    opacity: 1;
     width: 100px;
+    margin: 0 auto;
     pointer-events: none;
 
-    span.animatedLogo {
-      opacity: 1 !important;
+    &.loading-done {
+      opacity: 0;
+      transform: translateY(700%);
+      transition: transform 500ms ease-out 1000ms, opacity 600ms ease-out 1000ms;
     }
   }
 `

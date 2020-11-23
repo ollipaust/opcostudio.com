@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import MEDIA from 'helpers/mediaTemplates'
-import { accent, light, dark, glass, darker2, black } from 'constants/colors'
+import { accent, light, dark, glass, dark75, black } from 'constants/colors'
 import { shine } from 'constants/animations'
 
 export const HeroContainer = styled.section.withConfig({
@@ -22,23 +22,22 @@ export const HeroTextContainer = styled.div.withConfig({
   height: 100%;
   text-align: center;
 
-  h1 {
-    > span {
-      display: block;
-      color: ${glass};
-      -webkit-text-stroke: 3px ${darker2};
-      ${shine}
-    }
+  h1 > span {
+    text-transform: uppercase;
+    display: block;
+    color: ${glass};
+    -webkit-text-stroke: 3px ${dark75};
+    ${shine}
   }
 
-  h2 {
-    color: ${dark};
+  h2 > span {
+    color: ${dark75};
     display: block;
     margin-top: 1rem;
     margin-bottom: 0.5rem;
   }
 
-  p {
+  p > span {
     margin-bottom: 1.5rem;
   }
 `

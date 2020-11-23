@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import MEDIA from 'helpers/mediaTemplates'
-import { light, lighter, alter66 } from 'constants/colors'
+import { light, light33, alter66 } from 'constants/colors'
 
 export const Container = styled.ul.withConfig({
   displayName: 'NavLinks',
@@ -84,7 +84,7 @@ export const Container = styled.ul.withConfig({
       font-size: 1.25vw;
       font-weight: 500;
       -webkit-text-stroke: 0px;
-      color: ${lighter};
+      color: ${light33};
       pointer-events: none;
     }
   }
@@ -118,7 +118,7 @@ export const Container = styled.ul.withConfig({
       font-size: 1.25vw;
       font-weight: 500;
       -webkit-text-stroke: 0px;
-      color: ${lighter};
+      color: ${light33};
       pointer-events: none;
     }
   }

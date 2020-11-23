@@ -1,6 +1,6 @@
 import styled, { createGlobalStyle } from 'styled-components'
 import MEDIA from 'helpers/mediaTemplates'
-import { accent, darker, darker2, accent50 } from 'constants/colors'
+import { accent, dark33, dark75, accent50 } from 'constants/colors'
 
 export const Container = styled.div`
   display: flex;
@@ -489,7 +489,7 @@ export const GalleryStyles = createGlobalStyle`
 	background: transparent;
 	color: #fff;
 	font-size: 0.9rem;
-	filter: drop-shadow(0 1px 1px ${darker});
+	filter: drop-shadow(0 1px 1px ${dark33});
 	line-height: 1;
 	padding: 10px 20px;
 	position: absolute;

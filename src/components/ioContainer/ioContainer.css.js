@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { accent, accentGradient150, dark, darker } from 'constants/colors'
+import { accent, accentGradient150, dark, dark33 } from 'constants/colors'
 
 export const Container = styled.div`
   background: ${accentGradient150};

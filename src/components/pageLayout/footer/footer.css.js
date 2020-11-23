@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { accent, light, lighter, dark, darker, darkest } from 'constants/colors'
+import { accent, light, light33, dark, dark33, darkest } from 'constants/colors'
 
 export const Container = styled.footer.withConfig({
   displayName: 'FooterFlexBox',

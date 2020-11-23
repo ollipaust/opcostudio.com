@@ -1,5 +1,5 @@
 import styled, { createGlobalStyle } from 'styled-components'
-import { accent, light, darker2, glass, darker } from 'constants/colors'
+import { accent, light, dark75, glass, dark33 } from 'constants/colors'
 
 export const PageLayoutStyles = createGlobalStyle`
 body.about {
@@ -22,7 +22,7 @@ body.about {
         
         .caption {
             text-align: center;
-            color: ${darker};
+            color: ${dark33};
             margin-top: 0.5rem;
         
             > span {
@@ -92,19 +92,44 @@ body.contact {
 `
 export const IndexLayoutStyles = createGlobalStyle`
 body.home {
+    
+    [class*='3dOverlay'] {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        animation: fadein 500ms ease 3s forwards;
+
+        [class*='TriangleWrapper'] {
+            transform: scale(2);
+            transform-origin: center;
+            animation: zoom 500ms ease 2.2s forwards;
+        }
+
+        @keyframes fadein {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        @keyframes zoom {
+            0% { transform: scale(2); }
+            100% { transform: scale(1); }
+        }
+    }
 
     .heroBtn1, .heroBtn2 { display: inline-flex; }
 
     [class*='LogoDark'] {
         svg {
             .a {
-                fill: ${darker2};
+                fill: ${dark75};
             }
         }
     }
     [class*='MenuLines'] {
-        background: ${darker2};
-            ::before, ::after { background: ${darker2}; }
+        background: ${dark75};
+            ::before, ::after { background: ${dark75}; }
     }
     [class*='MenuButton'] {
         &.active {

@@ -16,6 +16,7 @@ import translatorWrapper from 'components/translator/translatorWrapper'
 import Div100vh from 'react-div-100vh'
 
 import { FormattedMessage } from 'react-intl'
+import Fade from 'react-reveal/Fade'
 
 const portraitStyles = {
   display: 'flex',

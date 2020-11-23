@@ -1,15 +1,6 @@
 import styled from 'styled-components'
 import MEDIA from 'helpers/mediaTemplates'
-import {
-  accent,
-  dark,
-  light,
-  lighter4,
-  darkest,
-  darker,
-  darker2,
-  black,
-} from 'constants/colors'
+import { dark, light, dark33, dark75, black } from 'constants/colors'
 import shineImg from 'images/shine.png'
 
 export const Container = styled.section.withConfig({
@@ -67,8 +58,8 @@ export const Content = styled.div.withConfig({
     align-items: center;
     justify-content: center;
     color: transparent;
-    -webkit-text-stroke: 3px ${darker2};
-    filter: drop-shadow(25px 20px 5px ${darker});
+    -webkit-text-stroke: 3px ${dark75};
+    filter: drop-shadow(25px 20px 5px ${dark33});
     font-size: 7.5vmax;
     font-weight: 800;
     text-transform: uppercase;

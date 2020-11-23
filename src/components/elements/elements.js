@@ -89,7 +89,7 @@ export const ButtonStyled = `
     :hover, :active {
 
       span {
-        color: ${light}
+        color: ${light};
         transition: color 300ms ease 100ms;
       }
     }
@@ -206,3 +206,11 @@ export const Hr = styled.hr.withConfig({
   height: 1px;
   background-image: -webkit-linear-gradient(left, ${light}, ${dark}, ${light});
 `
+
+export const absoluteMotionDiv = {
+  position: 'absolute',
+  top: '0',
+  left: '0',
+  width: '100%',
+  height: '100%',
+}

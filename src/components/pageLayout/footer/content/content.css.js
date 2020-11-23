@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import MEDIA from 'helpers/mediaTemplates'
-import { lighter, light, accent, darker, darkest } from 'constants/colors'
+import { light33, light, accent, dark33, darkest } from 'constants/colors'
 
 export const Container = styled.div.withConfig({
   displayName: 'FooterContent',
@@ -24,7 +24,7 @@ export const Container = styled.div.withConfig({
         color: ${light};
         transition: color 300ms ease;
         :hover {
-          color: ${lighter};
+          color: ${light33};
           transition: color 300ms ease;
         }
       }
@@ -66,7 +66,7 @@ export const ContentText = styled.div.withConfig({
     }
   }
   a {
-    color: ${lighter};
+    color: ${light33};
     transition: color 500ms ease 0ms;
 
     :hover {

@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import MEDIA from 'helpers/mediaTemplates'
-import { accent, neutral, darker } from 'constants/colors'
+import { accent, neutral, dark33 } from 'constants/colors'
 
 export const Container = styled.div.withConfig({
   displayName: 'HeroOverlayContainer',

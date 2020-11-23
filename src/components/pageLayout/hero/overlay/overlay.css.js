@@ -9,13 +9,13 @@ export const Container = styled.div.withConfig({
   align-items: flex-end;
   justify-content: space-between;
   position: absolute;
-  z-index: 10;
+  z-index: 1;
   top: 0;
   left: 0;
   width: calc(100% - 5em);
   height: 100%;
   padding: 0 2.5em;
-  pointer-events: none;
+  pointer-events: none !important;
 
   @media (max-width: 823px) and (max-height: 450px) and (orientation: landscape) {
     width: calc(100% - 2rem);

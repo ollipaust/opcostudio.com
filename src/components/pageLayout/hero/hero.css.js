@@ -21,6 +21,7 @@ export const HeroTextContainer = styled.div.withConfig({
   width: 100%;
   height: 100%;
   text-align: center;
+  pointer-events: none !important;
 
   h1 > span {
     text-transform: uppercase;

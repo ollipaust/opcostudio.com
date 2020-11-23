@@ -61,6 +61,7 @@ body.portfolio {
 body.stack {
 
 }
+
 body.contact {
     input {
         width: 50%;
@@ -93,29 +94,14 @@ body.contact {
 export const IndexLayoutStyles = createGlobalStyle`
 body.home {
     
-    [class*='3dOverlay'] {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        opacity: 0;
-        animation: fadein 500ms ease 3s forwards;
-
-        [class*='TriangleWrapper'] {
-            transform: scale(2);
-            transform-origin: center;
-            animation: zoom 500ms ease 2.2s forwards;
-        }
-
-        @keyframes fadein {
-            0% { opacity: 0; }
-            100% { opacity: 1; }
-        }
-        @keyframes zoom {
-            0% { transform: scale(2); }
-            100% { transform: scale(1); }
-        }
+    .canvors {
+        position: absolute!important;
+        top: 50%;
+        left: 50%;
+        width: 100vw!important;
+        height: 100vh!important;
+        transform: translateX(-50%) translateY(-50%)!important;
+        pointer-events: all!important;
     }
 
     .heroBtn1, .heroBtn2 { display: inline-flex; }

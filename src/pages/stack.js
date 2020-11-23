@@ -15,18 +15,13 @@ import Pagination from 'components/pageLayout/pagination'
 
 import translatorWrapper from 'components/translator/translatorWrapper'
 import { FormattedMessage } from 'react-intl'
+import Div100vh from 'react-div-100vh'
 
 const Stack = () => (
   <PageLayout>
     <BodyClassName className="stack" />
     <PageContent>
-      <p>
-        <FormattedMessage id="stack.intro" />
-      </p>
-
-      <div style={{ height: '50vh', width: '100%' }} />
-      <div style={{ height: '50vh', width: '100%' }} />
-      <div style={{ height: '50vh', width: '100%' }} />
+      <Div100vh />
     </PageContent>
 
     <Pagination>

@@ -19,7 +19,7 @@ import {
 } from 'components/elements'
 
 import { motionStagger, triangle1, ySpring } from 'constants/animations'
-import Triangle from 'components/triangles'
+import { Triangle1 } from 'components/triangles/triangle1'
 import Zoom from 'react-reveal/Zoom'
 
 const HeroButton = styled(Link).withConfig({ displayName: 'HeroButton' })`
@@ -30,10 +30,6 @@ const Index = () => (
   <React.Fragment>
     <IndexLayoutStyles />
     <BodyClassName className="home" />
-
-    <div className="3dOverlay">
-      <Triangle top="30%" left="20%" rotation="360deg" />
-    </div>
 
     <Hero>
       <Title as="h1" size="super">

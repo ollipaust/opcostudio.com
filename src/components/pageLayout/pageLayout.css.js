@@ -55,7 +55,7 @@ body.about {
             .div2 { grid-area: 1 / 2 / 2 / 3; }
     }
 }
-body.portfolio {
+body.caseStudies {
 
 }
 body.stack {

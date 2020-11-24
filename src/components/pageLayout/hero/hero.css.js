@@ -28,6 +28,7 @@ export const HeroTextContainer = styled.div.withConfig({
     display: block;
     color: ${glass};
     -webkit-text-stroke: 3px ${dark75};
+    pointer-events: none !important;
     ${shine}
   }
 

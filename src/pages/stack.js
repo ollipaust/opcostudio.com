@@ -29,9 +29,9 @@ const Stack = () => (
         <p>
           <FormattedMessage id="pagination.prev" />
         </p>
-        <Link to="/portfolio">
+        <Link to="/caseStudies">
           <Title as="h3" size="large" className="left">
-            <FormattedMessage id="pagination.portfolio" />
+            <FormattedMessage id="pagination.caseStudies" />
           </Title>
         </Link>
       </div>

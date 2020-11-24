@@ -17,9 +17,9 @@ import Pagination from 'components/pageLayout/pagination'
 import translatorWrapper from 'components/translator/translatorWrapper'
 import { FormattedMessage } from 'react-intl'
 
-const Portfolio = () => (
+const CaseStudies = () => (
   <PageLayout>
-    <BodyClassName className="portfolio" />
+    <BodyClassName className="caseStudies" />
 
     <PageContent>
       <PageContentHeading>
@@ -39,7 +39,7 @@ const Portfolio = () => (
       </PageContentHeading>
 
       <p>
-        <FormattedMessage id="portfolio.intro" />
+        <FormattedMessage id="caseStudies.intro" />
       </p>
 
       <Gallery />
@@ -72,7 +72,7 @@ const Portfolio = () => (
 )
 
 const customProps = {
-  localeKey: 'portfolio', // same as file name in src/i18n/translations/your-lang/index.js
+  localeKey: 'caseStudies', // same as file name in src/i18n/translations/your-lang/index.js
 }
 
-export default translatorWrapper(customProps)(Portfolio)
+export default translatorWrapper(customProps)(CaseStudies)

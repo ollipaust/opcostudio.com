@@ -3,7 +3,7 @@ import flatten from 'flat'
 import error404 from './404'
 import home from './home'
 import about from './about'
-import portfolio from './portfolio'
+import caseStudies from './case-studies'
 import stack from './stack'
 import blog from './blog'
 import contact from './contact'
@@ -18,7 +18,7 @@ const message = {
   error404,
   home,
   about,
-  portfolio,
+  caseStudies,
   stack,
   blog,
   contact,

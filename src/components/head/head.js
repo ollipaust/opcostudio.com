@@ -20,10 +20,10 @@ const Head = ({
 }) => {
   function fullTitle() {
     if (pageTitle === 'Home' || pageTitle === 'Startseite') {
-      return siteTitle
+      return `${siteTitle} by Olli Paust - ${siteDescription}`
     }
     {
-      return `${siteTitle} -${pageTitle}`
+      return `${siteTitle} - ${pageTitle}`
     }
   }
 
@@ -42,6 +42,7 @@ const Head = ({
       <meta content={siteTitle} name="apple-mobile-web-app-title" />
       <meta content={pageTitleFull} property="og:title" />
       <meta content={pageTitleFull} name="twitter:title" />
+
       <title>{fullTitle()}</title>
 
       <meta content={siteDescription} name="description" />

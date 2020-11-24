@@ -1,16 +1,26 @@
-import React, { useRef, useState } from 'react'
+import React, { useRef, useState, useEffect } from 'react'
 import { Canvas, useFrame } from 'react-three-fiber'
-import { accent, neutral } from 'constants/colors'
+import { accent, accentThree, dark50 } from 'constants/colors'
 import { useSpring, a } from 'react-spring/three'
 
-const RotatingMesh = ({ position, args }) => {
+const RotatingMesh = ({ position, args, rotationSpeed }) => {
   const mesh = useRef(null)
-  useFrame(() => (mesh.current.rotation.x = mesh.current.rotation.y += 0.01))
+  useFrame(
+    () =>
+      (mesh.current.rotation.x = mesh.current.rotation.y = mesh.current.rotation.z += rotationSpeed)
+  )
 
   const [expand, setExpand] = useState(false)
+  const [reveal, setReveal] = useState(false)
+
+  useEffect(() => {
+    setTimeout(() => setReveal(true), 3500)
+  }, [])
 
   const props = useSpring({
     scale: expand ? [1.5, 1.5, 1.5] : [1, 1, 1],
+    opacity: reveal ? 1 : 0,
+    from: { opacity: 0 },
   })
 
   return (
@@ -19,16 +29,21 @@ const RotatingMesh = ({ position, args }) => {
       position={position}
       scale={props.scale}
       onHover={() => setExpand(!expand)}
-      onPointerOver={e => setExpand(true)}
-      onPointerOut={e => setExpand(false)}
+      onPointerOver={() => setExpand(true)}
+      onPointerOut={() => setExpand(false)}
     >
       <tetrahedronBufferGeometry attach="geometry" args={args} />
-      <meshStandardMaterial attach="material" color={accent} />
+      <a.meshLambertMaterial
+        attach="material"
+        color={accentThree}
+        opacity={props.opacity}
+        transparent={true}
+      />
     </a.mesh>
   )
 }
 
-function Triangle1() {
+function Tetrahedron() {
   return (
     <>
       <Canvas
@@ -52,12 +67,29 @@ function Triangle1() {
         <pointLight position={[-10, 0, -20]} intensity={0.5} />
         <pointLight position={[0, -10, 0]} intensity={1.5} />
 
-        <RotatingMesh args={[2, 0]} position={[-2, 0, -10]} />
-        <RotatingMesh args={[1, 0]} position={[-2, 0, -5]} />
-        <RotatingMesh position={[2, 0, 2]} />
+        <RotatingMesh
+          args={[0.65, 0]}
+          position={[-3, 0.95, 0]}
+          rotationSpeed={0.0099}
+        />
+        <RotatingMesh
+          args={[0.65, 0]}
+          position={[4, 1.15, 0]}
+          rotationSpeed={0.005}
+        />
+        <RotatingMesh
+          args={[0.4, 0]}
+          position={[1, -1.25, -5]}
+          rotationSpeed={0.0075}
+        />
+        <RotatingMesh
+          args={[0.35, 0]}
+          position={[-0.85, -1, 2]}
+          rotationSpeed={0.015}
+        />
       </Canvas>
     </>
   )
 }
 
-export default Triangle1
+export default Tetrahedron

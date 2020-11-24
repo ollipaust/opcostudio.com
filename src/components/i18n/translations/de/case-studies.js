@@ -1,4 +1,4 @@
 export default {
-  title: 'Portfolio',
+  title: 'Referenzen',
   intro: 'Hallo, das ist ein schöner Text.',
 }

@@ -69,9 +69,9 @@ const About = () => (
         <p>
           <FormattedMessage id="pagination.next" />
         </p>
-        <Link to="/portfolio">
+        <Link to="/caseStudies">
           <Title as="h3" size="large" className="right">
-            <FormattedMessage id="pagination.portfolio" />
+            <FormattedMessage id="pagination.caseStudies" />
           </Title>
         </Link>
       </div>

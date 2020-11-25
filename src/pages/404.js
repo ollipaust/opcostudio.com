@@ -1,8 +1,6 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 
-import Link from 'components/link'
 import Title from 'components/title'
 
 import BodyClassName from 'react-body-classname'
@@ -10,15 +8,10 @@ import PageLayout from 'components/pageLayout'
 import PageContent from 'components/pageLayout/content'
 import PageContentHeading from 'components/pageLayout/content/contentHeading'
 
-import Portrait from 'components/portrait'
 
 import translatorWrapper from 'components/translator/translatorWrapper'
 import { FormattedMessage } from 'react-intl'
 
-const portraitStyles = {
-  display: 'flex',
-  justifyContent: 'flex-start',
-}
 
 const Error404 = () => (
   <PageLayout>

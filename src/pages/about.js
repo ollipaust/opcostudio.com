@@ -1,6 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
-import { graphql } from 'gatsby'
 
 import Link from 'components/link'
 import Title from 'components/title'
@@ -9,19 +7,11 @@ import BodyClassName from 'react-body-classname'
 import PageLayout from 'components/pageLayout'
 import PageContent from 'components/pageLayout/content'
 import Pagination from 'components/pageLayout/pagination'
-import Portrait from 'components/portrait'
 
-import IOContainer from 'components/ioContainer'
 import translatorWrapper from 'components/translator/translatorWrapper'
 import Div100vh from 'react-div-100vh'
 
 import { FormattedMessage } from 'react-intl'
-import Fade from 'react-reveal/Fade'
-
-const portraitStyles = {
-  display: 'flex',
-  justifyContent: 'flex-start',
-}
 
 const About = () => (
   <PageLayout>

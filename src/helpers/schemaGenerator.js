@@ -1,6 +1,3 @@
-// This does not support nested pages (level 2 and up)
-// If you're portfolioing with deeply nested pages, remove this or reportfolio it.
-
 export default ({
   location,
   canonical,

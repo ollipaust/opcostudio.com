@@ -1,9 +1,7 @@
-import React, { useRef, useState, useEffect, useThree } from 'react'
+import React, { useRef, useState, useEffect } from 'react'
 import { Canvas, useFrame } from 'react-three-fiber'
-import { accent, accentThree, accentBlue, dark50 } from 'constants/colors'
+import { accent, accentThree, accentBlue } from 'constants/colors'
 import { useSpring, a } from 'react-spring/three'
-import * as Device from 'helpers/mediaQueries'
-import { useMediaQuery } from 'react-responsive'
 
 const RotatingMesh = ({ position, args, rotationSpeed, color }) => {
   const mesh = useRef(null)
@@ -72,32 +70,30 @@ function Tetrahedrons() {
       <pointLight position={[-10, 0, -20]} intensity={0.5} decay={0.9} />
       <pointLight position={[0, -10, 0]} intensity={1} decay={0.9} />
 
-      <group>
-        <RotatingMesh
-          args={[0.65, 0]}
-          position={[-3.05, 0.5, 0]}
-          rotationSpeed={0.0099}
-          color={accentThree}
-        />
-        <RotatingMesh
-          args={[0.65, 0]}
-          position={[4, 1.15, 0]}
-          rotationSpeed={0.005}
-          color={accentBlue}
-        />
-        <RotatingMesh
-          args={[0.3, 0]}
-          position={[1, -0.85, -5]}
-          rotationSpeed={0.0075}
-          color={accentThree}
-        />
-        <RotatingMesh
-          args={[0.35, 0]}
-          position={[-1, -1, 2]}
-          rotationSpeed={0.015}
-          color={accent}
-        />
-      </group>
+      <RotatingMesh
+        args={[0.65, 0]}
+        position={[-3.05, 0.5, 0]}
+        rotationSpeed={0.0099}
+        color={accentThree}
+      />
+      <RotatingMesh
+        args={[0.65, 0]}
+        position={[4, 1.15, 0]}
+        rotationSpeed={0.005}
+        color={accentBlue}
+      />
+      <RotatingMesh
+        args={[0.3, 0]}
+        position={[1, -0.85, -5]}
+        rotationSpeed={0.0075}
+        color={accentThree}
+      />
+      <RotatingMesh
+        args={[0.35, 0]}
+        position={[-1, -1, 2]}
+        rotationSpeed={0.015}
+        color={accent}
+      />
     </Canvas>
   )
 }

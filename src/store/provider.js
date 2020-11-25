@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { Provider } from './createContext'
-import { ScreenProvider } from './screenContext'
 import { getWindowHeight } from 'react-div-100vh/lib/getWindowHeight'
 
 // The provider, which holds the page-wide store and its actions.
@@ -20,11 +19,7 @@ class AppProvider extends Component {
       }
     }
 
-    return (
-      <Provider value={this.state}>
-        <ScreenProvider>{this.props.children}</ScreenProvider>
-      </Provider>
-    )
+    return <Provider value={this.state}>{this.props.children}</Provider>
   }
 }
 

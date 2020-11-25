@@ -15,12 +15,9 @@ import {
   HeroButtonsContainer,
   Divider,
   Indicator,
-  absoluteMotionDiv,
 } from 'constants/elements'
 
-import { motionStaggerButtons, triangle1, ySpring } from 'constants/animations'
-import { Triangle1 } from 'components/triangles/triangle1'
-import Zoom from 'react-reveal/Zoom'
+import { motionStaggerButtons, ySpring } from 'constants/animations'
 
 const HeroButton = styled(Link).withConfig({ displayName: 'HeroButton' })`
   ${ButtonStyled}

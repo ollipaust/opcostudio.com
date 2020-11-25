@@ -35,23 +35,6 @@ const About = () => (
       </div>
 
       <Div100vh />
-
-      <div style={portraitStyles}>
-        <Portrait caption={<FormattedMessage id="about.portraitCaption" />} />
-        <div style={{ width: '50%', padding: '0 0 0 50px' }}>
-          <h1
-            style={{
-              fontSize: '10rem',
-              fontWeight: '800',
-              color: 'transparent',
-              lineHeight: 0.85,
-              WebkitTextStroke: '3px #373345',
-            }}
-          >
-            INFOS
-          </h1>
-        </div>
-      </div>
     </PageContent>
 
     <Pagination>

@@ -16,7 +16,7 @@ import {
   Divider,
   Indicator,
   absoluteMotionDiv,
-} from 'components/elements'
+} from 'constants/elements'
 
 import { motionStaggerButtons, triangle1, ySpring } from 'constants/animations'
 import { Triangle1 } from 'components/triangles/triangle1'

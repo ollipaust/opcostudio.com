@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import MEDIA from 'helpers/mediaTemplates'
-import * as color from 'constants/colors'
+import { accent, light, dark66 } from 'constants/colors'
 
 export const ContainerDark = styled.figure.withConfig({
   displayName: 'LogoDark',
@@ -16,10 +16,10 @@ export const ContainerDark = styled.figure.withConfig({
     transition: transform 300ms ease 50ms;
 
     .a {
-      fill: ${color.dark66};
+      fill: ${dark66};
     }
     .b {
-      fill: ${color.accent};
+      fill: ${accent};
     }
 
     :hover {
@@ -53,29 +53,29 @@ export const ContainerLight = styled.figure.withConfig({
     transform: scale(1);
     transition: transform 300ms ease 50ms;
     .a {
-      fill: ${color.light};
+      fill: ${light};
     }
     .b:nth-of-type(5) {
-      fill: ${color.light};
-      stroke: ${color.light};
+      fill: ${light};
+      stroke: ${light};
       stroke-width: 0.9px;
       transition: all 250ms ease-in 200ms;
     }
     .b:nth-of-type(8) {
-      fill: ${color.light};
-      stroke: ${color.light};
+      fill: ${light};
+      stroke: ${light};
       stroke-width: 0.9px;
       transition: all 250ms ease-in 400ms;
     }
     .b:nth-of-type(7) {
-      fill: ${color.light};
-      stroke: ${color.light};
+      fill: ${light};
+      stroke: ${light};
       stroke-width: 0.9px;
       transition: all 250ms ease-in 600ms;
     }
     .b:nth-of-type(6) {
-      fill: ${color.light};
-      stroke: ${color.light};
+      fill: ${light};
+      stroke: ${light};
       stroke-width: 0.9px;
       transition: all 250ms ease-in 800ms;
     }
@@ -83,25 +83,25 @@ export const ContainerLight = styled.figure.withConfig({
   :hover svg {
     .b:nth-of-type(5) {
       fill: transparent;
-      stroke: ${color.light};
+      stroke: ${light};
       stroke-width: 0.9px;
       transition: all 250ms ease-in 200ms;
     }
     .b:nth-of-type(8) {
       fill: transparent;
-      stroke: ${color.light};
+      stroke: ${light};
       stroke-width: 0.9px;
       transition: all 250ms ease-in 400ms;
     }
     .b:nth-of-type(7) {
       fill: transparent;
-      stroke: ${color.light};
+      stroke: ${light};
       stroke-width: 0.9px;
       transition: all 250ms ease-in 600ms;
     }
     .b:nth-of-type(6) {
       fill: transparent;
-      stroke: ${color.light};
+      stroke: ${light};
       stroke-width: 0.9px;
       transition: all 250ms ease-in 800ms;
     }
@@ -118,10 +118,10 @@ export const ContainerLight = styled.figure.withConfig({
         transform: scale(1);
         transition: transform 300ms ease 50ms;
           .a {
-            fill: ${color.light};
+            fill: ${light};
           }
           .b {
-            fill: ${color.light};
+            fill: ${light};
           }
       }
 

@@ -1,6 +1,5 @@
 import styled, { createGlobalStyle } from 'styled-components'
 import { light, dark33, dark75, accent } from 'constants/colors'
-import MEDIA from 'helpers/mediaTemplates'
 
 export const ScrollbarStyles = createGlobalStyle`
 [data-scrollbar] {

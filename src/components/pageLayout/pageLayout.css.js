@@ -98,8 +98,8 @@ body.home {
         position: absolute!important;
         top: 50%;
         left: 50%;
-        width: 100vw!important;
-        height: 100vh!important;
+        width: 100%!important;
+        height: 100%!important;
         transform: translateX(-50%) translateY(-50%)!important;
         pointer-events: all!important;
     }

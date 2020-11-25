@@ -36,7 +36,7 @@ export const HeroTextContainer = styled.div.withConfig({
     color: ${dark75};
     display: block;
     margin-top: 1rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 2rem;
   }
 
   p > span {

@@ -64,6 +64,7 @@ export const ButtonStyled = `
 
     @media (max-width: 450px) and (max-height: 823px) and (orientation: portrait) {
       padding: 7.5px 12.5px!important;
+      display: block!important;
     }
     @media (max-width: 823px) and (max-height: 450px) and (orientation: landscape) {
       padding: 7.5px 12.5px!important;

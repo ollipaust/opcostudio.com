@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import MEDIA from 'helpers/mediaTemplates'
-import { light, dark75 } from 'constants/colors'
+import * as color from 'constants/colors'
 
 export const Container = styled.div.withConfig({
   displayName: 'BrowserNotice',
@@ -16,23 +16,23 @@ export const Container = styled.div.withConfig({
   p,
   span {
     text-align: center;
-    text-shadow: 1px 1px 1px ${dark75};
-    color: ${light};
+    text-shadow: 1px 1px 1px ${color.dark75};
+    color: ${color.light};
   }
 
   button {
     display: inline-block;
     font-weight: 600;
-    color: ${light};
+    color: ${color.light};
     background: transparent;
-    border: 1px solid ${light};
+    border: 1px solid ${color.light};
     outline: 0;
     margin-left: 1rem;
 
     &:hover,
     &:active {
-      border: 1px solid ${dark75};
-      color: ${dark75};
+      border: 1px solid ${color.dark75};
+      color: ${color.dark75};
     }
   }
 `

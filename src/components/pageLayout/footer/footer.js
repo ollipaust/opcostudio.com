@@ -8,7 +8,7 @@ import { darkest } from 'constants/colors'
 const Footer = () => {
   return (
     <Container>
-      <Wave
+      {/*<Wave
         fill={darkest}
         className="footerWaves"
         paused={false}
@@ -18,7 +18,7 @@ const Footer = () => {
           speed: 0.15,
           points: 3,
         }}
-      />
+      /> */}
       <Content />
       <Copyright />
     </Container>

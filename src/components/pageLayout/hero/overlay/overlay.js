@@ -8,14 +8,14 @@ import Es6Logo from 'images/es6.png'
 import ReactLogo from 'images/react.png'
 import GatsbyLogo from 'images/gatsby.png'
 import { FormattedMessage } from 'react-intl'
-import { motionStagger, slideUp2s, ySpring } from 'constants/animations'
+import { motionStaggerLogos, slideUp2s, ySpring } from 'constants/animations'
 
 const HeroOverlay = () => {
   const MotionHeroLogosContainer = ({ className, children }) => (
     <LogosContainer>
       <motion.div
         className={className}
-        variants={motionStagger}
+        variants={motionStaggerLogos}
         initial="hidden"
         animate="show"
       >
@@ -54,8 +54,9 @@ const HeroOverlay = () => {
             variants={ySpring}
             src={Html5Logo}
             width="24"
-            heiht="33"
+            height="33"
             alt="Html5"
+            className="html"
           />
         </a>
         <a href="https://www.w3.org/TR/css-2018/" title="W3C CSS3 Standards">
@@ -63,8 +64,9 @@ const HeroOverlay = () => {
             variants={ySpring}
             src={Css3Logo}
             width="24"
-            heiht="33"
+            height="33"
             alt="Css3"
+            className="css"
           />
         </a>
         <a
@@ -75,8 +77,9 @@ const HeroOverlay = () => {
             variants={ySpring}
             src={Es6Logo}
             width="50"
-            heiht="33"
+            height="33"
             alt="Es6Logo"
+            className="es6"
           />
         </a>
         <a
@@ -87,8 +90,9 @@ const HeroOverlay = () => {
             variants={ySpring}
             src={ReactLogo}
             width="50"
-            heiht="33"
+            height="33"
             alt="ReactJS"
+            className="react"
           />
         </a>
         <a
@@ -99,8 +103,9 @@ const HeroOverlay = () => {
             variants={ySpring}
             src={GatsbyLogo}
             width="50"
-            heiht="33"
+            height="33"
             alt="GatsbyJS"
+            className="gatsby"
           />
         </a>
       </StyledMotionHeroLogosContainer>

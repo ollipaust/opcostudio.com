@@ -1,21 +1,17 @@
 /* eslint-disable */
 import React from 'react'
-import PropTypes from 'prop-types'
-import styled from 'styled-components'
-import { motion } from 'framer-motion'
 import { HeroContainer } from './hero.css'
 import { HeroContent } from './heroContent'
 import HeroOverlay from './overlay'
-import BackgroundWaves from 'components/animatedBackground/waves'
 import Div100vh from 'react-div-100vh'
-import Tetrahedron from 'components/triangles/triangle1'
+import Tetrahedrons from 'components/triangles/triangle1'
 
 const Hero = ({ children }) => {
   return (
     <HeroContainer>
       <Div100vh>
         <HeroOverlay />
-        <Tetrahedron />
+        <Tetrahedrons />
         <HeroContent>{children}</HeroContent>
       </Div100vh>
     </HeroContainer>

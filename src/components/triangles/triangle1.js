@@ -1,7 +1,9 @@
-import React, { useRef, useState, useEffect } from 'react'
+import React, { useRef, useState, useEffect, useThree } from 'react'
 import { Canvas, useFrame } from 'react-three-fiber'
 import { accent, accentThree, accentBlue, dark50 } from 'constants/colors'
 import { useSpring, a } from 'react-spring/three'
+import * as Device from 'helpers/mediaQueries'
+import { useMediaQuery } from 'react-responsive'
 
 const RotatingMesh = ({ position, args, rotationSpeed, color }) => {
   const mesh = useRef(null)
@@ -9,7 +11,6 @@ const RotatingMesh = ({ position, args, rotationSpeed, color }) => {
     () =>
       (mesh.current.rotation.x = mesh.current.rotation.y = mesh.current.rotation.z += rotationSpeed)
   )
-
   const [expand, setExpand] = useState(false)
   const [reveal, setReveal] = useState(false)
 
@@ -18,8 +19,9 @@ const RotatingMesh = ({ position, args, rotationSpeed, color }) => {
   }, [])
 
   const props = useSpring({
-    scale: expand ? [1.5, 1.5, 1.5] : [1, 1, 1],
+    scale: expand ? [1, 1, 1] : [2, 2, 2],
     opacity: reveal ? 1 : 0,
+
     from: { opacity: 0 },
   })
 
@@ -28,9 +30,11 @@ const RotatingMesh = ({ position, args, rotationSpeed, color }) => {
       ref={mesh}
       position={position}
       scale={props.scale}
-      onHover={() => setExpand(!expand)}
-      onPointerOver={() => setExpand(true)}
-      onPointerOut={() => setExpand(false)}
+      onLoad={useEffect(() => {
+        setTimeout(() => setExpand(true), 3750)
+      }, [])}
+      onPointerOver={() => setExpand(false)}
+      onPointerOut={() => setExpand(true)}
     >
       <tetrahedronBufferGeometry attach="geometry" args={args} />
       <a.meshPhongMaterial
@@ -38,40 +42,40 @@ const RotatingMesh = ({ position, args, rotationSpeed, color }) => {
         color={color}
         opacity={props.opacity}
         transparent={true}
-        shininess={100}
+        shininess={25}
         wireframe={true}
       />
     </a.mesh>
   )
 }
 
-function Tetrahedron() {
+function DesktopCanvas() {
   return (
-    <>
-      <Canvas
-        colorManagement
-        camera={{ position: [-5, 2, 10], fov: 30 }}
-        className="canvors"
-      >
-        <ambientLight intensity={0.5} />
-        <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
-        <directionalLight
-          position={[0, 10, 0]}
-          intensity={2.5}
-          shadow-mapSize-width={1024}
-          shadow-mapSize-height={1024}
-          shadow-camera-far={50}
-          shadow-camera-left={-10}
-          shadow-camera-right={10}
-          shadow-camera-top={10}
-          shadow-camera-bottom={-10}
-        />
-        <pointLight position={[-10, 0, -20]} intensity={0.5} decay={0.9} />
-        <pointLight position={[0, -10, 0]} intensity={1}  decay={0.9} />
+    <Canvas
+      colorManagement
+      camera={{ position: [-5, 2, 10], fov: 30 }}
+      className="canvors"
+    >
+      <ambientLight intensity={0.5} />
+      <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
+      <directionalLight
+        position={[0, 10, 0]}
+        intensity={2.5}
+        shadow-mapSize-width={1024}
+        shadow-mapSize-height={1024}
+        shadow-camera-far={50}
+        shadow-camera-left={-10}
+        shadow-camera-right={10}
+        shadow-camera-top={10}
+        shadow-camera-bottom={-10}
+      />
+      <pointLight position={[-10, 0, -20]} intensity={0.5} decay={0.9} />
+      <pointLight position={[0, -10, 0]} intensity={1} decay={0.9} />
 
+      <group>
         <RotatingMesh
           args={[0.65, 0]}
-          position={[-3.35, 0.5, 0]}
+          position={[-3.05, 0.5, 0]}
           rotationSpeed={0.0099}
           color={accentThree}
         />
@@ -82,20 +86,138 @@ function Tetrahedron() {
           color={accentBlue}
         />
         <RotatingMesh
-          args={[0.4, 0]}
-          position={[1, -1.25, -5]}
+          args={[0.3, 0]}
+          position={[1, -0.85, -5]}
           rotationSpeed={0.0075}
           color={accentThree}
         />
         <RotatingMesh
           args={[0.35, 0]}
-          position={[-0.85, -1, 2]}
+          position={[-1, -1, 2]}
           rotationSpeed={0.015}
           color={accent}
         />
-      </Canvas>
+      </group>
+    </Canvas>
+  )
+}
+
+function MobileCanvas() {
+  return (
+    <Canvas
+      colorManagement
+      camera={{ position: [-5, 2, 10], fov: 30 }}
+      className="canvors"
+    >
+      <ambientLight intensity={0.5} />
+      <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
+      <directionalLight
+        position={[0, 10, 0]}
+        intensity={2.5}
+        shadow-mapSize-width={1024}
+        shadow-mapSize-height={1024}
+        shadow-camera-far={50}
+        shadow-camera-left={-10}
+        shadow-camera-right={10}
+        shadow-camera-top={10}
+        shadow-camera-bottom={-10}
+      />
+      <pointLight position={[-10, 0, -20]} intensity={0.5} decay={0.9} />
+      <pointLight position={[0, -10, 0]} intensity={1} decay={0.9} />
+
+      <group>
+        <RotatingMesh
+          args={[0.65, 0]}
+          position={[0.5, 1.8, 0]}
+          rotationSpeed={0.0099}
+          color={accentThree}
+        />
+        <RotatingMesh
+          args={[0.2, 0]}
+          position={[1.75, 0.1, 0]}
+          rotationSpeed={0.0075}
+          color={accentThree}
+        />
+        <RotatingMesh
+          args={[0.35, 0]}
+          position={[-2, -0.8, 2]}
+          rotationSpeed={0.015}
+          color={accent}
+        />
+      </group>
+    </Canvas>
+  )
+}
+
+function TabletCanvas() {
+  return (
+    <Canvas
+      colorManagement
+      camera={{ position: [-5, 2, 10], fov: 30 }}
+      className="canvors"
+    >
+      <ambientLight intensity={0.5} />
+      <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
+      <directionalLight
+        position={[0, 10, 0]}
+        intensity={2.5}
+        shadow-mapSize-width={1024}
+        shadow-mapSize-height={1024}
+        shadow-camera-far={50}
+        shadow-camera-left={-10}
+        shadow-camera-right={10}
+        shadow-camera-top={10}
+        shadow-camera-bottom={-10}
+      />
+      <pointLight position={[-10, 0, -20]} intensity={0.5} decay={0.9} />
+      <pointLight position={[0, -10, 0]} intensity={1} decay={0.9} />
+
+      <group>
+        <RotatingMesh
+          args={[0.65, 0]}
+          position={[-1.05, 0.5, 0]}
+          rotationSpeed={0.0099}
+          color={accentThree}
+        />
+        <RotatingMesh
+          args={[0.65, 0]}
+          position={[2, 1.15, 0]}
+          rotationSpeed={0.005}
+          color={accentBlue}
+        />
+        <RotatingMesh
+          args={[0.3, 0]}
+          position={[0, -0.85, -5]}
+          rotationSpeed={0.0075}
+          color={accentThree}
+        />
+        <RotatingMesh
+          args={[0.35, 0]}
+          position={[-0, -1, 2]}
+          rotationSpeed={0.015}
+          color={accent}
+        />
+      </group>
+    </Canvas>
+  )
+}
+
+function Tetrahedrons() {
+  return (
+    <>
+      <Device.Desktop>
+        <DesktopCanvas />
+      </Device.Desktop>
+
+      <Device.Mobile>
+        <MobileCanvas />
+      </Device.Mobile>
+
+      <Device.Tablet>
+        <TabletCanvas />
+      </Device.Tablet>
     </>
   )
 }
 
-export default Tetrahedron
+export default Tetrahedrons

@@ -43,7 +43,10 @@ const PageHeading = ({ children, accentColor, shineIntensity }) => {
   return (
     <Container>
       <Content>
-        <BackgroundWaves accentColor={accentColor} shineIntensity={shineIntensity} />
+        <BackgroundWaves
+          accentColor={accentColor}
+          shineIntensity={shineIntensity}
+        />
         <StyledSlider />
         {children}
       </Content>

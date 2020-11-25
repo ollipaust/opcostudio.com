@@ -18,6 +18,7 @@ export const glass = 'hsla(249, 100%, 50%, 0.025)'
 export const neutral = 'hsla(275, 5%, 54%, 1)'
 export const black = '#000000'
 export const white = '#ffffff'
+export const darken = 'rgba(0, 0, 0, 0.33)'
 
 export const alter = 'hsla(49, 100%, 75%, 1)'
 export const alter33 = 'hsla(49, 100%, 75%, 0.33)'

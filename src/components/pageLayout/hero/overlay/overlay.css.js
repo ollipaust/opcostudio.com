@@ -47,35 +47,28 @@ export const LogosContainer = styled.div.withConfig({
   margin-bottom: 2vmax;
   width: 50%;
 
-  img,
-  a {
-    margin-right: 2em;
-    pointer-events: all;
-
-    :last-child {
-      margin-right: 0;
-    }
-    :nth-of-type(1),
-    :nth-of-type(2) {
+  img {
+    &.html,
+    &.css {
+      width: 24px;
       height: 33px;
     }
-    :nth-of-type(3) {
-      width: 53px;
+    &.es6,
+    &.react,
+    &.gatsby {
+      width: 50px;
+      height: 33px;
     }
+  }
+
+  a {
+    margin-right: 2rem;
+    pointer-events: all;
   }
   @media (max-width: 823px) and (max-height: 450px) and (orientation: landscape) {
     margin-bottom: 0;
     a {
       margin-right: 0 !important;
-      > img {
-        transform: scale(0.66) !important;
-      }
-      &:nth-of-type(2) > img {
-        margin-right: 5px !important;
-      }
-      &:nth-of-type(n + 3) > img {
-        margin-left: -10px !important;
-      }
     }
   }
   ${MEDIA.PHONE`
@@ -90,17 +83,6 @@ export const LogosContainer = styled.div.withConfig({
     img, a {
       margin-right: 0;
       pointer-events: all;
-
-        :last-child {
-          margin-right: 0;
-        }
-        :nth-of-type(1),
-        :nth-of-type(2) {
-          height: 25px;
-        }
-        :nth-of-type(3) {
-          width: 30px;
-        }
     }
   `}
 `

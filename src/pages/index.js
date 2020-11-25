@@ -18,7 +18,7 @@ import {
   absoluteMotionDiv,
 } from 'components/elements'
 
-import { motionStagger, triangle1, ySpring } from 'constants/animations'
+import { motionStaggerButtons, triangle1, ySpring } from 'constants/animations'
 import { Triangle1 } from 'components/triangles/triangle1'
 import Zoom from 'react-reveal/Zoom'
 
@@ -33,20 +33,21 @@ const Index = () => (
 
     <Hero>
       <Title as="h1" size="super">
-        <FormattedMessage id="home.intro1" />
+        <FormattedMessage id="home.name" />
       </Title>
 
       <Divider />
 
       <Title as="h2" size="medium">
-        <FormattedMessage id="home.name" />
-      </Title>
-      <p>
         <FormattedMessage id="home.job" />
-      </p>
+      </Title>
 
       <HeroButtonsContainer>
-        <motion.div variants={motionStagger} initial="hidden" animate="show">
+        <motion.div
+          variants={motionStaggerButtons}
+          initial="hidden"
+          animate="show"
+        >
           <motion.div variants={ySpring} className="heroBtn1">
             <HeroButton to="/about">
               <Indicator />

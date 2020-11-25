@@ -1,10 +1,9 @@
 export default {
   title: 'Startseite',
-  intro1: 'Willkommen',
-  name: 'Olliver Paust',
-  job: 'Web Coder & Designer aus Berlin',
+  name: 'Olli Paust',
+  job: 'Frontend Coder & Designern aus Berlin',
   buttonStart: 'Mehr über mich erfahren',
-  buttonDownload: 'Lebenslauf ↓',
+  buttonDownload: 'Lebenslauf  ↓',
   inDevNotice: 'Dieses Projekt befindet sich noch in Entwicklung.',
-  lastUpdate: 'Letzte Aktualisierung: 21.11.20',
+  lastUpdate: 'Letzte Aktualisierung: 25.11.20',
 }

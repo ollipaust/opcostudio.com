@@ -37,7 +37,7 @@ const About = () => (
       <Div100vh />
 
       <div style={portraitStyles}>
-        <Portrait caption={<FormattedMessage id="about.thatsMe" />} />
+        <Portrait caption={<FormattedMessage id="about.portraitCaption" />} />
         <div style={{ width: '50%', padding: '0 0 0 50px' }}>
           <h1
             style={{

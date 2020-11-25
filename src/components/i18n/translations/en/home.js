@@ -1,10 +1,9 @@
 export default {
   title: 'Home',
-  intro1: 'Welcome',
-  name: 'Olliver Paust',
-  job: 'Web Coder & Designer from  Berlin',
+  name: 'Olli Paust',
+  job: 'Frontend Coder & Designer from  Berlin',
   buttonStart: 'Learn more about me',
-  buttonDownload: 'Resumé ↓',
+  buttonDownload: 'Resumé / CV  ↓',
   inDevNotice: 'This Project is currently in Development.',
-  lastUpdate: 'Latest Update: 21.11.20',
+  lastUpdate: 'Latest Update: 25.11.20',
 }

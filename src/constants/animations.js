@@ -85,13 +85,24 @@ export const slideFade3s = {
     },
   },
 }
-export const motionStagger = {
+export const motionStaggerButtons = {
   hidden: { opacity: 0 },
   show: {
     opacity: 1,
     transition: {
       opacity: { delay: 1.5, ease: 'easeIn' },
-      staggerChildren: 0.25,
+      staggerChildren: 1,
+      delayChildren: 1.2,
+    },
+  },
+}
+export const motionStaggerLogos = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      opacity: { delay: 1.5, ease: 'easeIn' },
+      staggerChildren: 0.3,
       delayChildren: 1,
     },
   },

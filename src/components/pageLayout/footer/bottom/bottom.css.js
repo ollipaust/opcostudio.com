@@ -1,13 +1,6 @@
 import styled from 'styled-components'
 import MEDIA from 'helpers/mediaTemplates'
-import {
-  light33,
-  light,
-  accent,
-  dark33,
-  darkest,
-  black,
-} from 'constants/colors'
+import { light33, light, accent, dark66, darken, black } from 'constants/colors'
 
 export const ContainerBottom = styled.div.withConfig({
   displayName: 'FooterBottom',
@@ -19,7 +12,7 @@ export const ContainerBottom = styled.div.withConfig({
   justify-content: center;
   width: 100%;
   height: 50px;
-  background: ${dark33};
+  background: ${darken};
   .copyright {
     color: ${light33};
     font-size: 1em;

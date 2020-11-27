@@ -117,4 +117,27 @@ export const GlobalStyles = createGlobalStyle`
     background: ${accent};
     color: ${light};
   }
+  [data-scrollbar] {
+    display: block;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+  }
+  .scrollbar-track-x {
+    display: none;
+  }
+  .scrollbar-track .scrollbar-thumb {
+    background: ${accent};
+    transition: background linear;
+  
+  }
+  .scrollbar-track-y, .scrollbar-thumb {
+    width: 6px!important;
+  }
+  @media (max-width: 450px) and (max-height: 823px) and (orientation: portrait) {
+    .scrollbar-track-y, .scrollbar-thumb {
+      width: 3px!important;
+    }
+  }
 `

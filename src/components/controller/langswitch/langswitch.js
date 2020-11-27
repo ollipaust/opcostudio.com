@@ -3,7 +3,7 @@ import { navigate } from 'gatsby'
 import { injectIntl } from 'react-intl'
 
 import languages from 'components/i18n/languages'
-import PageContext from 'components/translator/pageContext'
+import PageContext from 'components/interface/translator/pageContext'
 
 import { LangSwitch } from './langswitch.css'
 

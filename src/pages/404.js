@@ -8,7 +8,7 @@ import PageLayout from 'components/pageLayout'
 import PageContent from 'components/pageLayout/content'
 import PageContentHeading from 'components/pageLayout/content/contentHeading'
 
-import translatorWrapper from 'components/translator/translatorWrapper'
+import Translator from 'components/interface/translator'
 import { FormattedMessage } from 'react-intl'
 
 const Error404 = () => (
@@ -39,7 +39,7 @@ const customProps = {
   localeKey: 'error404', // same as file name in src/i18n/translations/your-lang/index.js
 }
 
-export default translatorWrapper(customProps)(Error404)
+export default Translator(customProps)(Error404)
 
 export const query = graphql`
   query Error404Query {

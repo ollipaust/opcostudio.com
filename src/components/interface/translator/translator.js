@@ -12,7 +12,7 @@ import { translations, languages } from 'components/i18n'
 
 addLocaleData([...deData, ...enData])
 
-const translatorWrapper = customProps => PageComponent => props => {
+const Translator = customProps => PageComponent => props => {
   const { locale } = props.pageContext
   const { localeKey } = customProps
 
@@ -32,9 +32,9 @@ const translatorWrapper = customProps => PageComponent => props => {
   )
 }
 
-translatorWrapper.propTypes = {
+Translator.propTypes = {
   children: PropTypes.node.isRequired,
   lang: PropTypes.string.isRequired,
 }
 
-export default translatorWrapper
+export default Translator

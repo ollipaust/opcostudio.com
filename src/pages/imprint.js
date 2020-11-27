@@ -12,7 +12,7 @@ import PageHeading from 'components/pageLayout/heading'
 import PageContent from 'components/pageLayout/content'
 import Pagination from 'components/pageLayout/pagination'
 
-import translatorWrapper from 'components/translator/translatorWrapper'
+import Translator from 'components/interface/translator'
 import { FormattedMessage } from 'react-intl'
 
 const Imprint = () => (
@@ -57,4 +57,4 @@ const customProps = {
   localeKey: 'imprint', // same as file name in src/i18n/translations/your-lang/index.js
 }
 
-export default translatorWrapper(customProps)(Imprint)
+export default Translator(customProps)(Imprint)

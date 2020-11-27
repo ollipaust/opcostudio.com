@@ -29,31 +29,6 @@ body.about {
               font-size: 0.75rem !important;
             }
         }
-
-        [class*='LogoSvg'] svg {
-            width: 500px;
-        }
-        [class*='PortraitWrapper'] {
-            width: 50%;
-
-                [class*='CanvasWrap'] { 
-                    height: calc(100vh - 5rem); 
-                    width: 100%;
-                }
-        }
-
-
-        .parent {
-            display: grid;
-            grid-template-columns: 3fr 1fr;
-            grid-template-rows: 1fr;
-            grid-column-gap: 0px;
-            grid-row-gap: 0px;
-            }
-            
-            .div1 { grid-area: 1 / 1 / 2 / 2; }
-            .div2 { grid-area: 1 / 2 / 2 / 3; }
-    }
 }
 body.caseStudies {
 

@@ -11,7 +11,6 @@ const LogoSvg = ({
   strokeWidth,
   strokeColor,
 }) => {
-  console.log(speed)
   return (
     <Container className={className}>
       <SvgLines

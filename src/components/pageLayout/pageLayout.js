@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import Main from './main'
 import Footer from './footer'
 
-import { PageLayoutStyles } from './pageLayout.css.js'
+import { PageLayoutStyles } from './pageLayout.css'
 
 const PageLayout = ({ children }) => {
   return (

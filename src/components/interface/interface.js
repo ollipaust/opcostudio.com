@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { Component, useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 
 import BodyClassName from 'react-body-classname'
@@ -9,11 +9,10 @@ import { FormattedMessage } from 'react-intl'
 
 import AppView from './appViewWithScrollbars'
 import Controller from 'components/controller'
-import translatorWrapper from 'components/translator/translatorWrapper'
+import Translator from './translator'
 import useScreenOrientation from 'helpers/screenOrientation'
 
 import { GlobalStyles } from 'global.css'
-import { ScrollbarStyles, UnsortedStyles } from './interface.css'
 import { TransitionStyles } from './transitions/transitions.css'
 
 import { TransitionsController, TransitionsView } from './transitions'
@@ -23,6 +22,7 @@ import StartLoader from 'components/startLoader'
 
 import { neutral } from 'constants/colors'
 import { isIE } from 'react-device-detect'
+import { PageLayoutStyles } from 'components/pageLayout/pageLayout.css'
 
 const Interface = ({ children, location }) => {
   const [startLoading, setStartLoading] = useState(true)
@@ -36,8 +36,7 @@ const Interface = ({ children, location }) => {
   return (
     <Div100vh>
       <GlobalStyles />
-      <ScrollbarStyles />
-      <UnsortedStyles />
+      <PageLayoutStyles />
       <TransitionStyles />
 
       {isIE ? (
@@ -46,7 +45,7 @@ const Interface = ({ children, location }) => {
         </BrowserNotice>
       ) : null}
 
-      <BodyClassName className={hasTouch ? 'has-touch page' : 'has-no-touch'} />
+      <BodyClassName className={hasTouch ? 'has-touch' : 'has-no-touch'} />
 
       <StartLoader
         className={startLoading === true ? 'loading' : 'loading-done'}
@@ -82,4 +81,4 @@ Interface.propTypes = {
   location: PropTypes.object.isRequired,
 }
 
-export default translatorWrapper(customProps)(Interface)
+export default Translator(customProps)(Interface)

@@ -13,7 +13,7 @@ import PageHeading from 'components/pageLayout/heading'
 import PageContent from 'components/pageLayout/content'
 import Pagination from 'components/pageLayout/pagination'
 
-import translatorWrapper from 'components/translator/translatorWrapper'
+import Translator from 'components/interface/translator'
 import { FormattedMessage } from 'react-intl'
 import Div100vh from 'react-div-100vh'
 
@@ -53,4 +53,4 @@ const customProps = {
   localeKey: 'stack', // same as file name in src/i18n/translations/your-lang/index.js
 }
 
-export default translatorWrapper(customProps)(Stack)
+export default Translator(customProps)(Stack)

@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 
-import Langs from 'components/langswitch'
+import Langs from '../langswitch'
 import { FormattedMessage } from 'react-intl'
 
 import Nav from './nav'
@@ -31,7 +31,7 @@ class Menu extends PureComponent {
     this.setState({ collapsed: !this.state.collapsed })
   }
   escapeNavbar = () => {
-    if (!this.collapsed && (event.key === 'Escape' || event.keyCode === 27)) {
+    if (!this.collapsed && event.key === 'Escape') {
       this.toggleNavbar()
     }
   }
@@ -60,7 +60,7 @@ class Menu extends PureComponent {
           <LangSwitchContainer>{!hideLangs && <Langs />}</LangSwitchContainer>
 
           <MenuButton
-            className={`${toggled}`}
+            className={toggled}
             onClick={this.toggleNavbar}
             onKeyDown={this.escapeNavbar}
             aria-label="Overlay Menu"
@@ -71,9 +71,9 @@ class Menu extends PureComponent {
           </MenuButton>
         </ControlsContainer>
 
-        <OverlayContent className={`${toggled}`} role="navigation">
+        <OverlayContent className={toggled} role="navigation">
           <OverlayBg
-            className={`${toggled}`}
+            className={toggled}
             onClick={this.toggleNavbar}
             onKeyDown={this.escapeNavbar}
             tabIndex="0"

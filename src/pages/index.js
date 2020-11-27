@@ -2,11 +2,11 @@ import React from 'react'
 import styled from 'styled-components'
 
 import { FormattedMessage } from 'react-intl'
-import translatorWrapper from 'components/translator/translatorWrapper'
+import Translator from 'components/interface/translator'
 import { motion } from 'framer-motion'
 import BodyClassName from 'react-body-classname'
-
 import { IndexLayoutStyles } from 'components/pageLayout/pageLayout.css'
+
 import Hero from 'components/hero'
 import Link from 'components/link'
 import Title from 'components/title'
@@ -80,4 +80,4 @@ const customProps = {
   localeKey: 'home', // same as file name in src/i18n/translations/your-lang/index.js
 }
 
-export default translatorWrapper(customProps)(Index)
+export default Translator(customProps)(Index)

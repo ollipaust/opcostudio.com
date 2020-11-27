@@ -14,7 +14,7 @@ import PageContent from 'components/pageLayout/content'
 import PageContentHeading from 'components/pageLayout/content/contentHeading'
 import Pagination from 'components/pageLayout/pagination'
 
-import translatorWrapper from 'components/translator/translatorWrapper'
+import Translator from 'components/interface/translator'
 import { FormattedMessage } from 'react-intl'
 
 const CaseStudies = () => (
@@ -75,4 +75,4 @@ const customProps = {
   localeKey: 'caseStudies', // same as file name in src/i18n/translations/your-lang/index.js
 }
 
-export default translatorWrapper(customProps)(CaseStudies)
+export default Translator(customProps)(CaseStudies)

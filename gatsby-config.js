@@ -15,6 +15,20 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-webpack-size`,
     {
+      resolve: "gatsby-plugin-perfume.js",
+      options: {
+        resourceTiming: true,
+        dataConsumption: true,
+        firstContentfulPaint: true,
+        firstInputDelay: true,
+        speedIndex: true,
+        largestContentfulPaint: true,
+        totalBlockingTime: true,
+        timeToInteractive: true,
+        maxMeasureTime: 30000
+      },
+    },
+    {
       resolve: `gatsby-plugin-netlify-headers`,
       options: {
         headers: {

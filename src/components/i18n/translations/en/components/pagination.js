@@ -3,7 +3,7 @@ export default {
   next: 'next',
   home: 'Home',
   about: 'About me',
-  caseStudies: 'CaseStudies',
+  projects: 'Projects',
   stack: 'Tech Stack',
   blog: 'Blog',
   contact: 'Contact',

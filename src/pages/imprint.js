@@ -1,50 +1,21 @@
 import React from 'react'
-import Link from 'components/link'
+
 import Title from 'components/title'
 
-import BodyClassName from 'react-body-classname'
 import PageLayout from 'components/pageLayout'
-import PageContent from 'components/pageLayout/content'
-import Pagination from 'components/pageLayout/pagination'
 
 import Translator from 'components/interface/translator'
 import { FormattedMessage } from 'react-intl'
+import Div100vh from 'react-div-100vh'
 
 const Imprint = () => (
-  <PageLayout>
-    <BodyClassName className="imprint" />
-
-    <PageContent>
-      <p>
+  <PageLayout bodyClass="stack">
+    <div className="flexbox">
+      <Title as="h1" size="large" className="textLeft intro">
         <FormattedMessage id="imprint.intro" />
-        <span>hi tweeredd</span>
-      </p>
-
-      <div style={{ height: '50vh', width: '100%' }} />
-    </PageContent>
-
-    <Pagination>
-      <div className="prev">
-        <p>
-          <FormattedMessage id="pagination.prev" />
-        </p>
-        <Link to="/">
-          <Title as="h3" size="large" className="left">
-            <FormattedMessage id="pagination.home" />
-          </Title>
-        </Link>
-      </div>
-      <div className="next">
-        <p>
-          <FormattedMessage id="pagination.next" />
-        </p>
-        <Link to="/caseStudies">
-          <Title as="h3" size="large" className="right">
-            <FormattedMessage id="pagination.caseStudies" />
-          </Title>
-        </Link>
-      </div>
-    </Pagination>
+      </Title>
+    </div>
+    <Div100vh />
   </PageLayout>
 )
 

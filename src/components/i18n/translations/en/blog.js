@@ -4,5 +4,5 @@ export default {
   prev: 'previous page',
   prevLink: 'home',
   next: 'next page',
-  nextLink: 'caseStudies',
+  nextLink: 'case studies',
 }

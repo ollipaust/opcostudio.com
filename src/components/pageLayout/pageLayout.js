@@ -2,15 +2,26 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import Main from './main'
+import PageContent from './content'
 import Footer from './footer'
+import Pagination from './pagination'
+
+import BodyClassName from 'react-body-classname'
 
 import { PageLayoutStyles } from './pageLayout.css'
 
-const PageLayout = ({ children }) => {
+const PageLayout = ({ children, prev, next, bodyClass }) => {
   return (
     <React.Fragment>
       <PageLayoutStyles />
-      <Main>{children}</Main>
+      <BodyClassName className={bodyClass} />
+
+      <Main>
+        <PageContent>{children}</PageContent>
+      </Main>
+
+      <Pagination prev={prev} next={next} />
+
       <Footer />
     </React.Fragment>
   )

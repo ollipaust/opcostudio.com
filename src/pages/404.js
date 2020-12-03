@@ -1,37 +1,24 @@
 import React from 'react'
-import { graphql } from 'gatsby'
 
 import Title from 'components/title'
 
-import BodyClassName from 'react-body-classname'
 import PageLayout from 'components/pageLayout'
-import PageContent from 'components/pageLayout/content'
-import PageContentHeading from 'components/pageLayout/content/contentHeading'
 
 import Translator from 'components/interface/translator'
 import { FormattedMessage } from 'react-intl'
+import Div100vh from 'react-div-100vh'
 
 const Error404 = () => (
-  <PageLayout>
-    <BodyClassName className="error404" />
-
-    <PageContent>
-      <PageContentHeading>
-        <Title as="h1" size="medium" className="ContentTitleRight">
-          <FormattedMessage id="error404.intro1" />
-          <sub>
-            <FormattedMessage id="error404.intro1Sub" />
-          </sub>
-        </Title>
-
-        <Title as="h1" size="medium" className="ContentTitleRight">
-          <FormattedMessage id="error404.intro2" />
-          <sub>
-            <FormattedMessage id="error404.intro2Sub" />
-          </sub>
-        </Title>
-      </PageContentHeading>
-    </PageContent>
+  <PageLayout bodyClass="stack">
+    <div className="flexbox">
+      <Title as="h1" size="large" className="textLeft intro">
+        <FormattedMessage id="error404.title" />
+      </Title>
+      <sub>
+        <FormattedMessage id="error404.content" />
+      </sub>
+    </div>
+    <Div100vh />
   </PageLayout>
 )
 
@@ -40,11 +27,3 @@ const customProps = {
 }
 
 export default Translator(customProps)(Error404)
-
-export const query = graphql`
-  query Error404Query {
-    error404Json {
-      title
-    }
-  }
-`

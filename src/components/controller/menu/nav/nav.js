@@ -22,12 +22,12 @@ const Nav = () => {
       <li>
         <LinkContainer>
           <Link
-            to="/caseStudies"
+            to="/projects"
             activeClassName="active"
             className="creations"
             data-info="02"
           >
-            <FormattedMessage id="nav.caseStudies" />
+            <FormattedMessage id="nav.projects" />
           </Link>
         </LinkContainer>
       </li>

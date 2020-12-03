@@ -1,8 +1,7 @@
 const chromeLauncher = require('chrome-launcher');
 const { test } = require('ava');
 const lighthouse = require('lighthouse');
-
-const siteUrl = 'http://localhost:9000/de';
+const { siteUrl } = require('../site-config');
 
 const launchChromeAndRunLighthouse = (
   url,

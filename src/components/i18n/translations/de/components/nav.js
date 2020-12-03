@@ -1,7 +1,7 @@
 export default {
   home: 'Startseite',
   about: 'Über mich',
-  caseStudies: 'Referenzen',
+  projects: 'Projekte',
   stack: 'Tech Stack',
   blog: 'Blog',
   contact: 'Kontakt',

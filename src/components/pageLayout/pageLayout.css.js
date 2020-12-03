@@ -2,6 +2,21 @@ import { createGlobalStyle } from 'styled-components'
 import { light, dark75, dark33 } from 'constants/colors'
 
 export const PageLayoutStyles = createGlobalStyle`
+.flexbox {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+
+    > .intro {
+        width: 60%;
+        margin-left: 7.5vw;
+    }
+}
+
+
 body.home {
     
     .threeCanvas {
@@ -49,33 +64,8 @@ body.home {
 }
 body.about {
 
-    .flexbox {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        align-items: center;
-
-        > .intro {
-            width: 60%;
-            margin-left: 7.5vw;
-        }
-    }
-
-    [class*='ContentContainer'] {
-        
-        .caption {
-            text-align: center;
-            color: ${dark33};
-            margin-top: 0.5rem;
-        
-            > span {
-              font-size: 0.75rem !important;
-            }
-        }
 }
-body.caseStudies {
+body.projects {
 
 }
 body.stack {

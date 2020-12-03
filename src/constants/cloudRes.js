@@ -1,4 +1,3 @@
-
 export const cloudImg = {
   shineBg:
     'https://res.cloudinary.com/opco-studio/image/upload/v1606373915/shine_bugdx8.png',

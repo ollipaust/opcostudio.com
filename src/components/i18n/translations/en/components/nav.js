@@ -1,7 +1,7 @@
 export default {
   home: 'Home',
   about: 'About Me',
-  caseStudies: 'Case Studies',
+  projects: 'Projects',
   stack: 'Tech Stack',
   blog: 'Blog',
   contact: 'Contact',

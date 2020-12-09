@@ -1,20 +1,38 @@
-# Installation
-yarn install
+# www.opcostudio.com gatsby frontend
 
-# Development Env
+![Gatsby App OPCO](https://res.cloudinary.com/opco-studio/image/upload/v1607503108/opco_kmhmlg.png)
+
+## Features
+
+* based on:
+  * React
+  * Gatsby
+  * styled-components
+  * three.js
+
+## Installation
+
+* `git clone https://github.com/ollipaust/frontend_v1.0.0b-2020.git opcostudio`
+* `cd opcostudio`
+* `yarn install`
+
+# Development
 yarn develop
 
-# Build 
+# Build
 yarn build
 
-# build + serve
+# Full Build
 yarn ssr
 
-# Prettier-Formatierung
+# Fast Build (no icons etc)
+yarn prod 
+
+# Prettier formatting
 yarn format
 
-# Icons generieren
+# Generate Icons
 yarn icons
 
-# Lighthouse Test Script (testet live www.opcostudio.com)
+# Lighthouse Test
 yarn test

@@ -7,8 +7,7 @@ import Css3Logo from 'images/css3.png'
 import Es6Logo from 'images/es6.png'
 import ReactLogo from 'images/react.png'
 import GatsbyLogo from 'images/gatsby.png'
-import { FormattedMessage } from 'react-intl'
-import { motionStaggerLogos, slideUp2s, ySpring } from 'constants/animations'
+import { motionStaggerLogos, slideUp, ySpring } from 'constants/animations'
 
 const HeroOverlay = () => {
   const MotionHeroLogosContainer = ({ className, children }) => (
@@ -24,7 +23,7 @@ const HeroOverlay = () => {
   const MotionHeroNoticeContainer = ({ className, children }) => (
     <motion.div
       className={className}
-      variants={slideUp2s}
+      variants={slideUp}
       initial="hidden"
       animate="show"
     >
@@ -111,9 +110,14 @@ const HeroOverlay = () => {
       </StyledMotionHeroLogosContainer>
       <StyledMotionHeroNoticeContainer>
         <p>
-          <FormattedMessage id="home.inDevNotice" />
+          <span>
+            Frontend Design &amp; Development by{' '}
+            <a href="https://github.com/ollipaust" title="Github Profile">
+              Olli Paust
+            </a>
+          </span>
           <br />
-          <FormattedMessage id="home.lastUpdate" />
+          <span>Latest update: 23.12.2020</span>
         </p>
       </StyledMotionHeroNoticeContainer>
     </Container>

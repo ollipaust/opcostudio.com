@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 
+import Head from 'components/head'
 import BodyClassName from 'react-body-classname'
 import hasTouch from 'has-touch'
 
 import BrowserNotice from 'components/browserNotice'
-import { FormattedMessage } from 'react-intl'
 
 import AppView from './appViewWithScrollbars'
 import Controller from 'components/controller'
-import Translator from './translator'
 import useScreenOrientation from 'helpers/screenOrientation'
 
 import { GlobalStyles } from 'global.css'
@@ -41,16 +40,15 @@ const Interface = ({ children, location }) => {
 
       {isIE ? (
         <BrowserNotice>
-          <FormattedMessage id="messages.ieNotice" />
+          <span>iwjefiwje</span>
         </BrowserNotice>
       ) : null}
 
+      <Head />
       <BodyClassName className={hasTouch ? 'has-touch' : 'has-no-touch'} />
-
       <StartLoader
         className={startLoading === true ? 'loading' : 'loading-done'}
       />
-
       <BackgroundWaves accentColor={neutral} shineIntensity={250} />
 
       <TransitionsController location={location}>
@@ -61,7 +59,7 @@ const Interface = ({ children, location }) => {
         <AppView>
           {screenOrientation === 'landscape-primary' && hasTouch ? (
             <BrowserNotice>
-              <FormattedMessage id="messages.rotate" />
+              <span>iwjefiwje</span>
             </BrowserNotice>
           ) : null}
 
@@ -72,13 +70,9 @@ const Interface = ({ children, location }) => {
   )
 }
 
-const customProps = {
-  localeKey: 'interfaceComponent',
-}
-
 Interface.propTypes = {
   children: PropTypes.node.isRequired,
   location: PropTypes.object.isRequired,
 }
 
-export default Translator(customProps)(Interface)
+export default Interface

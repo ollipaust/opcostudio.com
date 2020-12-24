@@ -15,7 +15,7 @@ export const Container = styled.div.withConfig({
   width: calc(100% - 5rem);
   height: 100%;
   padding: 0 2.5rem;
-  pointer-events: none !important;
+  pointer-events: none;
 
   @media (max-width: 823px) and (max-height: 450px) and (orientation: landscape) {
     width: calc(100% - 2rem);
@@ -90,6 +90,10 @@ export const NoticeBox = `
   text-align: right;
   font-size: 0.75rem;
   color: ${neutral};
+
+  a {
+    pointer-events: all;
+  }
 
   @media (max-height: 812px) and (max-width: 414px) and (orientation: portrait) {
     text-align: center;

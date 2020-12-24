@@ -1,12 +1,14 @@
 import React from 'react'
+import Head from 'components/head'
 
 import PageLayout from 'components/pageLayout'
 
-import Translator from 'components/interface/translator'
 import NetlifyForm from 'react-netlify-form'
 
 const Contact = () => (
   <PageLayout prev="stack" bodyClass="contact">
+    <Head pageTitle="Contact" />
+
     <NetlifyForm name="Form With Invisible Recaptcha">
       {({ loading, error, success }) => (
         <div>
@@ -34,8 +36,4 @@ const Contact = () => (
   </PageLayout>
 )
 
-const customProps = {
-  localeKey: 'contact', // same as file name in src/i18n/translations/your-lang/index.js
-}
-
-export default Translator(customProps)(Contact)
+export default Contact

@@ -1,48 +1,45 @@
 import React from 'react'
+import Head from 'components/head'
 
-import { FormattedMessage } from 'react-intl'
-import Translator from 'components/interface/translator'
 import BodyClassName from 'react-body-classname'
 
 import Hero from 'components/hero'
 import Title from 'components/title'
+import { HeroButton, Indicator } from 'constants/elements'
+import RandomWords from 'components/randomWords'
+import { motion } from 'framer-motion'
 import {
-  HeroButton,
-  HeroButtonsContainer,
-  Divider,
-  Indicator,
-} from 'constants/elements'
+  fadeSlideHero1,
+  fadeSlideHero2,
+  fadeSlideHero3,
+} from 'constants/animations'
 
 const Index = () => (
   <React.Fragment>
+    <Head pageTitle="Home" />
+
     <BodyClassName className="home" />
     <Hero>
       <Title as="h1" size="super">
-        <FormattedMessage id="home.name" />
+        <motion.i initial="hidden" animate="show" variants={fadeSlideHero1}>
+          I create
+        </motion.i>
+        <br />
+        <RandomWords />
+        <br />
+        <motion.i initial="hidden" animate="show" variants={fadeSlideHero2}>
+          websites
+        </motion.i>
       </Title>
 
-      <Divider />
-
-      <Title as="h2" size="medium">
-        <FormattedMessage id="home.job" />
-      </Title>
-
-      <HeroButtonsContainer>
+      <motion.div initial="hidden" animate="show" variants={fadeSlideHero3}>
         <HeroButton to="/about">
           <Indicator />
-          <FormattedMessage id="home.buttonStart" />
+          Get to know me!
         </HeroButton>
-
-        <HeroButton to="/about" className="dark">
-          <FormattedMessage id="home.buttonDownload" />
-        </HeroButton>
-      </HeroButtonsContainer>
+      </motion.div>
     </Hero>
   </React.Fragment>
 )
 
-const customProps = {
-  localeKey: 'home', // same as file name in src/i18n/translations/your-lang/index.js
-}
-
-export default Translator(customProps)(Index)
+export default Index

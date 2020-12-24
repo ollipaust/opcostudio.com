@@ -8,12 +8,7 @@ export const Text = styled.span.withConfig({
     line-height: 1em;
     pointer-events: all;
     display: block;
-
-    &.stroke {
-      word-wrap: break-word;
-      text-transform: uppercase;
-      transition: color 500ms ease;
-    }
+    
 
     font-weight: ${({ size }) => () => {
       switch (size) {

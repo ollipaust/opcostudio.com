@@ -5,7 +5,7 @@ import { Text } from './title.css'
 const Title = ({ children, as = 'span', size, className }) => {
   return (
     <Text as={as} size={size} className={className}>
-      {children}
+      <span>{children}</span>
     </Text>
   )
 }

@@ -5,4 +5,6 @@ export const cloudImg = {
     'https://res.cloudinary.com/opco-studio/image/upload/v1606391169/eng_m14rlz.png',
   de:
     'https://res.cloudinary.com/opco-studio/image/upload/v1606391168/de_cj9ja0.png',
+  portrait:
+    'https://res.cloudinary.com/opco-studio/image/upload/v1608562019/olli_photo_elt1mk.jpg',
 }

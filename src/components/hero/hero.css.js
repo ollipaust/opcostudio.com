@@ -21,18 +21,45 @@ export const HeroTextContainer = styled.div.withConfig({
   width: 100%;
   height: 100%;
   text-align: center;
-  pointer-events: none !important;
+  pointer-events: none;
 
-  h1 > span {
-    text-transform: uppercase;
-    display: block;
-    color: ${glass};
-    -webkit-text-stroke: 3px ${dark75};
-    pointer-events: none !important;
-    ${shine}
+  h1 {
+    width: 50vw;
+    height: calc(50vh - 5rem);
 
-    @media (max-height: 1024px) and (max-width: 768px) and (orientation: portrait) {
-      -webkit-text-stroke: 2px ${dark75};
+    span {
+      text-transform: uppercase;
+      display: block;
+      color: ${glass};
+      -webkit-text-stroke: 3px ${dark75};
+      pointer-events: none !important;
+      ${shine}
+
+      @media (max-height: 1024px) and (max-width: 768px) and (orientation: portrait) {
+        -webkit-text-stroke: 2px ${dark75};
+      }
+    }
+
+    i,
+    .loop {
+      position: absolute;
+      top: calc(50% - 5rem);
+      left: 50%;
+      white-space: nowrap;
+      pointer-events: all;
+    }
+
+    .loop {
+      transform: translateX(-50%) translateY(-50%);
+
+      &.inactive {
+        opacity: 0;
+        transition: opacity 500ms ease;
+      }
+      &.active {
+        opacity: 1;
+        transition: opacity 500ms ease;
+      }
     }
   }
 

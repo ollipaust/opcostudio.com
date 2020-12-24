@@ -2,20 +2,6 @@ import { createGlobalStyle } from 'styled-components'
 import { light, dark75 } from 'constants/colors'
 
 export const PageLayoutStyles = createGlobalStyle`
-.flexbox {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    align-items: center;
-
-    > .intro {
-        width: 60%;
-        margin-left: 7.5vw;
-    }
-}
-
 
 body.home {
     
@@ -54,6 +40,26 @@ body.home {
 }
 body.about {
 
+    .portrait-container {
+        width: 60%;
+        align-self: center;
+        overflow: hidden;
+        margin-top: 50px;
+        
+        img {
+            width: 100%;
+            transform: scale(1);
+            transition: transform 500ms ease;
+            cursor: grab;
+
+            &:hover {
+               transform: scale(1.15);
+               transform-origin: center;
+               transition: transform 500ms ease;
+            }
+        }
+    }
+  
 }
 body.projects {
 

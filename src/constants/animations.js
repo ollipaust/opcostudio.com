@@ -2,9 +2,43 @@ import { cloudImg } from 'constants/cloudRes'
 
 export const fadeIn = {
   hidden: { opacity: 0 },
-  show: { opacity: 1, transition: { duration: 0.3 } },
+  show: { opacity: 1, transition: { duration: 0.3, delay: 3 } },
 }
-
+export const fadeSlideHero1 = {
+  hidden: { opacity: 0, y: '-50%', x: '-50%' },
+  show: {
+    opacity: 1,
+    y: '-150%',
+    x: '-50%',
+    transition: {
+      opacity: { duration: 0.5, delay: 2 },
+      y: { duration: 0.5, delay: 2.5 },
+    },
+  },
+}
+export const fadeSlideHero2 = {
+  hidden: { opacity: 0, y: '-50%', x: '-50%' },
+  show: {
+    opacity: 1,
+    y: '50%',
+    x: '-50%',
+    transition: {
+      opacity: { duration: 0.5, delay: 2 },
+      y: { duration: 0.5, delay: 2.5 },
+    },
+  },
+}
+export const fadeSlideHero3 = {
+  hidden: { opacity: 0, y: '100%' },
+  show: {
+    opacity: 1,
+    y: '0%',
+    transition: {
+      opacity: { duration: 0.5, delay: 3 },
+      y: { duration: 0.5, delay: 3.25 },
+    },
+  },
+}
 export const triangle1 = {
   hidden: { opacity: 0, transform: 'scale(2)' },
   show: {
@@ -19,19 +53,17 @@ export const triangle1 = {
 
 export const shine = `
 
-animation: shine 1s cubic-bezier(0, 1, 1, 0.01) 3.5s;
+animation: shine 1s cubic-bezier(0, 1, 1, 0.01) 4s;
 background: url(${cloudImg.shineBg});
 -webkit-background-clip: text;
 background-position-x: 100%;
-
+background-repeat: no-repeat;
 @keyframes shine {
   0% {
     background-position-x: 0%;
-    background-position-y: 0%;
   }
   100% {
     background-position-x: 100%;
-    background-position-y: -100%;
   }
 }
 `
@@ -85,83 +117,16 @@ export const pulseRings = `
   }
 }
 `
-export const slideFade1s = {
-  hidden: { opacity: 0, y: '75%' },
-  show: {
-    opacity: 1,
-    y: '0%',
-    transition: {
-      opacity: { delay: 1, duration: 0.5 },
-      y: { delay: 1.1, type: 'spring', damping: 100, stiffness: 100 },
-    },
-  },
-}
-export const slideFade2s = {
-  hidden: { opacity: 0, y: '75%' },
-  show: {
-    opacity: 1,
-    y: '0%',
-    transition: {
-      opacity: { delay: 2, duration: 0.5 },
-      y: { delay: 2.1, type: 'spring', damping: 100, stiffness: 100 },
-    },
-  },
-}
-export const slideFade3s = {
-  hidden: { opacity: 0, y: '75%' },
-  show: {
-    opacity: 1,
-    y: '0%',
-    transition: {
-      opacity: { delay: 3, duration: 0.5 },
-      y: { delay: 3.1, type: 'spring', damping: 100, stiffness: 100 },
-    },
-  },
-}
-export const motionStaggerButtons = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: {
-      opacity: { delay: 1.5, ease: 'easeIn' },
-      staggerChildren: 1,
-      delayChildren: 1.2,
-    },
-  },
-}
+
 export const motionStaggerLogos = {
   hidden: { opacity: 0 },
   show: {
     opacity: 1,
     transition: {
-      opacity: { delay: 1.5, ease: 'easeIn' },
-      staggerChildren: 0.3,
       delayChildren: 1,
-    },
-  },
-}
-
-export const slideUp3s = {
-  hidden: { opacity: 0, y: '50%' },
-  show: {
-    opacity: 1,
-    y: '0%',
-    transition: {
-      delay: 3,
-      opacity: { duration: 0.5 },
-      y: { type: 'spring', damping: 300, stiffness: 50 },
-    },
-  },
-}
-export const slideUp2s = {
-  hidden: { opacity: 0, y: '50%' },
-  show: {
-    opacity: 1,
-    y: '0%',
-    transition: {
-      delay: 2,
-      opacity: { duration: 0.5 },
-      y: { type: 'spring', damping: 300, stiffness: 50 },
+      staggerChildren: 0.15,
+      ease: 'easeIn',
+      opacity: { delay: 1 },
     },
   },
 }
@@ -170,7 +135,116 @@ export const ySpring = {
   show: {
     y: '0%',
     transition: {
-      y: { type: 'spring', damping: 300, stiffness: 10 },
+      type: 'spring',
+      damping: 10,
+      stiffness: 50,
+      duration: 0.25,
     },
   },
 }
+
+export const slideUp = {
+  hidden: { opacity: 0, y: '100%' },
+  show: {
+    opacity: 1,
+    y: '0%',
+    transition: {
+      delay: 2,
+      opacity: { duration: 1 },
+      y: { type: 'spring', damping: 10, stiffness: 50 },
+    },
+  },
+}
+export const rasterStaggers = `
+.raster-line-v:nth-of-type(21), .raster-line-v:nth-of-type(22) {
+  transition-delay: 0.025s;
+}
+.raster-line-v:nth-of-type(20), .raster-line-v:nth-of-type(23) {
+  transition-delay: 0.05s;
+}
+.raster-line-v:nth-of-type(19), .raster-line-v:nth-of-type(24) {
+  transition-delay: 0.075s;
+}
+.raster-line-v:nth-of-type(18), .raster-line-v:nth-of-type(25) {
+  transition-delay: 0.1s;
+}
+.raster-line-v:nth-of-type(17), .raster-line-v:nth-of-type(26) {
+  transition-delay: 0.125s;
+}
+.raster-line-v:nth-of-type(16), .raster-line-v:nth-of-type(27) {
+  transition-delay: 0.15s;
+}
+.raster-line-v:nth-of-type(15), .raster-line-v:nth-of-type(28) {
+  transition-delay: 0.175s;
+}
+.raster-line-v:nth-of-type(14), .raster-line-v:nth-of-type(29) {
+  transition-delay: 0.2s;
+}
+.raster-line-v:nth-of-type(13), .raster-line-v:nth-of-type(30) {
+  transition-delay: 0.225s;
+}
+.raster-line-v:nth-of-type(12), .raster-line-v:nth-of-type(31) {
+  transition-delay: 0.25s;
+}
+.raster-line-v:nth-of-type(11), .raster-line-v:nth-of-type(32) {
+  transition-delay: 0.275s;
+}
+.raster-line-v:nth-of-type(10), .raster-line-v:nth-of-type(33) {
+  transition-delay: 0.3s;
+}
+.raster-line-v:nth-of-type(9), .raster-line-v:nth-of-type(34) {
+  transition-delay: 0.325s;
+}
+.raster-line-v:nth-of-type(8), .raster-line-v:nth-of-type(35) {
+  transition-delay: 0.35s;
+}
+.raster-line-v:nth-of-type(7), .raster-line-v:nth-of-type(36) {
+  transition-delay: 0.375s;
+}
+.raster-line-v:nth-of-type(6), .raster-line-v:nth-of-type(37) {
+  transition-delay: 0.4s;
+}
+.raster-line-v:nth-of-type(5), .raster-line-v:nth-of-type(38) {
+  transition-delay: 0.425s;
+}
+.raster-line-v:nth-of-type(4), .raster-line-v:nth-of-type(39) {
+  transition-delay: 0.45s;
+}
+.raster-line-v:nth-of-type(3), .raster-line-v:nth-of-type(40) {
+  transition-delay: 0.475s;
+}
+.raster-line-v:nth-of-type(2), .raster-line-v:nth-of-type(41) {
+  transition-delay: 0.5s;
+}
+.raster-line-v:nth-of-type(1), .raster-line-v:nth-of-type(42) {
+  transition-delay: 0.525s;
+}
+.raster-line-v:nth-of-type(0), .raster-line-v:nth-of-type(43) {
+  transition-delay: 0.55s;
+}
+
+.raster-line-h:nth-of-type(7), .raster-line-h:nth-of-type(8) {
+  transition-delay: 0.025s;
+}
+.raster-line-h:nth-of-type(6), .raster-line-h:nth-of-type(9) {
+  transition-delay: 0.05s;
+}
+.raster-line-h:nth-of-type(5), .raster-line-h:nth-of-type(10) {
+  transition-delay: 0.075s;
+}
+.raster-line-h:nth-of-type(4), .raster-line-h:nth-of-type(11) {
+  transition-delay: 0.1s;
+}
+.raster-line-h:nth-of-type(3), .raster-line-h:nth-of-type(12) {
+  transition-delay: 0.125s;
+}
+.raster-line-h:nth-of-type(2), .raster-line-h:nth-of-type(13) {
+  transition-delay: 0.15s;
+}
+.raster-line-h:nth-of-type(1), .raster-line-h:nth-of-type(14) {
+  transition-delay: 0.175s;
+}
+.raster-line-h:nth-of-type(0), .raster-line-h:nth-of-type(15) {
+  transition-delay: 0.2s;
+}
+`

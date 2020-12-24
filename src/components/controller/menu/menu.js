@@ -1,9 +1,4 @@
 import React, { PureComponent } from 'react'
-import PropTypes from 'prop-types'
-
-import Langs from '../langswitch'
-import { FormattedMessage } from 'react-intl'
-
 import Nav from './nav'
 import { LogoLight } from '../logo'
 import {
@@ -12,9 +7,7 @@ import {
   OverlayNav,
   MenuButton,
   MenuLines,
-  ControlsContainer,
   LogoContainer,
-  LangSwitchContainer,
   OverlayBoxRight,
   OverlayBoxLeft,
 } from './menu.css'
@@ -46,7 +39,6 @@ class Menu extends PureComponent {
   }
 
   render() {
-    const { hideLangs } = this.props
     const collapsed = this.state.collapsed
     const toggled = !collapsed ? 'active' : 'inactive'
 
@@ -56,20 +48,16 @@ class Menu extends PureComponent {
 
     return (
       <React.Fragment>
-        <ControlsContainer>
-          <LangSwitchContainer>{!hideLangs && <Langs />}</LangSwitchContainer>
-
-          <MenuButton
-            className={toggled}
-            onClick={this.toggleNavbar}
-            onKeyDown={this.escapeNavbar}
-            aria-label="Overlay Menu"
-            tabIndex="0"
-            type="button"
-          >
-            <MenuLines />
-          </MenuButton>
-        </ControlsContainer>
+        <MenuButton
+          className={toggled}
+          onClick={this.toggleNavbar}
+          onKeyDown={this.escapeNavbar}
+          aria-label="Overlay Menu"
+          tabIndex="0"
+          type="button"
+        >
+          <MenuLines />
+        </MenuButton>
 
         <OverlayContent className={toggled} role="navigation">
           <OverlayBg
@@ -90,9 +78,9 @@ class Menu extends PureComponent {
 
           <OverlayBoxLeft>
             <strong>
-              <FormattedMessage id="menu.siteUrl" />
+              <span>OPCOSTUDIO.COM</span>
             </strong>
-            <FormattedMessage id="menu.text" />
+            <span>Personal Website &amp; Portfolio</span>
           </OverlayBoxLeft>
 
           <OverlayBoxRight>
@@ -104,11 +92,4 @@ class Menu extends PureComponent {
   }
 }
 
-Menu.propTypes = {
-  hideLangs: PropTypes.bool,
-}
-
-Menu.defaultProps = {
-  hideLangs: false,
-}
 export default Menu

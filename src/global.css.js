@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components'
 import { normalize } from 'styled-normalize'
-import { accent, light, dark50 } from 'constants/colors'
+import { accent, light, textDark, accentGradient } from 'constants/colors'
 import '../static/fonts/fontPrimary.css'
 
 export const GlobalStyles = createGlobalStyle`
@@ -41,7 +41,7 @@ export const GlobalStyles = createGlobalStyle`
     overflow-x: hidden!important;
   }
   body {
-    color: ${dark50};
+    color: ${textDark};
     margin: 0;
     overflow-x: hidden!important;
     -webkit-text-size-adjust: 100%;
@@ -94,6 +94,12 @@ export const GlobalStyles = createGlobalStyle`
   .textJustify > span {
     text-align: justify;
   }
+  .textUppercase > span {
+    text-transform: uppercase;
+  }
+  .textLowercase > span {
+    text-transform: lowercase;
+  }
   video {
     max-width: 100%;
   }
@@ -128,13 +134,11 @@ export const GlobalStyles = createGlobalStyle`
     display: none;
   }
   .scrollbar-track .scrollbar-thumb {
-    background: ${accent};
+    background: ${accentGradient};
     transition: background linear;
   
   }
-  .scrollbar-track-y, .scrollbar-thumb {
-    width: 6px!important;
-  }
+
   @media (max-width: 450px) and (max-height: 823px) and (orientation: portrait) {
     .scrollbar-track-y, .scrollbar-thumb {
       width: 3px!important;

@@ -1,10 +1,7 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import { Container, Content } from './pagination.css'
-
-import Link from 'components/link'
+import { Link } from 'gatsby'
 import Title from 'components/title'
-import { FormattedMessage } from 'react-intl'
 
 const PaginationContainer = ({ children, className }) => {
   return (
@@ -20,11 +17,11 @@ const Pagination = ({ prev, next }) => {
       return (
         <div className="prev">
           <p>
-            <FormattedMessage id="pagination.prev" />
+            <span>prev</span>
           </p>
-          <Link to={'/' + prev}>
+          <Link to={'/' + (prev === 'home' ? '' : prev)}>
             <Title as="h3" size="large" className="left">
-              <FormattedMessage id={'pagination.' + prev} />
+              {prev}
             </Title>
           </Link>
         </div>
@@ -38,11 +35,11 @@ const Pagination = ({ prev, next }) => {
       return (
         <div className="next">
           <p>
-            <FormattedMessage id="pagination.next" />
+            <span>next</span>
           </p>
           <Link to={'/' + next}>
             <Title as="h3" size="large" className="right">
-              <FormattedMessage id={'pagination.' + next} />
+              {next}
             </Title>
           </Link>
         </div>
@@ -57,9 +54,6 @@ const Pagination = ({ prev, next }) => {
       <NextPage />
     </PaginationContainer>
   )
-}
-Pagination.propTypes = {
-  children: PropTypes.node.isRequired,
 }
 
 export default Pagination

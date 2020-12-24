@@ -1,7 +1,6 @@
 import React from 'react'
-import Link from 'components/link'
+import { Link } from 'gatsby'
 import { Container, LinkContainer } from './nav.css'
-import { FormattedMessage } from 'react-intl'
 
 const Nav = () => {
   return (
@@ -14,7 +13,7 @@ const Nav = () => {
             className="about"
             data-info="01"
           >
-            <FormattedMessage id="nav.about" />
+            <span>About</span>
           </Link>
         </LinkContainer>
       </li>
@@ -27,7 +26,7 @@ const Nav = () => {
             className="creations"
             data-info="02"
           >
-            <FormattedMessage id="nav.projects" />
+            <span>Projects</span>
           </Link>
         </LinkContainer>
       </li>
@@ -40,7 +39,7 @@ const Nav = () => {
             className="stack"
             data-info="03"
           >
-            <FormattedMessage id="nav.stack" />
+            <span>Techstack</span>
           </Link>
         </LinkContainer>
       </li>
@@ -53,7 +52,7 @@ const Nav = () => {
             className="contact"
             data-info="04"
           >
-            <FormattedMessage id="nav.contact" />
+            <span>Contact</span>
           </Link>
         </LinkContainer>
       </li>

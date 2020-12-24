@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Link from 'components/link'
+import { Link } from 'gatsby'
 
 import { ContainerDark, ContainerLight } from './logo.css'
 

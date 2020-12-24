@@ -8,8 +8,8 @@ import { LogoDark } from './logo'
 const Controller = () => (
   <Container>
     <Content>
-      <LogoDark />
       <Menu />
+      <LogoDark />
     </Content>
   </Container>
 )

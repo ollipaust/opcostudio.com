@@ -7,7 +7,7 @@ import {
   light33,
   light90,
   alter50,
-  dark90,
+  textDark,
 } from 'constants/colors'
 import MEDIA from 'helpers/mediaTemplates'
 
@@ -28,6 +28,7 @@ export const OverlayContent = styled(OverlayContainer).withConfig({
   display: flex;
   pointer-events: none;
   z-index: 1000;
+  will-change: transform, opacity;
 
   [class*='LogoSvg'] {
     position: absolute;
@@ -169,14 +170,13 @@ export const OverlayBg = styled.div.withConfig({
   width: 100%;
   height: 100vh;
   overflow: hidden;
-  opacity: 0.96;
+  opacity: 0.97;
   outline: 0;
   background: ${accentGradient150};
   background-size: cover;
   background-position: center;
   transform: translate3d(0px, -100%, 0px);
   transition: transform 375ms ease-in-out 875ms;
-  will-change: transform;
 `
 
 export const MenuButton = styled.button.withConfig({
@@ -216,7 +216,7 @@ export const MenuButton = styled.button.withConfig({
     content: '';
     width: 4em;
     border-radius: 0.25em;
-    background-color: ${dark90};
+    background-color: ${textDark};
     height: 0.495em;
     position: absolute;
     transform: rotate(0);
@@ -363,31 +363,12 @@ ${MEDIA.PHONE &&
 `}
 
 `
-export const ControlsContainer = styled.div.withConfig({
-  displayName: 'ControlsContainer',
-})`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: calc(100px + 2.5em);
-  width: auto;
-  padding-right: calc(2.5rem + 16px);
-  pointer-events: none;
-
-  > div:first-of-type {
-    margin-right: 2.5rem;
-
-    @media (max-height: 823px) and (max-width: 450px) and (orientation: portrait) {
-      margin-right: 2rem;
-    }
-  }
-`
 export const LogoContainer = styled.div.withConfig({
   displayName: 'LogoContainer',
 })`
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: flex-end;
   position: absolute;
   top: 0;
   left: 0;
@@ -395,49 +376,9 @@ export const LogoContainer = styled.div.withConfig({
   z-index: 10000;
   width: 100%;
   pointer-events: none;
-`
 
-export const LangSwitchContainer = styled.div.withConfig({
-  displayName: 'LangSwitchContainer',
-})`
-  width: auto;
-  height: auto;
-  z-index: 100;
-
-  @media (max-height: 823px) and (max-width: 450px) and (orientation: portrait) {
-    position: fixed;
-    top: 4.5rem;
-    right: -0.4rem;
-
-    > button {
-      display: block;
-      width: 24px;
-      height: 12px;
-      transform: translateY(50%) translateX(50%);
-
-      &:nth-of-type(2) {
-        margin-left: 0;
-        margin-top: 1rem;
-      }
-    }
-  }
-
-  @media (max-height: 450px) and (max-width: 823px) and (orientation: landscape) {
-    position: fixed;
-    top: 4rem;
-    right: -0.4rem;
-
-    > button {
-      display: block;
-      width: 24px;
-      height: 12px;
-      transform: translateY(50%) translateX(50%);
-
-      &:nth-of-type(2) {
-        margin-left: 0;
-        margin-top: 1rem;
-      }
-    }
+  [class*='LogoLight'] {
+    margin-right: calc(2.5rem + 16px);
   }
 `
 

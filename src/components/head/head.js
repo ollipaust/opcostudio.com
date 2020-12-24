@@ -15,21 +15,11 @@ const Head = ({
   social,
   imageUrl,
   location,
-  lang,
   canonical = siteUrl + (location.pathname || ''),
 }) => {
-  function fullTitle() {
-    if (pageTitle === 'Home' || pageTitle === 'Startseite') {
-      return `${siteTitle} by Olli Paust - ${siteDescription}`
-    }
-    {
-      return `${siteTitle} - ${pageTitle}`
-    }
-  }
-
   return (
     <Helmet>
-      <html lang={lang} />
+      <html lang="en" />
       <meta charset="UTF-8" />
       <meta content="IE=edge" httpEquiv="X-UA-Compatible" />
 
@@ -42,7 +32,7 @@ const Head = ({
       <meta content={pageTitleFull} property="og:title" />
       <meta content={pageTitleFull} name="twitter:title" />
 
-      <title>{fullTitle()}</title>
+      <title>{pageTitleFull}</title>
 
       <meta content={siteDescription} name="description" />
       <meta content={siteDescription} property="og:description" />
@@ -198,7 +188,6 @@ Head.propTypes = {
   pageTitleFull: PropTypes.string,
   htmlStyle: PropTypes.string,
   location: PropTypes.object.isRequired,
-  lang: PropTypes.string.isRequired,
 }
 
 const HeadWithQuery = props => (
@@ -222,13 +211,8 @@ const HeadWithQuery = props => (
     `}
     render={data => (
       <Location>
-        {({ location, lang }) => (
-          <Head
-            {...data.site.siteMetadata}
-            lang={lang}
-            {...props}
-            location={location}
-          />
+        {({ location }) => (
+          <Head {...data.site.siteMetadata} {...props} location={location} />
         )}
       </Location>
     )}

@@ -103,6 +103,7 @@ export const Content = styled.header.withConfig({
   align-items: center;
   justify-content: space-between;
   position: relative;
-  width: 100%;
+  width: auto;
   height: 100%;
+  padding: 0 calc(2.5rem + 16px) 0 2.5rem;
 `

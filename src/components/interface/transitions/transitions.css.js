@@ -4,6 +4,8 @@ import MEDIA from 'helpers/mediaTemplates'
 
 export const TransitionStyles = createGlobalStyle`
 
+will-change: opacity;
+
 [class*='AppView'] {
     &.enter {
         z-index: 1;

@@ -1,20 +1,17 @@
 import React from 'react'
+import Head from 'components/head'
 
 import PageLayout from 'components/pageLayout'
 
 import Gallery from 'components/gallery'
 
-import Translator from 'components/interface/translator'
-
 const Projects = () => (
   <PageLayout prev="about" next="stack" bodyClass="projects">
+    <Head pageTitle="Projects" />
+
     <Gallery />
     <div style={{ height: '50vh', width: '100%' }} />
   </PageLayout>
 )
 
-const customProps = {
-  localeKey: 'projects', // same as file name in src/i18n/translations/your-lang/index.js
-}
-
-export default Translator(customProps)(Projects)
+export default Projects

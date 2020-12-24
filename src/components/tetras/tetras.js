@@ -1,4 +1,4 @@
-import React, { useRef, useState, useLayoutEffect } from 'react'
+import React, { useRef, useState, useEffect, Component } from 'react'
 import { Canvas, useFrame } from 'react-three-fiber'
 import { accent, accentThree, accentBlue } from 'constants/colors'
 import { useSpring, a } from 'react-spring/three'
@@ -13,7 +13,7 @@ const RotatingMesh = ({ position, args, rotationSpeed, color }) => {
   const [expand, setExpand] = useState(false)
   const [reveal, setReveal] = useState(false)
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     setTimeout(() => setReveal(true), 3500)
   }, [])
 
@@ -29,7 +29,7 @@ const RotatingMesh = ({ position, args, rotationSpeed, color }) => {
       ref={mesh}
       position={position}
       scale={props.scale}
-      onLoad={useLayoutEffect(() => {
+      onLoad={useEffect(() => {
         setTimeout(() => setExpand(true), 3750)
       }, [])}
       onPointerOver={() => setExpand(false)}
@@ -74,25 +74,25 @@ function DesktopCanvas() {
       <group>
         <RotatingMesh
           args={[0.65, 0]}
-          position={[-3.05, 0.5, 0]}
+          position={[-3.5, 0.5, 0]}
           rotationSpeed={0.0099}
           color={accentThree}
         />
         <RotatingMesh
           args={[0.65, 0]}
-          position={[4, 1.15, 0]}
+          position={[4.2, 1.15, 0]}
           rotationSpeed={0.005}
           color={accentBlue}
         />
         <RotatingMesh
           args={[0.3, 0]}
-          position={[1, -0.65, -5]}
+          position={[1, 2, -5]}
           rotationSpeed={0.0075}
           color={accentThree}
         />
         <RotatingMesh
           args={[0.35, 0]}
-          position={[-1, -1, 2]}
+          position={[-1, -1.5, 2]}
           rotationSpeed={0.015}
           color={accent}
         />
@@ -201,22 +201,32 @@ function TabletCanvas() {
   )
 }
 
-function Tetrahedrons() {
-  return (
-    <>
-      <Device.Desktop>
-        <DesktopCanvas />
-      </Device.Desktop>
+class Tetrahedrons extends Component {
+  constructor(props) {
+    super(props)
+    this.state = { tetras: true }
+  }
+  //state update to fix no-op warning
+  componentWillUnmount() {
+    this.setState({ tetras: false })
+  }
+  render() {
+    return (
+      <>
+        <Device.Desktop>
+          <DesktopCanvas />
+        </Device.Desktop>
 
-      <Device.Mobile>
-        <MobileCanvas />
-      </Device.Mobile>
+        <Device.Mobile>
+          <MobileCanvas />
+        </Device.Mobile>
 
-      <Device.Tablet>
-        <TabletCanvas />
-      </Device.Tablet>
-    </>
-  )
+        <Device.Tablet>
+          <TabletCanvas />
+        </Device.Tablet>
+      </>
+    )
+  }
 }
 
 export default Tetrahedrons

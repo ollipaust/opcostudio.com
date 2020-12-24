@@ -3,11 +3,13 @@ import styled from 'styled-components'
 
 import { ContainerWrapper, ContentContainer } from './content.css'
 
-const Div = ({ className, children }) => {
-  return <div className={className}>{children}</div>
+const Article = ({ className, children }) => {
+  return <article className={className}>{children}</article>
 }
 
-const StyledDiv = styled(Div).withConfig({ displayName: 'ContentContainer' })`
+const StyledDiv = styled(Article).withConfig({
+  displayName: 'ContentContainer',
+})`
   ${ContentContainer}
 `
 

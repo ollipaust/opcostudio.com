@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import Main from './main'
 import PageContent from './content'
 import Footer from './footer'
 import Pagination from './pagination'
@@ -16,9 +15,7 @@ const PageLayout = ({ children, prev, next, bodyClass }) => {
       <PageLayoutStyles />
       <BodyClassName className={bodyClass} />
 
-      <Main>
-        <PageContent>{children}</PageContent>
-      </Main>
+      <PageContent>{children}</PageContent>
 
       <Pagination prev={prev} next={next} />
 

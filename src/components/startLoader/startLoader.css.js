@@ -14,6 +14,7 @@ export const LoaderContainer = styled.div.withConfig({
   color: ${light};
   text-align: center;
   overflow: hidden;
+  will-change: transform;
 
   &.loading-done {
     transform: translateY(-100%);
@@ -24,6 +25,7 @@ export const LoaderContainer = styled.div.withConfig({
     width: 100px;
     margin: 0 auto;
     pointer-events: none;
+    will-change: transform, opacity;
 
     &.loading-done {
       opacity: 0;

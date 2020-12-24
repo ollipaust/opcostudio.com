@@ -1,11 +1,10 @@
 import styled from 'styled-components'
 import MEDIA from 'helpers/mediaTemplates'
-import { accent, light, dark66 } from 'constants/colors'
+import { accent, light, textDark } from 'constants/colors'
 
 export const ContainerDark = styled.figure.withConfig({
   displayName: 'LogoDark',
 })`
-  padding-left: 2.5rem;
   z-index: 100;
   pointer-events: all;
 
@@ -16,7 +15,7 @@ export const ContainerDark = styled.figure.withConfig({
     transition: transform 300ms ease 50ms;
 
     .a {
-      fill: ${dark66};
+      fill: ${textDark};
     }
     .b {
       fill: ${accent};
@@ -43,7 +42,6 @@ export const ContainerDark = styled.figure.withConfig({
 export const ContainerLight = styled.figure.withConfig({
   displayName: 'LogoLight',
 })`
-  padding-left: 2.5rem;
   z-index: 10000;
   pointer-events: none;
 

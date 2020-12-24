@@ -5,6 +5,8 @@ export const accent66 = 'hsla(270, 100%, 50%, 0.66)'
 export const accent75 = 'hsla(270, 100%, 50%, 0.75)'
 export const accent90 = 'hsla(270, 100%, 50%, 0.90)'
 
+export const textDark = '#64616c'
+
 export const accentGradient =
   'linear-gradient(rgba(128,0,255,1) 0%, rgba(89,0,255,1) 100%)'
 export const accentGradient150 =
@@ -13,7 +15,7 @@ export const accentGradient150 =
 export const accentDark = '#24153C'
 export const accentThree = '#580dd0'
 export const accentBlue = 'rgba(89,0,255,1)'
-export const darkest = 'hsla(255, 15%, 16%, 1)'
+export const darkest = '#26232f'
 export const glass = 'hsla(249, 100%, 50%, 0.025)'
 export const neutral = 'hsla(275, 5%, 54%, 1)'
 export const black = '#000000'

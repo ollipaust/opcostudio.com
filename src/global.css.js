@@ -29,7 +29,7 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   html {
-    font-family: 'Roboto', sans-serif;
+    font-family: Arial, Helvetica, sans-serif;;
     font-size: 16px;
     font-weight: 400;
     font-feature-settings: "liga", "kern";

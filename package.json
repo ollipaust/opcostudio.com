@@ -45,6 +45,7 @@
     "gsap": "^3.5.1",
     "has-touch": "^1.0.1",
     "intersection-observer": "^0.5.1",
+    "nice-react-ticker": "^1.1.0",
     "prop-types": "^15.6.2",
     "random-key-generator": "^1.2.3",
     "react": "^16.4.2",

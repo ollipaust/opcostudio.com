@@ -18,30 +18,10 @@ export const Container = styled.header.withConfig({
     [class*='LogoLight'] {
       padding-left: 1rem;
       padding-top: 1rem;
+      transform: scale(0.8);
     }
     [class*='LogoContainer'] {
       height: 75px !important;
-    }
-    [class*='ControlsContainer'] {
-      height: 75px;
-      padding-right: 1rem;
-    }
-  }
-
-  @media (min-height: 824px) and (max-height: 1366px) and (min-width: 451px) and (max-width: 1024px) and (orientation: portrait) {
-    height: 100px;
-
-    [class*='LogoDark'],
-    [class*='LogoLight'] {
-      padding-left: 2rem;
-      padding-top: 2rem;
-    }
-    [class*='LogoContainer'] {
-      height: 150px !important;
-    }
-    [class*='ControlsContainer'] {
-      padding-right: 2rem;
-      padding-top: 2rem;
     }
   }
 
@@ -55,10 +35,6 @@ export const Container = styled.header.withConfig({
     [class*='LogoContainer'] {
       height: 75px !important;
     }
-    [class*='ControlsContainer'] {
-      padding-right: 1rem;
-      margin-top: -1rem;
-    }
   }
 
   @media (min-width: 824px) and (max-width: 1366px) and (min-height: 451px) and (max-height: 1024px) and (orientation: landscape) {
@@ -70,9 +46,6 @@ export const Container = styled.header.withConfig({
     }
     [class*='LogoContainer'] {
       height: 150px !important;
-    }
-    [class*='ControlsContainer'] {
-      padding-right: 1.5rem;
     }
   }
 
@@ -105,5 +78,9 @@ export const Content = styled.header.withConfig({
   position: relative;
   width: auto;
   height: 100%;
-  padding: 0 calc(2.5rem + 16px) 0 2.5rem;
+  padding: 0 3.5rem 0 2.5rem;
+
+  @media (max-height: 823px) and (max-width: 450px) and (orientation: portrait) {
+    padding: 0 1.5rem 0 1rem;
+  }
 `

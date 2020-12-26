@@ -30,44 +30,38 @@ const MarqueeText = ({ direction }) => {
     return array
   }
   return (
-    <Container key={random}>
-      <PageVisibility onChange={handleVisibilityChange}>
-        {pageIsVisible && (
-          <Ticker
-            move={process.env.NODE_ENV !== 'development' ? moving : !moving}
-            speed={10}
-            direction={direction}
-          >
-            {() => (
-              <>
-                {shuffle(wordsList).map(function(words) {
-                  return (
-                    <h1
-                      onMouseEnter={() => setMoving(false)}
-                      onMouseLeave={() => setMoving(true)}
-                      key={random() + '-' + words}
-                    >
-                      {words}
-                    </h1>
-                  )
-                })}
-              </>
-            )}
-          </Ticker>
-        )}
-      </PageVisibility>
-    </Container>
+    <PageVisibility onChange={handleVisibilityChange}>
+      {pageIsVisible && (
+        <Ticker move={moving} speed={10} direction={direction}>
+          {() => (
+            <>
+              {shuffle(wordsList).map(function(words) {
+                return (
+                  <h1
+                    onMouseEnter={() => setMoving(false)}
+                    onMouseLeave={() => setMoving(true)}
+                    key={random() + '-' + words}
+                  >
+                    {words}
+                  </h1>
+                )
+              })}
+            </>
+          )}
+        </Ticker>
+      )}
+    </PageVisibility>
   )
 }
 
 const Marquee = () => {
   return (
-    <>
+    <Container>
       <MarqueeText key={random()} />
       <MarqueeText key={random()} direction="toRight" />
       <MarqueeText key={random()} />
       <MarqueeText key={random()} direction="toRight" />
-    </>
+    </Container>
   )
 }
 

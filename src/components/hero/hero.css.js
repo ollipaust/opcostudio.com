@@ -33,7 +33,6 @@ export const HeroTextContainer = styled.div.withConfig({
       color: ${glass};
       -webkit-text-stroke: 3px ${dark75};
       pointer-events: none !important;
-      ${shine}
 
       @media (max-height: 1024px) and (max-width: 768px) and (orientation: portrait) {
         -webkit-text-stroke: 2px ${dark75};
@@ -47,6 +46,11 @@ export const HeroTextContainer = styled.div.withConfig({
       left: 50%;
       white-space: nowrap;
       pointer-events: all;
+      ${shine}
+
+      @media (max-height: 823px) and (max-width: 450px) and (orientation: portrait) {
+        top: calc(50% - 2.5rem);
+      }
     }
 
     .loop {
@@ -64,7 +68,7 @@ export const HeroTextContainer = styled.div.withConfig({
   }
 
   h2 > span {
-    font-family: Roboto;
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: 700;
     color: ${dark75};
     display: block;
@@ -77,5 +81,10 @@ export const HeroTextContainer = styled.div.withConfig({
     @media (max-height: 568px) and (max-width: 320px) and (orientation: portrait) {
       font-size: 1rem !important;
     }
+  }
+
+  .sub-title-container {
+    margin: 25px 0 12.5px;
+    width: 100%;
   }
 `

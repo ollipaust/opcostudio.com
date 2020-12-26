@@ -167,6 +167,8 @@ export const Raster = () => {
         <div className="raster-line-v"></div>
         <div className="raster-line-v"></div>
         <div className="raster-line-v"></div>
+        <div className="raster-line-v"></div>
+        <div className="raster-line-v"></div>
       </div>
       <div className="raster-line-h"></div>
       <div className="raster-line-h"></div>
@@ -223,6 +225,7 @@ export const wordsList = [
   'Web Design',
   'Graphic Design',
   'Adobe Photoshop',
+  'Styled-Components',
   'Figma',
   'Joomla',
   'NPM',

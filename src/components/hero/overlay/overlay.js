@@ -2,11 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
 import { Container, LogosContainer, NoticeBox } from './overlay.css'
-import Html5Logo from 'images/html5.png'
-import Css3Logo from 'images/css3.png'
-import Es6Logo from 'images/es6.png'
-import ReactLogo from 'images/react.png'
-import GatsbyLogo from 'images/gatsby.png'
+import { cloudImg } from 'constants/cloudRes'
 import { motionStaggerLogos, slideUp, ySpring } from 'constants/animations'
 
 const HeroOverlay = () => {
@@ -51,7 +47,7 @@ const HeroOverlay = () => {
         <a href="https://www.w3.org/TR/html53/" title="W3C HTML5 Standards">
           <motion.img
             variants={ySpring}
-            src={Html5Logo}
+            src={cloudImg.html}
             width="24"
             height="33"
             alt="Html5"
@@ -61,7 +57,7 @@ const HeroOverlay = () => {
         <a href="https://www.w3.org/TR/css-2018/" title="W3C CSS3 Standards">
           <motion.img
             variants={ySpring}
-            src={Css3Logo}
+            src={cloudImg.css}
             width="24"
             height="33"
             alt="Css3"
@@ -74,7 +70,7 @@ const HeroOverlay = () => {
         >
           <motion.img
             variants={ySpring}
-            src={Es6Logo}
+            src={cloudImg.es6}
             width="50"
             height="33"
             alt="Es6Logo"
@@ -87,7 +83,7 @@ const HeroOverlay = () => {
         >
           <motion.img
             variants={ySpring}
-            src={ReactLogo}
+            src={cloudImg.react}
             width="50"
             height="33"
             alt="ReactJS"
@@ -100,7 +96,7 @@ const HeroOverlay = () => {
         >
           <motion.img
             variants={ySpring}
-            src={GatsbyLogo}
+            src={cloudImg.gatsby}
             width="50"
             height="33"
             alt="GatsbyJS"

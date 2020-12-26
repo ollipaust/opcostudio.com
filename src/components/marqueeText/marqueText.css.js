@@ -7,6 +7,7 @@ export const Container = styled.section.withConfig({
   position: relative;
   height: 100%;
   width: 100vw;
+  left: -7.5rem;
 
   h1 {
     display: inline-block !important;
@@ -22,10 +23,10 @@ export const Container = styled.section.withConfig({
     -webkit-text-stroke: 2px ${darkest} !important;
 
     &:first-of-type {
-      margin-left: 0.5rem !important;
+      margin-left: 0.75rem !important;
     }
     &:last-of-type {
-      margin-right: 0.5rem !important;
+      margin-right: 0.75rem !important;
     }
     &:hover {
       color: ${accent}!important;

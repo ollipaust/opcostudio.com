@@ -46,9 +46,13 @@ const Interface = ({ children, location }) => {
 
       <Head />
       <BodyClassName className={hasTouch ? 'has-touch' : 'has-no-touch'} />
-      <StartLoader
-        className={startLoading === true ? 'loading' : 'loading-done'}
-      />
+
+      {process.env.NODE_ENV !== 'development' ? (
+        <StartLoader
+          className={startLoading === true ? 'loading' : 'loading-done'}
+        />
+      ) : null}
+
       <BackgroundWaves accentColor={neutral} shineIntensity={250} />
 
       <TransitionsController location={location}>

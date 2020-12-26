@@ -16,18 +16,14 @@ export const ContainerWrapper = styled.section.withConfig({
 `
 
 export const ContentContainer = `
-display: flex;
-flex-direction: column;
-flex-wrap:wrap;
-place-content: center space-between;
 position: relative;
 height: 100%;
 margin: 0;
 padding: 150px 7.5rem;
-z-index: 10000;
 pointer-events: all;
 
 @media (max-height: 1366px) and (max-width: 1024px) and (orientation: portrait) {
+  padding: 2.5rem;
 
 }
 
@@ -35,10 +31,5 @@ pointer-events: all;
   > span {
     color: ${textDark};
   }
-}
-
-p,
-p > span {
-  font-size: 18px;
 }
 `

@@ -259,7 +259,7 @@ export const MenuButton = styled.button.withConfig({
   ${MEDIA.PHONE &&
     MEDIA.TABLET`
     transform: scale(0.80);
-    margin-top: 0.6255rem;
+    margin-top: 0.5rem;
   `}
 `
 
@@ -378,14 +378,20 @@ export const LogoContainer = styled.div.withConfig({
   pointer-events: none;
 
   [class*='LogoLight'] {
-    margin-right: calc(2.5rem + 16px);
+    margin-right: 3.5rem;
+  }
+
+  @media (max-height: 823px) and (max-width: 450px) and (orientation: portrait) {
+    [class*='LogoLight'] {
+      margin-right: 1.5rem;
+    }
   }
 `
 
 export const OverlayBoxLeft = styled.div.withConfig({
   displayName: 'OverlayBoxLeft',
 })`
-  font-family: 'Roboto', sans-serif;
+  font-family: Arial, Helvetica, sans-serif;;
   font-size: 1rem;
   line-height: normal;
   display: flex;

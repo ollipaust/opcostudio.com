@@ -39,6 +39,17 @@ export const fadeSlideHero3 = {
     },
   },
 }
+export const expandHero = {
+  hidden: { opacity: 0, scaleY: 0 },
+  show: {
+    opacity: 1,
+    scaleY: 1,
+    transition: {
+      opacity: { duration: 0.5, delay: 3 },
+      scaleY: { duration: 0.5, delay: 3 },
+    },
+  },
+}
 export const triangle1 = {
   hidden: { opacity: 0, transform: 'scale(2)' },
   show: {
@@ -53,14 +64,17 @@ export const triangle1 = {
 
 export const shine = `
 
-animation: shine 1s cubic-bezier(0, 1, 1, 0.01) 4s;
+animation: shine 1s cubic-bezier(0, 1, 1, 0.1) 4s;
 background: url(${cloudImg.shineBg});
 -webkit-background-clip: text;
-background-position-x: 100%;
+background-position-x: 0%;
 background-repeat: no-repeat;
 @keyframes shine {
   0% {
     background-position-x: 0%;
+  }
+  50% {
+    background-position-x: 60%;
   }
   100% {
     background-position-x: 100%;

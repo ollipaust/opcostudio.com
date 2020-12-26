@@ -41,8 +41,8 @@ body.home {
 body.about {
 
     .portrait-container {
-        width: 60%;
-        align-self: center;
+        width: 60vw;
+        max-height: 35vw;
         overflow: hidden;
         margin-top: 50px;
         

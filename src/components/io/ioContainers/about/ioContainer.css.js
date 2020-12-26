@@ -9,31 +9,99 @@ export const IoAboutIntroContainer = styled.div`
 `
 
 export const IoAboutTextContainer = styled.div`
-  flex-direction: column;
-  padding: 100px 0;
+
   opacity: ${({ isVisible }) => (isVisible ? 1 : 0)};
   transition: opacity 500ms ease;
 
-  [class*='Divider'] {
-    margin: 50px 0;
-    align-self: center;
+  &.about-text {
+    margin-top: 200px; 
+
+    h6 {
+      margin-bottom: 75px;
+    }
+
+    .flexbox {
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: space-between;
+
+      p {
+        text-align: justify;
+        flex: 0 0 47.5%;
+
+        > span {
+          font-family: Arial, sans-serif;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+
+  &.marquee-text {
+    position: relative;
+    height: 100vh;
+    flex-direction: column;
+  
+    
+    [class*='Divider'] {
+      margin: 50px 0;
+      align-self: center;
+    }
+  }
+
+  &.statement {
+    padding: 100px 0;
+  }
+
+  &.reasons {
+    flex-direction: row;
+    justify-content: space-between;
+
+    .title {
+      margin-bottom: 50px;
+    }
+
+    div {
+      &:nth-of-type(1) {
+        flex: 0 0 20%; 
+      }
+      &:nth-of-type(2) {
+        flex: 0 0 70%; 
+      }
+    }
+
+    ul > li {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between
+      padding-top: 25px;
+      padding-bottom: 100px;
+      border-top: 2px solid ${accent};
+
+      .number {
+        flex: 0 0 10%;
+        > span { color: ${accent}; }
+      }
+      .title  {
+        flex: 0 0 60%;
+      }
+      .text {
+        flex: 1 0 0;
+      }
+    }
   }
 `
 
 export const IoRasterContainer = styled.div`
   position: relative;
-  flex-direction: column;
-  place-content: center space-between;
-  min-height: 100vh;
-  width: calc(100vw - 15rem);
-  margin: 0 auto;
+  height: 100vh;
+  margin-top: 100px;
 
   .raster-container {
-    position: absolute;
+    position: relative;
     z-index: -1;
-    top: 100px;
-    width: 100%;
-    height: auto;
+    width: calc(91.66667vw + 1px);
+    left: -2.5rem;
   }
   .raster-v-container {
     position: absolute;
@@ -79,14 +147,25 @@ export const IoRasterContainer = styled.div`
   ${rasterStaggers}
 
   .raster-text {
-    flex-direction: column;
-    opacity: ${({ hasBeenVisible }) => (hasBeenVisible ? 1 : 0)};
-    transition: opacity 500ms ease 1.2s;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%) translateY(-25%);
+    width: 100%;
+    opacity: ${({ isVisible }) => (isVisible ? 1 : 0)};
+    transition: opacity 500ms ease
+      ${({ isVisible }) => (isVisible ? '1.2s' : '0.5s')};
     will-change: opacity;
   }
   .portrait-container {
-    opacity: ${({ hasBeenVisible }) => (hasBeenVisible ? 1 : 0)};
-    transition: opacity 500ms ease 1.5s;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-20%);
+    width: 100%;
+    opacity: ${({ isVisible }) => (isVisible ? 1 : 0)};
+    transition: opacity 500ms ease
+      ${({ isVisible }) => (isVisible ? '1.5s' : '0.5s')};
     will-change: opacity;
   }
 `

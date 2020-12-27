@@ -20,7 +20,7 @@ const Pagination = ({ prev, next }) => {
             <span>prev</span>
           </p>
           <Link to={'/' + (prev === 'home' ? '' : prev)}>
-            <Title as="h3" size="large" className="left">
+            <Title as="h3" size="super" className="left">
               {prev}
             </Title>
           </Link>
@@ -38,7 +38,7 @@ const Pagination = ({ prev, next }) => {
             <span>next</span>
           </p>
           <Link to={'/' + next}>
-            <Title as="h3" size="large" className="right">
+            <Title as="h3" size="super" className="right">
               {next}
             </Title>
           </Link>

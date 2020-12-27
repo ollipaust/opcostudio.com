@@ -2,7 +2,7 @@ import React from 'react'
 import IO from 'components/io'
 import { IoAboutTextContainer } from './ioContainer.css'
 
-const IoAboutRaster = ({ children, className }) => (
+const IoAboutContainer = ({ children, className }) => (
   <IO rootMargin="-50%">
     {({ isVisible, hasBeenVisible }) => (
       <IoAboutTextContainer
@@ -16,4 +16,4 @@ const IoAboutRaster = ({ children, className }) => (
   </IO>
 )
 
-export default IoAboutRaster
+export default IoAboutContainer

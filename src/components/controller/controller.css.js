@@ -78,9 +78,9 @@ export const Content = styled.header.withConfig({
   position: relative;
   width: auto;
   height: 100%;
-  padding: 0 3.5rem 0 2.5rem;
+  padding: 0 2.5rem;
 
   @media (max-height: 823px) and (max-width: 450px) and (orientation: portrait) {
-    padding: 0 1.5rem 0 1rem;
+    padding: 0 1rem;
   }
 `

@@ -7,7 +7,7 @@ export const heroSloganAnimation1 = {
     y: '-150%',
     x: '-50%',
     transition: {
-      opacity: { duration: 0.5, delay: 2.5 },
+      opacity: { duration: 0.5, delay: 1 },
       y: { duration: 0.5, delay: 4 },
     },
   },
@@ -19,7 +19,7 @@ export const heroSloganAnimation2 = {
     y: '50%',
     x: '-50%',
     transition: {
-      opacity: { duration: 0.5, delay: 2.5 },
+      opacity: { duration: 0.5, delay: 1 },
       y: { duration: 0.5, delay: 4 },
     },
   },
@@ -52,7 +52,7 @@ export const motionHeroLogos = {
     opacity: 1,
     transition: {
       delayChildren: 4.5,
-      staggerChildren: 0.15,
+      staggerChildren: 0.1,
       ease: 'easeIn',
       opacity: { delay: 4.5 },
     },
@@ -64,7 +64,7 @@ export const motionHeroLogosChildren = {
     y: '0%',
     transition: {
       type: 'spring',
-      damping: 10,
+      damping: 20,
       stiffness: 50,
       duration: 0.25,
     },

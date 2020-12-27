@@ -45,32 +45,24 @@ export const LogosContainer = `
   justify-content: flex-start;
   margin-bottom: 2vmax;
 
-  img {
-    &.html,
-    &.css {
-      width: 24px;
-      height: 33px;
-    }
-    &.es6,
-    &.react,
-    &.gatsby {
-      width: 50px;
-      height: 33px;
-    }
-  }
-
   a {
     margin-right: 2rem;
     pointer-events: all;
   }
+
   @media (max-height: 812px) and (max-width: 414px) and (orientation: portrait) {
     justify-content: center;
+    margin-bottom: 0;
 
     a {
       margin-right: 1rem;
       &:last-of-type {
         margin-right: 0;
       }
+    }
+
+    img {
+      transform: scale(0.75)!important;
     }
   }
 

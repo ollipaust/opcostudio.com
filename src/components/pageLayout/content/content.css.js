@@ -19,14 +19,13 @@ export const ContentContainer = `
 position: relative;
 height: 100%;
 margin: 0;
-padding: 150px 7.5rem;
+padding: 150px 7.5rem 0;
 pointer-events: all;
 
 @media (max-height: 1366px) and (max-width: 1024px) and (orientation: portrait) {
   padding: 2.5rem;
 
 }
-
 [class*='Title-'] {
   > span {
     color: ${textDark};

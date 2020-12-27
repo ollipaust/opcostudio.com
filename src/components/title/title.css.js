@@ -3,6 +3,13 @@ import styled from 'styled-components'
 export const Text = styled.span.withConfig({
   displayName: 'Title',
 })`
+
+  margin-bottom: 4rem;
+
+  @media (max-height: 812px) and (max-width: 414px) and (orientation: portrait) {
+    margin-bottom: 3rem;
+  }
+
   > span {
     font-family: Campton;
     line-height: 1em;

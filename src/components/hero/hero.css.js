@@ -13,6 +13,8 @@ export const HeroTextContainer = styled.div.withConfig({
   displayName: 'HeroTextContainer',
 })`
   position: absolute;
+  top: 0;
+  left: 0;
   z-index: 100;
   display: flex;
   flex-direction: column;
@@ -22,6 +24,10 @@ export const HeroTextContainer = styled.div.withConfig({
   height: 100%;
   text-align: center;
   pointer-events: none;
+
+  @media (max-height: 823px) and (max-width: 450px) and (orientation: portrait) {
+    top: -50px;
+  }
 
   h1 {
     width: 50vw;
@@ -34,8 +40,8 @@ export const HeroTextContainer = styled.div.withConfig({
       -webkit-text-stroke: 3px ${dark75};
       pointer-events: none !important;
 
-      @media (max-height: 1024px) and (max-width: 768px) and (orientation: portrait) {
-        -webkit-text-stroke: 2px ${dark75};
+      @media (max-height: 823px) and (max-width: 450px) and (orientation: portrait) {
+        -webkit-text-stroke: 1.5px ${dark75};
       }
     }
 
@@ -69,24 +75,24 @@ export const HeroTextContainer = styled.div.withConfig({
     }
   }
 
-  h2 > span {
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 700;
-    color: ${dark75};
-    display: block;
-    margin-top: 1rem;
-    margin-bottom: 2rem;
-
-    @media (max-height: 1024px) and (max-width: 768px) and (orientation: portrait) {
-      margin-top: 0.3rem;
-    }
-    @media (max-height: 568px) and (max-width: 320px) and (orientation: portrait) {
-      font-size: 1rem !important;
-    }
-  }
-
   .sub-title-container {
-    margin: 25px 0 12.5px;
-    width: 100%;
+    width: 75%;
+
+    [class*='Divider'] {
+      width: 20%;
+    }
+
+    h2 > span {
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 700;
+      color: ${dark75};
+      display: block;
+      margin-top: 1rem;
+      margin-bottom: 2rem;
+
+      @media (max-height: 568px) and (max-width: 320px) and (orientation: portrait) {
+        font-size: 1rem !important;
+      }
+    }
   }
 `

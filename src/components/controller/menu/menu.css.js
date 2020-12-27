@@ -378,7 +378,7 @@ export const LogoContainer = styled.div.withConfig({
   pointer-events: none;
 
   [class*='LogoLight'] {
-    margin-right: 3.5rem;
+    margin-right: 2.5rem;
   }
 
   @media (max-height: 823px) and (max-width: 450px) and (orientation: portrait) {

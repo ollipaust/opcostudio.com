@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import MEDIA from 'helpers/mediaTemplates'
-import { dark, dark33 } from 'constants/colors'
+import { dark33, darkest } from 'constants/colors'
 
 export const Container = styled.section.withConfig({
   displayName: 'PaginationContainer',
@@ -12,8 +12,7 @@ export const Container = styled.section.withConfig({
   position: relative;
   z-index: 10;
   width: 100vw;
-  height: 25vh;
-  margin-top: 50px;
+  height: 30vh;
   overflow-x: hidden;
 `
 export const Content = styled.div.withConfig({
@@ -33,15 +32,15 @@ export const Content = styled.div.withConfig({
     text-transform: uppercase;
     color: transparent;
     transition: color 500ms cubic-bezier(0.165, 0.8, 0.45, 1) 150ms;
-    -webkit-text-stroke: 1.5px ${dark};
+    -webkit-text-stroke: 3px ${darkest};
     perspective: 35vw;
 
     @media (max-width: 450px) and (max-height: 823px) and (orientation: portrait) {
-      -webkit-text-stroke: 1px ${dark};
+      -webkit-text-stroke: 1px ${darkest};
     }
 
     @media (max-height: 450px) and (max-width: 823px) and (orientation: landscape) {
-      -webkit-text-stroke: 1px ${dark};
+      -webkit-text-stroke: 1px ${darkest};
     }
 
     h3 {
@@ -86,7 +85,7 @@ export const Content = styled.div.withConfig({
       top: -2.5vw;
       white-space: nowrap;
       left: 2.5vw;
-      font-size: 1.5vmax;
+      font-size: 3rem;
       font-weight: 700;
       ${MEDIA.PHONE`
         top: -2.5vw;    
@@ -100,7 +99,7 @@ export const Content = styled.div.withConfig({
       top: -2.5vw;
       white-space: nowrap;
       right: 2.5vw;
-      font-size: 1.5vmax;
+      font-size: 3rem;
       font-weight: 700;
       ${MEDIA.PHONE`
         top: -2.5vw;    

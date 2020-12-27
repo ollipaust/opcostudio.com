@@ -16,8 +16,10 @@ import { TransitionStyles } from './transitions/transitions.css'
 
 import { TransitionsController, TransitionsView } from './transitions'
 import Div100vh from 'react-div-100vh'
+import BackgroundWaves from 'components/animatedBackground'
 import StartLoader from 'components/startLoader'
 
+import { neutral } from 'constants/colors'
 import { isIE } from 'react-device-detect'
 import { PageLayoutStyles } from 'components/pageLayout/pageLayout.css'
 
@@ -40,6 +42,8 @@ const Interface = ({ children, location }) => {
       <BodyClassName className={hasTouch ? 'has-touch' : 'has-no-touch'} />
 
       <StartLoader />
+
+      <BackgroundWaves accentColor={neutral} shineIntensity={250} />
 
       <TransitionsController location={location}>
         <Controller />

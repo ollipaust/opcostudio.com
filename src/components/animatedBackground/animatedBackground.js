@@ -1,5 +1,5 @@
 import React from 'react'
-import '../../../static/js/vantaWaves.min.js'
+import '../../../static/js/waves.min.js'
 import * as THREE from 'three'
 import { VantaContainer } from './animatedBackground.css'
 import fastMount from 'react-fast-mount'

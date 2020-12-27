@@ -2,7 +2,6 @@ import React, { PureComponent } from 'react'
 import { LoaderContainer } from './startLoader.css'
 import { LogoSvgAnimated } from 'components/logoSvg'
 import { light } from 'constants/colors'
-import fastMount from 'react-fast-mount'
 
 class StartLoader extends PureComponent {
   constructor(props) {
@@ -34,4 +33,4 @@ class StartLoader extends PureComponent {
   }
 }
 
-export default fastMount(StartLoader)
+export default StartLoader

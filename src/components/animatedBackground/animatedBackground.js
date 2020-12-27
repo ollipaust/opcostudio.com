@@ -1,9 +1,9 @@
-import React, { PureComponent } from 'react'
+import React, { Component } from 'react'
 import '../../../static/js/waves.min.js'
 import * as THREE from 'three'
 import { Container } from './animatedBackground.css'
 
-class BackgroundWaves extends PureComponent {
+class BackgroundWaves extends Component {
   constructor() {
     super()
     this.wavesElement = React.createRef()

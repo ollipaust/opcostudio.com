@@ -41,8 +41,6 @@ const Interface = ({ children, location }) => {
       <Head />
       <BodyClassName className={hasTouch ? 'has-touch' : 'has-no-touch'} />
 
-      <StartLoader />
-
       <TransitionsController location={location}>
         <Controller />
       </TransitionsController>

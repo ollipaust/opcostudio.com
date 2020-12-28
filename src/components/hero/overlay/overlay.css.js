@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import MEDIA from 'helpers/mediaTemplates'
-import { neutral } from 'constants/colors'
+import { textDark } from 'constants/colors'
 
 export const Container = styled.div.withConfig({
   displayName: 'HeroOverlayContainer',
@@ -81,7 +81,7 @@ export const NoticeBox = `
   margin-bottom: 2vmax;
   text-align: right;
   font-size: 0.75rem;
-  color: ${neutral};
+  color: ${textDark};
 
   a {
     pointer-events: all;

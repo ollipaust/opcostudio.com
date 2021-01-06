@@ -48,7 +48,7 @@ const About = ({ data }) => (
           href="https://blog.prepscholar.com/aquarius-traits-personality"
           target="_blank"
           title="Quote source"
-          rel="noreferrer"
+          rel="noreferrer noopener"
         >
           https://blog.prepscholar.com/aquarius-traits-personality
         </a>

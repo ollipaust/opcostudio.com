@@ -7,15 +7,22 @@ import PageLayout from 'components/interface/pageLayout'
 import IoWorkContainer from 'components/io/ioContainers/work/ioContainer'
 import Title from 'components/title'
 import Slider from 'components/slider'
+import { Divider } from 'constants/elements'
 
 const Work = ({ data }) => (
   <PageLayout prev="about" next="stack" bodyClass="work">
     <Head pageTitle={data.workJson.pagetitle} />
 
+    <Title as="h1" size="large" className="textLeft">
+      Currently in Development...
+    </Title>
+
     <IoWorkContainer className="head-text flexbox">
       <Title as="h1" size="super" className="title">
         {data.workJson.headtitle}
       </Title>
+
+      <Divider />
 
       <Slider slides={data.workJson.slidedata} />
     </IoWorkContainer>
@@ -26,98 +33,29 @@ const Work = ({ data }) => (
           React GitHub Repository
         </Title>
         <p className="text">
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-          nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-          sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
-          rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
-          ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
-          sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
-          dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
-          et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
-          takimata sanctus est Lorem ipsum dolor sit amet.
+          I&apos;m open-sourcing some of my codes and apps, because I believe
+          that sharing such stuff improves the world so that beginners can see
+          how experienced developers do things. That&apos;s also how I learned
+          coding: learning from others. Check out my GitHub repository if you
+          are interested!
         </p>
       </div>
       <div className="right">
         <ul>
           <li>
             <Title as="h5" size="medium" className="number">
-              01
+              ➥
             </Title>
-            <Title as="h3" size="large" className="list-title">
-              React Repo #1
-            </Title>
-            <p className="text">
-              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-              nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-              erat, sed diam voluptua. At vero eos et accusam et justo duo
-              dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
-              sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
-              amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-              invidunt ut labore et dolore magna aliquyam erat, sed diam
-              voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
-              Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
-              dolor sit amet.
-            </p>
-          </li>
-          <li>
-            <Title as="h5" size="medium" className="number">
-              02
-            </Title>
-            <Title as="h3" size="large" className="list-title">
-              React Repo #2
-            </Title>
-            <p className="text">
-              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-              nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-              erat, sed diam voluptua. At vero eos et accusam et justo duo
-              dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
-              sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
-              amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-              invidunt ut labore et dolore magna aliquyam erat, sed diam
-              voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
-              Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
-              dolor sit amet.
-            </p>
-          </li>
-          <li>
-            <Title as="h5" size="medium" className="number">
-              03
-            </Title>
-            <Title as="h3" size="large" className="list-title">
-              React Repo #3
-            </Title>
-            <p className="text">
-              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-              nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-              erat, sed diam voluptua. At vero eos et accusam et justo duo
-              dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
-              sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
-              amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-              invidunt ut labore et dolore magna aliquyam erat, sed diam
-              voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
-              Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
-              dolor sit amet.
-            </p>
-          </li>
-          <li>
-            <Title as="h5" size="medium" className="number">
-              03
-            </Title>
-            <Title as="h3" size="large" className="list-title">
-              React Repo #4
-            </Title>
-            <p className="text">
-              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-              nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-              erat, sed diam voluptua. At vero eos et accusam et justo duo
-              dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
-              sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
-              amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-              invidunt ut labore et dolore magna aliquyam erat, sed diam
-              voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
-              Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
-              dolor sit amet.
-            </p>
+            <a
+              href="https://github.com/ollipaust"
+              target="_blank"
+              title="GitHub Profile"
+              rel="noreferrer"
+            >
+              <Title as="h3" size="large" className="list-title">
+                https://github.com/ollipaust
+              </Title>
+            </a>
           </li>
         </ul>
       </div>
@@ -145,9 +83,15 @@ export const query = graphql`
       slidedata {
         index
         headline
-        button
+        description
         buttonlink
-        image
+        image {
+          childImageSharp {
+            fluid(maxHeight: 500, quality: 90) {
+              ...GatsbyImageSharpFluid_withWebp
+            }
+          }
+        }
       }
     }
   }

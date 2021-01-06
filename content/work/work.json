@@ -1,33 +1,47 @@
 {
   "pagetitle": "Work",
-  "headtitle": "A little selection\nof my recent works",
+  "headtitle": "A small selection\nof my recent works",
   "content": "content.md",
   "slidedata": [{
     "index": 0,
-    "headline": "First Website",
-    "button": "Details",
+    "headline": "OPCOStudio.com",
+    "description": "Lorem ipsum dolor sit amet",
     "buttonlink": "/",
-    "image": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/225363/fashion.jpg"
+    "image": "../images/work/1.jpg"
   },
   {
     "index": 1,
-    "headline": "Second Website",
-    "button": "Details",
+    "headline": "Rent24.com",
+    "description": "Lorem ipsum dolor sit amet",
     "buttonlink": "/",
-    "image": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/225363/forest.jpg"
+    "image": "../images/work/3.jpg"
   },
   {
     "index": 2,
-    "headline": "Third Website",
-    "button": "Details",
+    "headline": "Alt-Moabit73.de",
+    "description": "Lorem ipsum dolor sit amet",
     "buttonlink": "/",
-    "image": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/225363/guitar.jpg"
+    "image": "../images/work/3.jpg"
   },
   {
     "index": 3,
-    "headline": "Fourth Website",
-    "button": "Details",
+    "headline": "Calberla8.de",
+    "description": "Lorem ipsum dolor sit amet",
     "buttonlink": "/",
-    "image": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/225363/typewriter.jpg"
+    "image": "../images/work/1.jpg"
+  },
+  {
+    "index": 4,
+    "headline": "Mueller29.de",
+    "description": "Lorem ipsum dolor sit amet",
+    "buttonlink": "/",
+    "image": "../images/work/1.jpg"
+  },
+  {
+    "index": 5,
+    "headline": "Hegereiter9.de",
+    "description": "Lorem ipsum dolor sit amet",
+    "buttonlink": "/",
+    "image": "../images/work/1.jpg"
   }]
 }

@@ -27,7 +27,7 @@ export const IoWorkTextContainer = styled.div`
     }
 
     .work-slider {
-      padding-top: 100px;
+      padding-top: 200px;
       padding-bottom: 200px;
     }
   }
@@ -35,7 +35,8 @@ export const IoWorkTextContainer = styled.div`
   &.github-text {
     flex-direction: row;
     justify-content: space-between;
-
+    width 90%;
+    margin: 0 auto 100px;
     .title {
       margin-bottom: 50px;
     }
@@ -48,13 +49,12 @@ export const IoWorkTextContainer = styled.div`
       }
       .text {
         flex: 1 0 0;
-        text-align: justify;
       }
 
     ul > li {
       display: flex;
       flex-direction: row;
-      justify-content: space-between
+      justify-content: flex-start;
       padding-top: 25px;
       padding-bottom: 100px;
       border-top: 2px solid ${accent};
@@ -63,7 +63,10 @@ export const IoWorkTextContainer = styled.div`
         > span { color: ${accent}; }
       }
       .list-title  {
-        flex: 0 0 60%;
+        &:hover {
+          text-decoration: underline;
+        }
+        }
       }
     }
   }

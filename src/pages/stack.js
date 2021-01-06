@@ -12,8 +12,8 @@ const Stack = () => (
     <Head pageTitle="TechStack" />
 
     <div className="flexbox">
-      <Title as="h1" size="large" className="textLeft intro">
-        wefwefwef
+      <Title as="h1" size="large" className="textLeft">
+        Currently in Development...
       </Title>
     </div>
     <Div100vh />

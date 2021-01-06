@@ -1,7 +1,5 @@
 # www.opcostudio.com gatsby frontend
 
-![Gatsby App OPCO](https://res.cloudinary.com/opco-studio/image/upload/v1607503108/opco_kmhmlg.png)
-
 ## Features
 
 * based on:
@@ -12,7 +10,7 @@
 
 ## Installation
 
-* `git clone https://github.com/ollipaust/frontend_v1.0.0b-2020.git opcostudio`
+* `git clone https://github.com/ollipaust/opcostudio.com.git opcostudio`
 * `cd opcostudio`
 * `yarn install`
 

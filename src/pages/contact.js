@@ -2,12 +2,16 @@ import React from 'react'
 import Head from 'components/head'
 
 import PageLayout from 'components/interface/pageLayout'
-
+import Title from 'components/title'
 import NetlifyForm from 'react-netlify-form'
 
 const Contact = () => (
   <PageLayout prev="stack" bodyClass="contact">
     <Head pageTitle="Contact" />
+
+    <Title as="h1" size="large" className="textLeft">
+      Currently in Development...
+    </Title>
 
     <NetlifyForm name="Form With Invisible Recaptcha">
       {({ loading, error, success }) => (

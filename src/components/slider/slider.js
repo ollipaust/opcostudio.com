@@ -1,76 +1,52 @@
 import React, { Component } from 'react'
 import { Container } from './slider.css'
 import { StyledButton } from 'constants/elements'
+import Img from 'gatsby-image'
 
 class Slide extends Component {
   constructor(props) {
     super(props)
 
-    this.handleMouseMove = this.handleMouseMove.bind(this)
-    this.handleMouseLeave = this.handleMouseLeave.bind(this)
     this.handleSlideClick = this.handleSlideClick.bind(this)
-    this.imageLoaded = this.imageLoaded.bind(this)
     this.slide = React.createRef()
-  }
-
-  handleMouseMove(event) {
-    const el = this.slide.current
-    const r = el.getBoundingClientRect()
-
-    el.style.setProperty(
-      '--x',
-      event.clientX - (r.left + Math.floor(r.width / 2))
-    )
-    el.style.setProperty(
-      '--y',
-      event.clientY - (r.top + Math.floor(r.height / 2))
-    )
-  }
-
-  handleMouseLeave() {
-    this.slide.current.style.setProperty('--x', 0)
-    this.slide.current.style.setProperty('--y', 0)
   }
 
   handleSlideClick() {
     this.props.handleSlideClick(this.props.slide.index)
   }
 
-  imageLoaded() {
-    event.target.style.opacity = 1
-  }
-
   render() {
-    const { image, button, buttonlink, headline, index } = this.props.slide
+    const { image, description, buttonlink, headline, index } = this.props.slide
     const current = this.props.current
     let classNames = 'slide'
 
-    if (current === index) classNames += ' slide--current'
-    else if (current - 1 === index) classNames += ' slide--previous'
-    else if (current + 1 === index) classNames += ' slide--next'
+    if (current === index) classNames += ' slide-current'
+    else if (current - 1 === index) classNames += ' slide-previous'
+    else if (current + 1 === index) classNames += ' slide-next'
 
-    console.log('this is index  ' + typeof index)
     return (
       <li
         ref={this.slide}
         className={classNames}
         onClick={this.handleSlideClick}
-        onMouseMove={this.handleMouseMove}
-        onMouseLeave={this.handleMouseLeave}
       >
-        <div className="slide-image-wrapper">
-          <img
-            className="slide-image"
-            alt={headline}
-            src={image}
-            onLoad={this.imageLoaded}
-          />
+        <div className="slide-image-container">
+          <figure className="slide-image">
+            <Img
+              className="slide-gatsby-image"
+              alt={headline}
+              fluid={image ? image.childImageSharp.fluid : {}}
+            />
+          </figure>
         </div>
 
         <article className="slide-content">
           <h2 className="slide-headline">{headline}</h2>
+          <div>
+            <span>{description}</span>
+          </div>
           <StyledButton to={buttonlink} className="works-button">
-            {button}
+            {'more details'}
           </StyledButton>
         </article>
       </li>

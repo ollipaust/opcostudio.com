@@ -1,27 +1,12 @@
 import styled from 'styled-components'
-import {
-  accent,
-  textDark,
-  accentGradient150,
-  light,
-  dark66,
-} from 'constants/colors'
+import { accent, accent33, textDark, light, dark66 } from 'constants/colors'
 
 export const Container = styled.div`
-  --slide-size: 60vmin;
+  --slide-size: 80vmin;
   --slide-margin: 4vmin;
   --color-primary: ${accent};
-  --base-duration: 600ms;
+  --base-duration: 500ms;
   --base-ease: cubic-bezier(0.25, 0.46, 0.45, 0.84);
-
-  visuallyhidden {
-    clip: rect(1px, 1px, 1px, 1px);
-    height: 1px;
-    overflow: hidden;
-    position: absolute !important;
-    white-space: nowrap;
-    width: 1px;
-  }
 
   .icon {
     fill: ${textDark};
@@ -29,6 +14,7 @@ export const Container = styled.div`
   }
 
   .works-button {
+    margin-top: 2rem;
     color: ${light}!important;
 
     &:hover {
@@ -84,101 +70,100 @@ export const Container = styled.div`
   }
 
   .slide {
-    align-items: center;
-    color: white;
     display: flex;
+    position: relative;
     flex: 1;
     flex-direction: column;
     height: var(--slide-size);
-    justify-content: center;
+    width: var(--slide-size);
+    justify-content: flex-end;
+    align-items: center;
+    border-radius: 2%;
+    color: ${light};
     margin: 0 var(--slide-margin);
     opacity: 0.25;
-    position: relative;
+    overflow: hidden;
     text-align: center;
     transition: opacity calc(var(--base-duration) / 2) var(--base-ease),
       transform calc(var(--base-duration) / 2) var(--base-ease);
-    width: var(--slide-size);
     z-index: 1;
   }
-  .slide--previous:hover,
-  .slide--next:hover {
+  .slide-previous:hover,
+  .slide-next:hover {
     opacity: 0.5;
   }
-  .slide--previous {
+  .slide-previous {
     cursor: grab;
   }
-  .slide--previous:hover {
+  .slide-previous:hover {
     transform: translateX(2%);
   }
-  .slide--next {
+  .slide-next {
     cursor: grab;
   }
-  .slide--next:hover {
+  .slide-next:hover {
     transform: translateX(-2%);
   }
 
-  .slide--current {
+  .slide-current {
     opacity: 1;
     pointer-events: auto;
     user-select: auto;
 
-    .slide-image-wrapper {
+    .slide-gatsby-image {
       transform: scale(1);
-      transition: transform 500ms ease;
+      transition: transform var(--base-duration) ease;
       cursor: pointer;
     }
 
-    &:hover .slide-image-wrapper {
+    &:hover .slide-gatsby-image {
       transform: scale(1.025);
-      transition: transform 500ms ease;
+      transition: transform var(--base-duration) ease;
       cursor: pointer;
     }
   }
-  .slide-image-wrapper {
-    background: ${accentGradient150};
-    border-radius: 1%;
-    height: 100%;
-    left: 0%;
-    overflow: hidden;
+  .slide-gatsby-image {
     position: absolute;
     top: 0%;
-    transition: transform calc(var(--base-duration) / 4) var(--base-ease);
+    left: 0%;
+    height: 100%;
     width: 100%;
+    overflow: hidden;
   }
 
   .slide-image {
-    height: 110%;
-    left: -5%;
-    object-fit: cover;
-    opacity: 0;
-    pointer-events: none;
     position: absolute;
-    top: -5%;
-    transition: opacity var(--base-duration) var(--base-ease),
-      transform var(--base-duration) var(--base-ease);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
     user-select: none;
-    width: 110%;
+
+    .slide-image-container {
+      height: 100%;
+    }
   }
 
   .slide-headline {
-    font-size: 8vmin;
-    font-weight: 600;
+    font-size: 4rem;
+    font-weight: 700;
     position: relative;
   }
 
   .slide-content {
+    position: relative;
+    width: 100%;
+    background: ${accent33};
     opacity: 0;
     padding: 4vmin;
-    position: relative;
     transition: transform var(--base-duration) var(--base-ease);
     visibility: hidden;
   }
-  .slide--current .slide-content {
+  .slide-current .slide-content {
     animation: fade-in calc(var(--base-duration) / 2) var(--base-ease) forwards;
     visibility: visible;
-  }
-  .slide-content > * + * {
-    margin-top: 2rem;
   }
 
   @-webkit-keyframes fade-in {

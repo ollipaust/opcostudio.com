@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-  siteTitle: `OPCO Studio - Frontend Design & Development by Olli Paust`,
+  siteTitle: `OPCO Studio - Frontend Web Design & Development by Olli Paust`,
   siteTitleShort: `OPCO Studio`,
   siteAuthor: `Olliver Paust`,
   siteDescription: `Personal Website & Portfolio by Olli Paust made with ♥ in Berlin.`,

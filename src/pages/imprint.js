@@ -12,8 +12,8 @@ const Imprint = () => (
     <Head pageTitle="Imprint" />
 
     <div className="flexbox">
-      <Title as="h1" size="large" className="textLeft intro">
-        fwfwefwef
+      <Title as="h1" size="large" className="textLeft">
+        Currently in Development...
       </Title>
     </div>
     <Div100vh />

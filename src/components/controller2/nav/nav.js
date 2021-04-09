@@ -7,9 +7,10 @@ const NavLinks = ({ className }) => {
 
   const collapsed = isAboutActive ? 'active' : 'inactive'
 
-  const menuBtn = (typeof document !== 'undefined') ? document.getElementById('MenuBtn') : null
-  const navList = (typeof document !== 'undefined') ? document.getElementById('NavList') : null
-
+  const menuBtn =
+    typeof document !== 'undefined' ? document.getElementById('MenuBtn') : null
+  const navList =
+    typeof document !== 'undefined' ? document.getElementById('NavList') : null
 
   function hideStuff() {
     menuBtn.classList.add('deactivated')

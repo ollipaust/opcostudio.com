@@ -13,15 +13,15 @@ export const Container = styled.figure.withConfig({
     width: 40px;
     height: 40px;
     transform: scale(1) translateZ(0);
-    transition: transform 300ms ease 50ms, fill 375ms ease 950ms;
+    transition: transform 300ms ease 50ms, fill 500ms ease 950ms;
 
     #a stop {
       stop-color: ${darkBlue};
-      transition: stop-color 375ms ease 950ms;
+      transition: stop-color 500ms ease 950ms;
     }
     #b stop {
       stop-color: ${pink};
-      transition: stop-color 375ms ease 950ms;
+      transition: stop-color 500ms ease 950ms;
     }
 
     :hover {
@@ -31,19 +31,19 @@ export const Container = styled.figure.withConfig({
 
     &.active {
       fill: ${light}!important;
-      transition: fill 500ms ease 150ms;
+      transition: fill 500ms ease 950ms;
 
       #a stop {
         stop-color: ${darkBlue}!important;
-        transition: stop-color 500ms ease 150ms;
+        transition: stop-color 500ms ease 950ms;
       }
       #b stop:nth-of-type(1) {
         stop-color: ${light}!important;
-        transition: stop-color 500ms ease 150ms;
+        transition: stop-color 500ms ease 950ms;
       }
       #b stop:nth-of-type(2) {
         stop-color: ${darkBlue}!important;
-        transition: stop-color 500ms ease 150ms;
+        transition: stop-color 500ms ease 950ms;
       }
     }
   }
@@ -84,7 +84,7 @@ export const SiteName = styled.span.withConfig({
   &.active {
     span {
       color: ${light};
-      transition: color 500ms ease 150ms;
+      transition: color 500ms ease 950ms;
     }
   }
 

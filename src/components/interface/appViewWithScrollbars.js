@@ -15,11 +15,11 @@ const ViewContainer = styled.main.withConfig({
   opacity: 1;
   pointer-events: none;
   filter: blur(0);
-  transition: filter 300ms ease 500ms;
+  transition: filter 300ms ease 750ms;
 
   &.blurred {
     filter: blur(6px);
-    transition: filter 300ms ease 300ms;
+    transition: filter 300ms ease 850ms;
   }
 
   section:first-of-type {

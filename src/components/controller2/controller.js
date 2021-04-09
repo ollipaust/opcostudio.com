@@ -12,14 +12,17 @@ const Controller = () => {
   const [isMenuActive, setIsMenuActive] = useState(false)
   const toggled = isMenuActive ? 'active' : 'inactive'
 
-  const appView = (typeof document !== 'undefined') ? document.getElementById('AppView') : null
-
+  const appView =
+    typeof document !== 'undefined' ? document.getElementById('AppView') : null
 
   function hideStuff() {
     appView.classList.add('blurred')
   }
   function hideMenu() {
     setIsMenuActive(!isMenuActive)
+    appView.classList.remove('blurred')
+  }
+  function removeBlur() {
     appView.classList.remove('blurred')
   }
 
@@ -34,6 +37,7 @@ const Controller = () => {
   }
 
   useEffect(() => {
+    const appView = document.getElementById('AppView')
     const handleEsc = event => {
       if (event.keyCode === 27) {
         setIsMenuActive(false)

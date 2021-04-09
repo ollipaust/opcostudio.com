@@ -26,7 +26,7 @@ export const Button = styled.button.withConfig({
   border-color: initial;
   border-image: initial;
   background: transparent;
-  transition: transform 300ms ease-in 150ms;
+  transition: transform 300ms ease-in 150ms, visibility 100ms ease 50ms;
 
   @media (min-width: 1280px) {
     &:hover :after {
@@ -59,6 +59,7 @@ export const Button = styled.button.withConfig({
 
   &.deactivated {
     visibility: hidden !important;
+    transition: visibility 100ms ease 50ms;
     pointer-events: none !important;
   }
 
@@ -67,7 +68,7 @@ export const Button = styled.button.withConfig({
     span:after,
     span:before {
       background-color: ${light};
-      transition: background-color 500ms ease 150ms, 200ms top, 200ms left,
+      transition: background-color 500ms ease 750ms, 200ms top, 200ms left,
         200ms transform;
       transition-delay: 0;
     }

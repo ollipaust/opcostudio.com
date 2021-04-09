@@ -24,15 +24,13 @@ export const NavLinksAboutContainer = styled.div.withConfig({
 
   &.active {
     opacity: 0.9;
-    transform: translateY(0%);
-    transition: opacity 500ms ease, transform 500ms ease;
+    transition: opacity 1s cubic-bezier(0.23, 1, 0.32, 1) 250ms;
     pointer-events: all !important;
   }
 
   &.inactive {
     opacity: 0;
-    transform: translateY(15%);
-    transition: opacity 500ms ease, transform 500ms ease;
+    transition: opacity 1s cubic-bezier(0.23, 1, 0.32, 1) 250ms;
     pointer-events: none !important;
   }
 
@@ -67,9 +65,12 @@ export const Nav = styled.ul.withConfig({
   justify-content: center;
   flex-direction: column;
   margin-top: -2.5rem;
+  filter: blur(0px);
+  transition: filter 500ms ease;
 
   &.blurred {
     filter: blur(5px);
+    transition: filter 500ms ease;
   }
   @media (max-width: 1024px) and (max-height: 1366px) and (orientation: portrait) {
     text-align: center;
@@ -87,22 +88,22 @@ export const Nav = styled.ul.withConfig({
 
     li:nth-child(1) {
       opacity: 0;
-      transition: all 375ms ease-out 600ms;
+      transition: opacity 375ms ease-out 750ms;
       pointer-events: none;
     }
     li:nth-child(2) {
       opacity: 0;
-      transition: all 375ms ease-out 500ms;
+      transition: opacity 375ms ease-out 600ms;
       pointer-events: none;
     }
     li:nth-child(3) {
       opacity: 0;
-      transition: all 375ms ease-out 400ms;
+      transition: opacity 375ms ease-out 450ms;
       pointer-events: none;
     }
     li:nth-child(4) {
       opacity: 0;
-      transition: all 375ms ease-out 300ms;
+      transition: opacity 375ms ease-out 300ms;
       pointer-events: none;
     }
   }
@@ -113,19 +114,19 @@ export const Nav = styled.ul.withConfig({
 
     li:nth-child(1) {
       opacity: 1;
-      transition: all 375ms ease-in 500ms;
+      transition: opacity 375ms ease-in 1.2s;
     }
     li:nth-child(2) {
       opacity: 1;
-      transition: all 375ms ease-in 600ms;
+      transition: opacity 375ms ease-in 1.35s;
     }
     li:nth-child(3) {
       opacity: 1;
-      transition: all 375ms ease-in 700ms;
+      transition: opacity 375ms ease-in 1.5s;
     }
     li:nth-child(4) {
       opacity: 1;
-      transition: all 375ms ease-in 800ms;
+      transition: opacity 375ms ease-in 1.65s;
     }
   }
 

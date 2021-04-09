@@ -69,7 +69,7 @@ export const Nav = styled.ul.withConfig({
   margin-top: -2.5rem;
 
   &.blurred {
-    filter: blur(3px);
+    filter: blur(5px);
   }
   @media (max-width: 1024px) and (max-height: 1366px) and (orientation: portrait) {
     text-align: center;

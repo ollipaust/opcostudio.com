@@ -37,6 +37,7 @@ const Controller = () => {
     const handleEsc = event => {
       if (event.keyCode === 27) {
         setIsMenuActive(false)
+        appView.classList.remove('blurred')
       }
     }
     window.addEventListener('keydown', handleEsc)

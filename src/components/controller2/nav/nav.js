@@ -6,8 +6,6 @@ const NavLinks = ({ className }) => {
   const [isAboutActive, setIsAboutActive] = useState(false)
 
   const collapsed = isAboutActive ? 'active' : 'inactive'
-  const menuBtn = document.getElementById('MenuBtn')
-  const navList = document.getElementById('NavList')
 
   const menuBtn = (typeof document !== 'undefined') ? document.getElementById('MenuBtn') : null
   const navList = (typeof document !== 'undefined') ? document.getElementById('NavList') : null

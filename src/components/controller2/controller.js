@@ -12,7 +12,8 @@ const Controller = () => {
   const [isMenuActive, setIsMenuActive] = useState(false)
   const toggled = isMenuActive ? 'active' : 'inactive'
 
-  const appView = document.getElementById('AppView')
+  const appView = (typeof document !== 'undefined') ? document.getElementById('AppView') : null
+
 
   function hideStuff() {
     appView.classList.add('blurred')

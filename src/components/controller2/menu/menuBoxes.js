@@ -1,9 +1,9 @@
 import React from 'react'
 
-import { Container, MenuBoxLeft, MenuBoxRight } from './menuContent.css'
+import { Container, MenuBoxLeft, MenuBoxRight } from './menuBoxes.css'
 import Socials from 'components/socials'
 
-const MenuContent = ({ className }) => (
+const MenuBoxes = ({ className }) => (
   <Container className={className}>
     <MenuBoxLeft>
       <strong>
@@ -18,4 +18,4 @@ const MenuContent = ({ className }) => (
   </Container>
 )
 
-export default MenuContent
+export default MenuBoxes

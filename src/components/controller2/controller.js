@@ -1,15 +1,17 @@
-import React, { useState, useEffect, useLayoutEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 
 import { Container, Content, AppControllerWrapper } from './controller.css'
 
 import Logo from './logo'
 import MenuButton from './menu/menuButton'
 import MenuBackground from './menu/menuBg'
-import MenuContent from './menu/menuContent'
+import MenuBoxes from './menu/menuBoxes'
 import NavLinks from './nav'
 
 const Controller = () => {
   const [isMenuActive, setIsMenuActive] = useState(false)
+  const [isAboutActive, setIsAboutActive] = useState(false)
+
   const toggled = isMenuActive ? 'active' : 'inactive'
 
   const blurContent =
@@ -37,7 +39,7 @@ const Controller = () => {
   }
 
   useEffect(() => {
-    const blurContent = document.getElementById('blurContent')
+    const blurContent = document.getElementById('ScrollContent')
     const handleEsc = event => {
       if (event.keyCode === 27) {
         setIsMenuActive(false)
@@ -55,15 +57,24 @@ const Controller = () => {
     <AppControllerWrapper>
       {typeof document !== 'undefined' ? OverflowHider() : null}
       {isMenuActive ? addBlur() : null}
-      <NavLinks className={toggled} setIsMenuActive={setIsMenuActive} />
+      <NavLinks
+        className={toggled}
+        setIsMenuActive={setIsMenuActive}
+        isAboutActive={isAboutActive}
+        setIsAboutActive={setIsAboutActive}
+      />
       <Container>
         <Content>
           <MenuButton className={toggled} onClick={() => hideMenu()} />
-          <Logo className={toggled} setIsMenuActive={setIsMenuActive} />
+          <Logo
+            className={toggled}
+            setIsMenuActive={setIsMenuActive}
+            setIsAboutActive={setIsAboutActive}
+          />
         </Content>
       </Container>
 
-      <MenuContent className={toggled} />
+      <MenuBoxes className={toggled} />
       <MenuBackground className={toggled} />
     </AppControllerWrapper>
   )

@@ -22,7 +22,6 @@ export const Container = styled.div.withConfig({
     filter: saturate(1.5);
     width: 100vw;
     height: 100vh;
-    pointer-events: none;
     transform: translateY(-100%);
     transition: transform 1s ease-out 1s;
   }
@@ -31,7 +30,6 @@ export const Container = styled.div.withConfig({
     filter: saturate(1.5);
     width: 100vw;
     height: 100vh;
-    pointer-events: none;
     transform: translateY(100%);
     transition: transform 1s ease-out 1s;
   }

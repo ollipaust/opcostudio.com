@@ -1,11 +1,14 @@
-import React, { useState, useEffect, useCallback } from 'react'
-import { Link } from 'gatsby'
+import React, { useEffect } from 'react'
+import { navigate } from 'gatsby'
 import { Container, Nav, NavLinksAboutContainer } from './nav.css'
 import { AboutContent } from './about'
 
-const NavLinks = ({ className, setIsMenuActive }) => {
-  const [isAboutActive, setIsAboutActive] = useState(false)
-
+const NavLinks = ({
+  className,
+  setIsMenuActive,
+  isAboutActive,
+  setIsAboutActive,
+}) => {
   const collapsed = isAboutActive ? 'active' : 'inactive'
 
   const menuBtn =
@@ -70,12 +73,10 @@ const NavLinks = ({ className, setIsMenuActive }) => {
           <button
             className="work"
             data-info="02"
-            onClick={() => setIsMenuActive(false)}
+            onClick={() => setIsMenuActive(false) + navigate('/work')}
             style={isAboutActive === true ? { pointerEvents: 'none' } : null}
           >
-            <Link to="/work">
-              <span>Work</span>
-            </Link>
+            <span>Work</span>
           </button>
         </li>
         <li>

@@ -35,15 +35,10 @@ will-change: opacity;
 &.exit.exit-active {
     [class*='OverlayBackground'] {
 
-        transform: rotate(26deg) translateX(0%) translateY(-22.6%) scale(2);
+        transform: translateX(0%) translateY(0%) scale(2);
 
-        .alpha {
+        .bg {
             transform: translateY(-100%);
-            transition: transform 400ms ease-in-out 1400ms!important;
-            will-change: transform;
-          }
-          .beta {
-            transform: translateY(100%);
             transition: transform 400ms ease-in-out 1400ms!important;
             will-change: transform;
           }

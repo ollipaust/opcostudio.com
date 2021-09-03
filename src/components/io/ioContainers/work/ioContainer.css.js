@@ -4,6 +4,7 @@ import { accent } from 'constants/colors'
 export const IoWorkTextContainer = styled.div`
   opacity: ${({ isVisible }) => (isVisible ? 1 : 0)};
   transition: opacity 500ms ease;
+  min-height: 75vh;
 
   .title {
     white-space: pre;

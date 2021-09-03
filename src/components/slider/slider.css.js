@@ -22,6 +22,12 @@ export const Container = styled.div`
     }
   }
 
+  .slide-year {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+
   .slider-controls {
     display: flex;
     justify-content: center;

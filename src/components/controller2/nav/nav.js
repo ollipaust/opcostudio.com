@@ -52,7 +52,7 @@ const NavLinks = ({
               : { pointerEvents: 'none' }
           }
         >
-          X
+          <span>X</span>
         </button>
 
         <AboutContent className={collapsed} />

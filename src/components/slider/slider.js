@@ -16,7 +16,14 @@ class Slide extends Component {
   }
 
   render() {
-    const { image, description, buttonlink, headline, index } = this.props.slide
+    const {
+      image,
+      description,
+      year,
+      buttonlink,
+      headline,
+      index,
+    } = this.props.slide
     const current = this.props.current
     let classNames = 'slide'
 
@@ -42,11 +49,12 @@ class Slide extends Component {
 
         <article className="slide-content">
           <h2 className="slide-headline">{headline}</h2>
+          <span className="slide-year">- {year} -</span>
           <div>
             <span>{description}</span>
           </div>
           <StyledButton to={buttonlink} className="works-button">
-            {'more details'}
+            {'learn more'}
           </StyledButton>
         </article>
       </li>

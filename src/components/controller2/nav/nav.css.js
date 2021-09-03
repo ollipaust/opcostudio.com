@@ -1,5 +1,6 @@
 import styled from 'styled-components'
-import { light, light33, light66, darkBlue } from 'constants/colors'
+import { light, light33, light66, accent } from 'constants/colors'
+import MEDIA from 'helpers/mediaTemplates'
 
 export const Container = styled.nav.withConfig({
   displayName: 'NavLinksContainer',
@@ -36,18 +37,88 @@ export const NavLinksAboutContainer = styled.div.withConfig({
 
   .close {
     position: fixed;
+    background: none;
+    outline: none;
+    border: none;
     z-index: 10000;
     top: 2.5rem;
     left: 2.5rem;
     width: 50px;
     height: 50px;
     opacity: 0;
-    transition: opacity 1s cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+    font-size: 12px;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+    border: none;
+    outline: none;
+    border-width: initial;
+    border-style: none;
+    border-color: initial;
+    border-image: initial;
+    background: transparent;
+    transform: rotate(45deg);
+    transition: transform 300ms ease-in 150ms, visibility 100ms ease 50ms,
+      opacity 1s cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+
+    :hover {
+      > span,
+      span:after {
+        background-color: ${accent}!important;
+        transition: background-color 100ms ease 0ms;
+      }
+    }
+
+    @media (min-width: 1280px) {
+      &:hover :after {
+        transform: translateX(1.4em);
+      }
+    }
+
+    span,
+    span:after {
+      pointer-events: none;
+      display: block;
+      content: '';
+      width: 4em;
+      border-radius: 0.25em;
+      background-color: ${accent};
+      height: 0.495em;
+      position: absolute;
+      transform: rotate(0);
+      transition: top 500ms ease 0ms, left 500ms ease 0ms,
+        transform 500ms ease 0ms, background-color 375ms ease 850ms;
+    }
+    span:after {
+      width: 4em;
+    }
 
     &.active {
       opacity: 1;
       transition: opacity 1s cubic-bezier(0.23, 1, 0.32, 1) 250ms;
+
+      span,
+      span:after {
+        background-color: ${light};
+        transition: background-color 500ms ease 750ms, 200ms top, 200ms left,
+          200ms transform;
+        transition-delay: 0;
+      }
+      span:after {
+        left: 0;
+        top: 0px;
+      }
+      span:after {
+        top: 0;
+        transform: rotate(90deg);
+      }
     }
+
+    ${MEDIA.PHONE &&
+      MEDIA.TABLET`
+        transform: scale(0.80);
+        margin-top: 0.5rem;
+      `}
   }
 `
 

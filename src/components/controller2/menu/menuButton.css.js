@@ -79,14 +79,11 @@ export const Button = styled.button.withConfig({
     }
     span:after {
       top: 0.76em;
-      -webkit-transform: rotate(45deg);
-      -ms-transform: rotate(45deg);
       transform: rotate(45deg);
     }
     span:before {
       top: -0.76em;
-      -webkit-transform: rotate(-45deg);
-      -ms-transform: rotate(-45deg);
+
       transform: rotate(-45deg);
     }
   }

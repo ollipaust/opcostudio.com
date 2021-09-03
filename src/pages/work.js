@@ -7,7 +7,6 @@ import PageLayout from 'components/interface/pageLayout'
 import IoWorkContainer from 'components/io/ioContainers/work/ioContainer'
 import Title from 'components/title'
 import Slider from 'components/slider'
-import { Divider } from 'constants/elements'
 
 const Work = ({ data }) => (
   <PageLayout prev="about" next="stack" bodyClass="work">
@@ -21,8 +20,6 @@ const Work = ({ data }) => (
       <Title as="h1" size="super" className="title">
         {data.workJson.headtitle}
       </Title>
-
-      <Divider />
 
       <Slider slides={data.workJson.slidedata} />
     </IoWorkContainer>
@@ -83,6 +80,7 @@ export const query = graphql`
       slidedata {
         index
         headline
+        year
         description
         buttonlink
         image {

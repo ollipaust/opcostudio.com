@@ -35,14 +35,25 @@ export const heroSubTitleAnimation = {
     },
   },
 }
-export const heroButtonAnimation = {
-  hidden: { opacity: 0, y: '100%' },
+export const heroButtonAnimation1 = {
+  hidden: { opacity: 0, y: '50%' },
   show: {
     opacity: 1,
     y: '0%',
     transition: {
-      opacity: { duration: 0.5, delay: 4 },
-      y: { duration: 0.5, delay: 4.25 },
+      opacity: { duration: 0.75, delay: 4.9 },
+      y: { duration: 0.5, delay: 5 },
+    },
+  },
+}
+export const heroButtonAnimation2 = {
+  hidden: { opacity: 0, y: '50%' },
+  show: {
+    opacity: 1,
+    y: '0%',
+    transition: {
+      opacity: { duration: 0.75, delay: 5.15 },
+      y: { duration: 0.5, delay: 5.25 },
     },
   },
 }
@@ -51,10 +62,10 @@ export const motionHeroLogos = {
   show: {
     opacity: 1,
     transition: {
-      delayChildren: 4.5,
+      delayChildren: 4,
       staggerChildren: 0.1,
       ease: 'easeIn',
-      opacity: { delay: 4.5 },
+      opacity: { delay: 4 },
     },
   },
 }
@@ -77,7 +88,7 @@ export const motionHeroNotice = {
     opacity: 1,
     y: '0%',
     transition: {
-      delay: 4.5,
+      delay: 4,
       opacity: { duration: 1 },
       y: { type: 'spring', damping: 10, stiffness: 50 },
     },
@@ -150,11 +161,11 @@ export const pulseRings = `
   width: 250px;
   height: 250px;
   background: transparent;
-  border: 3px solid rgba(135, 0, 255, 0.15);
+  border: 3px solid white;
   border-radius: 50%;
   transform: scale(0.1, 0.1);
   opacity: 0;
-  animation: pulse 13s ease-out infinite;
+  animation: pulse 10s ease-out infinite;
   animation-delay: 3s;
 }
 .pulsing-rings .pulsing-ringlet:nth-of-type(2) {

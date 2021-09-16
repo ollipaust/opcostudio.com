@@ -1,75 +1,37 @@
+import React from 'react'
 import styled from 'styled-components'
+import Div100vh from 'react-div-100vh'
+
+const ControllerOverlayContainer = ({ className, children }) => (
+  <Div100vh className={className}>{children}</Div100vh>
+)
+
+export const AppControllerWrapper = styled(
+  ControllerOverlayContainer
+).withConfig({
+  displayName: 'AppControllerWrapper',
+})`
+  position: fixed;
+  overflow: hidden;
+  z-index: 10;
+  width: 100vw;
+  background: transparent;
+  pointer-events: none;
+`
 
 export const Container = styled.header.withConfig({
   displayName: 'AppController',
 })`
+  position: absolute;
+  z-index: 1000;
   width: 100%;
   height: calc(100px + 2.5em);
-  position: fixed;
-  z-index: 100;
   top: 0;
   left: 0;
   pointer-events: none;
-
-  @media (max-height: 823px) and (max-width: 450px) and (orientation: portrait) {
-    height: 75px;
-
-    [class*='LogoDark'],
-    [class*='LogoLight'] {
-      padding-left: 1rem;
-      padding-top: 1rem;
-      transform: scale(0.8);
-    }
-    [class*='LogoContainer'] {
-      height: 75px !important;
-    }
-  }
-
-  @media (max-width: 823px) and (max-height: 450px) and (orientation: landscape) {
-    height: 75px;
-
-    [class*='LogoDark'],
-    [class*='LogoLight'] {
-      padding-left: 1rem;
-    }
-    [class*='LogoContainer'] {
-      height: 75px !important;
-    }
-  }
-
-  @media (min-width: 824px) and (max-width: 1366px) and (min-height: 451px) and (max-height: 1024px) and (orientation: landscape) {
-    height: 150px;
-
-    [class*='LogoDark'],
-    [class*='LogoLight'] {
-      padding-left: 1rem;
-    }
-    [class*='LogoContainer'] {
-      height: 150px !important;
-    }
-  }
-
-  a {
-    color: #757575;
-    transition: color 0.2s ease;
-    text-decoration: none;
-
-    &:hover {
-      color: inherit;
-    }
-  }
-  &:nth-of-type(n + 3) {
-    opacity: 0 !important;
-  }
-  &.enter-active {
-    opacity: 0 !important;
-  }
-  &.enter-done {
-    opacity: 1 !important;
-  }
 `
 
-export const Content = styled.header.withConfig({
+export const Content = styled.div.withConfig({
   displayName: 'AppControllerContent',
 })`
   display: flex;
@@ -79,8 +41,4 @@ export const Content = styled.header.withConfig({
   width: auto;
   height: 100%;
   padding: 0 2.5rem;
-
-  @media (max-height: 823px) and (max-width: 450px) and (orientation: portrait) {
-    padding: 0 1rem;
-  }
 `

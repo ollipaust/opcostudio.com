@@ -117,6 +117,14 @@ export const GlobalStyles = createGlobalStyle`
   video {
     max-width: 100%;
   }
+  .multi-form {
+    form {
+      pointer-events: none;
+    }
+    input {
+      pointer-events: all;
+    }
+  }
   pre {
     display: block;
     padding: 2rem;

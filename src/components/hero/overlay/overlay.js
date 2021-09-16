@@ -117,7 +117,7 @@ const HeroOverlay = () => {
             </a>
           </span>
           <br />
-          <span>Currently in Development. Latest update: 06.01.2021</span>
+          <span>Currently in Development. Latest update: 13.09.2021</span>
         </p>
       </StyledMotionHeroNoticeContainer>
     </Container>

@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import Head from 'components/head'
 
 import AppView from './appViewWithScrollbars'
-import Controller from 'components/controller2/controller'
+import Controller from 'components/controller/controller'
 
 import { GlobalStyles } from 'global.css'
 import { TransitionStyles } from './transitions/transitions.css'
@@ -27,7 +27,7 @@ const Interface = ({ children, location }) => {
 
       <Head />
 
-      {/*<StartLoader />*/}
+      <StartLoader />
 
       <BackgroundWaves accentColor={neutral} shineIntensity={250} />
 

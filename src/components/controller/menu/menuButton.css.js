@@ -68,7 +68,7 @@ export const Button = styled.button.withConfig({
     span:after,
     span:before {
       background-color: ${light};
-      transition: background-color 500ms ease 750ms, 200ms top, 200ms left,
+      transition: background-color 500ms ease 350ms, 200ms top, 200ms left,
         200ms transform;
       transition-delay: 0;
     }

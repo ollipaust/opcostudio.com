@@ -23,7 +23,7 @@ export const Container = styled.div.withConfig({
     width: 100vw;
     height: 100vh;
     transform: translateY(-100%);
-    transition: transform 1s ease-out 1s;
+    transition: transform 500ms ease-in 750ms;
   }
 
   &.active {
@@ -32,7 +32,7 @@ export const Container = styled.div.withConfig({
 
     .bg {
       transform: translateY(0%);
-      transition: transform 1s ease-in 100ms;
+      transition: transform 750ms ease-out 100ms;
       will-change: transform;
     }
   }

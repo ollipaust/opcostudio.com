@@ -73,7 +73,7 @@ const NavLinks = ({
           <button
             className="work"
             data-info="02"
-            onClick={() => setIsMenuActive(false) + navigate('/work')}
+            onClick={() => setIsMenuActive(false) + navigate('/#')}
             style={isAboutActive === true ? { pointerEvents: 'none' } : null}
           >
             <span>Work</span>

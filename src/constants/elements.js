@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { accent, accentGradient150, dark, light } from 'constants/colors'
 import { pulseRings } from 'constants/animations'
 import { Link } from 'gatsby'
+import { PointLightShadow } from 'three'
 
 export const StyledButton = styled(Link).withConfig({
   displayName: 'StyledButton',
@@ -22,6 +23,7 @@ export const StyledButton = styled(Link).withConfig({
   border-width: 2px;
   border-style: solid;
   border-color: ${accent};
+  margin: 1rem;
   padding: 15px 20px;
   overflow: hidden;
   text-decoration: none;
@@ -37,11 +39,23 @@ export const StyledButton = styled(Link).withConfig({
     font-size: 0.66rem;
     padding: 7.5px 12.5px !important;
   }
+
+  &.dark {
+    border-color: ${dark}!important;
+    color: ${light}!important;
+
+  }
   
   :hover,
   :active {
       color: ${dark};
-      transition: color 350ms ease 100ms;
+      transition: color 350ms ease 150ms;
+
+      &.dark {
+        color: ${dark}!important;
+        transition: color 350ms ease 150ms;
+    
+      }
   }
   ::after {
     content: '';
@@ -60,6 +74,27 @@ export const StyledButton = styled(Link).withConfig({
     transform: translateY(-100%) translateZ(0);
     transition: transform 500ms ease-in-out 0ms;
   }
+
+  &.dark {
+    ::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 150%;
+      height: 200px;
+      background: ${dark};
+      z-index: -1;
+      transform: translateY(0%) translateZ(0);
+      transition: transform 500ms ease-in-out 50ms;
+    }
+    :hover::after,
+    :active::after {
+      transform: translateY(-100%) translateZ(0);
+      transition: transform 500ms ease-in-out 0ms;
+    }
+  }
+
   ${pulseRings}
 `
 

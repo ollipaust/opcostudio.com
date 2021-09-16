@@ -22,7 +22,7 @@ const ViewContainer = styled.main.withConfig({
 
     &.blur {
       filter: blur(6px);
-      transition: filter 300ms ease 850ms !important;
+      transition: filter 300ms ease 450ms !important;
     }
 
     .scroll-content {

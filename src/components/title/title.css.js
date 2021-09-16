@@ -33,7 +33,7 @@ export const Text = styled.span.withConfig({
     font-size: ${({ size }) => () => {
       switch (size) {
         case 'super':
-          return '8rem'
+          return '7.25rem'
         case 'larger':
           return '6rem'
         case 'large':
